@@ -1,0 +1,1984 @@
+app:
+  description: 读取八张基站小区业务与约束表，按时段编排运行、轻载节能和深度休眠策略，并独立校验策略风险。适用于通信网络运维分析、节能策略验证和工作流教学，输出能耗分析图与 Markdown 报告。
+  icon: 📡
+  icon_background: '#FFEAD5'
+  icon_type: emoji
+  mode: workflow
+  name: TomJ-ES
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: antv/visualization:0.2.0@798a255e7bf02e93b8a5717be235b833482be58daab1c64c79c954281da14b9c
+    version: null
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: bowenliang123/md_exporter:3.6.9@3f027d63e80b44d5d5a9f706871afaef37905b8f8a89a2d152dc530211a8acb1
+    version: null
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/tongyi:0.2.26@6c75a6b95954ef3c97f0d3225bad7cbfbff7cdbc82d9425074aae121cc056a64
+    version: null
+kind: app
+version: 0.6.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        attachment_image_file_size_limit: 2
+        audio_file_size_limit: 50
+        batch_count_limit: 10
+        file_size_limit: 30
+        file_upload_limit: 20
+        image_file_batch_limit: 10
+        image_file_size_limit: 10
+        single_chunk_attachment_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 15
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: document-extractor
+      id: start-ext01
+      source: start
+      sourceHandle: source
+      target: ext01
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: document-extractor
+      id: start-ext02
+      source: start
+      sourceHandle: source
+      target: ext02
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: document-extractor
+      id: start-ext03
+      source: start
+      sourceHandle: source
+      target: ext03
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: document-extractor
+      id: start-ext04
+      source: start
+      sourceHandle: source
+      target: ext04
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: document-extractor
+      id: start-ext05
+      source: start
+      sourceHandle: source
+      target: ext05
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: document-extractor
+      id: start-ext06
+      source: start
+      sourceHandle: source
+      target: ext06
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: document-extractor
+      id: start-ext07
+      source: start
+      sourceHandle: source
+      target: ext07
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: document-extractor
+      id: start-ext08
+      source: start
+      sourceHandle: source
+      target: ext08
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: code
+      id: ext01-parse
+      source: ext01
+      sourceHandle: source
+      target: parse
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: code
+      id: ext02-parse
+      source: ext02
+      sourceHandle: source
+      target: parse
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: code
+      id: ext03-parse
+      source: ext03
+      sourceHandle: source
+      target: parse
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: code
+      id: ext04-parse
+      source: ext04
+      sourceHandle: source
+      target: parse
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: code
+      id: ext05-parse
+      source: ext05
+      sourceHandle: source
+      target: parse
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: code
+      id: ext06-parse
+      source: ext06
+      sourceHandle: source
+      target: parse
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: code
+      id: ext07-parse
+      source: ext07
+      sourceHandle: source
+      target: parse
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: code
+      id: ext08-parse
+      source: ext08
+      sourceHandle: source
+      target: parse
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: if-else
+      id: parse-if
+      source: parse
+      sourceHandle: source
+      target: if_parse
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: code
+      id: if-false-parseerr
+      source: if_parse
+      sourceHandle: 'false'
+      target: parse_error
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: end
+      id: parseerr-end
+      source: parse_error
+      sourceHandle: source
+      target: end_error
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: code
+      id: if-true-strategy
+      source: if_parse
+      sourceHandle: 'true'
+      target: strategy
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: if-else
+      id: strategy-if-risk
+      source: strategy
+      sourceHandle: source
+      target: if_risk
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: code
+      id: ifrisk-false-riskerror
+      source: if_risk
+      sourceHandle: 'false'
+      target: risk_error
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: end
+      id: riskerr-end
+      source: risk_error
+      sourceHandle: source
+      target: end_risk
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: iteration
+      id: ifrisk-true-iter
+      source: if_risk
+      sourceHandle: 'true'
+      target: iter_review
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: tool
+      id: ifrisk-true-chart1
+      source: if_risk
+      sourceHandle: 'true'
+      target: chart1
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: tool
+      id: ifrisk-true-chart2
+      source: if_risk
+      sourceHandle: 'true'
+      target: chart2
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: tool
+      id: ifrisk-true-chart3
+      source: if_risk
+      sourceHandle: 'true'
+      target: chart3
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: iter_review
+        sourceType: iteration-start
+        targetType: code
+      id: iter_reviewstart-source
+      source: iter_reviewstart
+      sourceHandle: source
+      target: code_iter_inner
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: iteration
+        targetType: code
+      id: iter-summary
+      source: iter_review
+      sourceHandle: source
+      target: code_summary_llm
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: tool
+        targetType: template-transform
+      id: chart1-report
+      source: chart1
+      sourceHandle: source
+      target: report
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: tool
+        targetType: template-transform
+      id: chart2-report
+      source: chart2
+      sourceHandle: source
+      target: report
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: tool
+        targetType: template-transform
+      id: chart3-report
+      source: chart3
+      sourceHandle: source
+      target: report
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: template-transform
+        targetType: tool
+      id: report-md
+      source: report
+      sourceHandle: source
+      target: md_export
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: tool
+        targetType: end
+      id: md-end
+      source: md_export
+      sourceHandle: source
+      target: end
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: code_summary_llm-source-1793278892832-target
+      source: code_summary_llm
+      sourceHandle: source
+      target: '1793278892832'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: template-transform
+      id: 1793278892832-source-report-target
+      source: '1793278892832'
+      sourceHandle: source
+      target: report
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        selected: false
+        title: 01 用户输入八张表
+        type: start
+        variables:
+        - allowed_file_extensions:
+          - .csv
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          default: ''
+          hide: false
+          hint: ''
+          label: 01_任务时段表.csv
+          options: []
+          placeholder: ''
+          required: true
+          type: file
+          variable: slot_csv
+        - allowed_file_extensions:
+          - .csv
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          default: ''
+          hide: false
+          hint: ''
+          label: 02_小区基础信息表.csv
+          options: []
+          placeholder: ''
+          required: true
+          type: file
+          variable: cell_csv
+        - allowed_file_extensions:
+          - .csv
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          default: ''
+          hide: false
+          hint: ''
+          label: 03_分时业务需求表.csv
+          options: []
+          placeholder: ''
+          required: true
+          type: file
+          variable: demand_csv
+        - allowed_file_extensions:
+          - .csv
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          default: ''
+          hide: false
+          hint: ''
+          label: 04_覆盖保障约束表.csv
+          options: []
+          placeholder: ''
+          required: true
+          type: file
+          variable: coverage_csv
+        - allowed_file_extensions:
+          - .csv
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          default: ''
+          hide: false
+          hint: ''
+          label: 05_小区业务承接关系表.csv
+          options: []
+          placeholder: ''
+          required: true
+          type: file
+          variable: transfer_csv
+        - allowed_file_extensions:
+          - .csv
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          default: ''
+          hide: false
+          hint: ''
+          label: 06_运行状态容量与功耗参数表.csv
+          options: []
+          placeholder: ''
+          required: true
+          type: file
+          variable: power_csv
+        - allowed_file_extensions:
+          - .csv
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          default: ''
+          hide: false
+          hint: ''
+          label: 07_临时保障限制表.csv
+          options: []
+          placeholder: ''
+          required: true
+          type: file
+          variable: restriction_csv
+        - allowed_file_extensions:
+          - .csv
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          default: ''
+          hide: false
+          hint: ''
+          label: 08_节能策略编排规则表.csv
+          options: []
+          placeholder: ''
+          required: true
+          type: file
+          variable: rule_csv
+      height: 290
+      id: start
+      position:
+        x: 40
+        y: 360
+      positionAbsolute:
+        x: 40
+        y: 360
+      type: custom
+      width: 242
+    - data:
+        is_array_file: false
+        selected: false
+        title: 01时段提取
+        type: document-extractor
+        variable_selector:
+        - start
+        - slot_csv
+      height: 103
+      id: ext01
+      position:
+        x: 380
+        y: 40
+      positionAbsolute:
+        x: 380
+        y: 40
+      type: custom
+      width: 241
+    - data:
+        is_array_file: false
+        selected: false
+        title: 02小区提取
+        type: document-extractor
+        variable_selector:
+        - start
+        - cell_csv
+      height: 103
+      id: ext02
+      position:
+        x: 380
+        y: 170
+      positionAbsolute:
+        x: 380
+        y: 170
+      type: custom
+      width: 241
+    - data:
+        is_array_file: false
+        selected: false
+        title: 03需求提取
+        type: document-extractor
+        variable_selector:
+        - start
+        - demand_csv
+      height: 103
+      id: ext03
+      position:
+        x: 380
+        y: 300
+      positionAbsolute:
+        x: 380
+        y: 300
+      type: custom
+      width: 241
+    - data:
+        is_array_file: false
+        selected: false
+        title: 04覆盖提取
+        type: document-extractor
+        variable_selector:
+        - start
+        - coverage_csv
+      height: 103
+      id: ext04
+      position:
+        x: 380
+        y: 430
+      positionAbsolute:
+        x: 380
+        y: 430
+      type: custom
+      width: 241
+    - data:
+        is_array_file: false
+        selected: false
+        title: 05承接提取
+        type: document-extractor
+        variable_selector:
+        - start
+        - transfer_csv
+      height: 103
+      id: ext05
+      position:
+        x: 380
+        y: 560
+      positionAbsolute:
+        x: 380
+        y: 560
+      type: custom
+      width: 241
+    - data:
+        is_array_file: false
+        selected: false
+        title: 06功耗提取
+        type: document-extractor
+        variable_selector:
+        - start
+        - power_csv
+      height: 103
+      id: ext06
+      position:
+        x: 380
+        y: 690
+      positionAbsolute:
+        x: 380
+        y: 690
+      type: custom
+      width: 241
+    - data:
+        is_array_file: false
+        selected: false
+        title: 07限制提取
+        type: document-extractor
+        variable_selector:
+        - start
+        - restriction_csv
+      height: 103
+      id: ext07
+      position:
+        x: 380
+        y: 820
+      positionAbsolute:
+        x: 380
+        y: 820
+      type: custom
+      width: 241
+    - data:
+        is_array_file: false
+        selected: false
+        title: 08规则提取
+        type: document-extractor
+        variable_selector:
+        - start
+        - rule_csv
+      height: 103
+      id: ext08
+      position:
+        x: 380
+        y: 950
+      positionAbsolute:
+        x: 380
+        y: 950
+      type: custom
+      width: 241
+    - data:
+        code: "import csv, io, json, re\nfrom collections import OrderedDict\n\ndef _clean(t):\n    return \"\" if t is None\
+          \ else str(t).lstrip(\"\\ufeff\")\n\ndef _split_table(text):\n    text = _clean(text)\n    if not text.strip():\n\
+          \        return [], []\n    lines = [ln for ln in text.replace(\"\\r\\n\",\"\\n\").replace(\"\\r\",\"\\n\").split(\"\
+          \\n\") if ln.strip()!=\"\"]\n    if lines and lines[0].strip().startswith(\"|\"):\n        def split_md(line):\n\
+          \            s = line.strip()\n            if s.startswith(\"|\"): s = s[1:]\n            if s.endswith(\"|\"):\
+          \ s = s[:-1]\n            cells, buf, i = [], \"\", 0\n            while i < len(s):\n                if s[i] ==\
+          \ \"\\\\\" and i + 1 < len(s) and s[i + 1] == \"|\":\n                    buf += \"|\"; i += 2\n               \
+          \ elif s[i] == \"|\":\n                    cells.append(buf.strip()); buf = \"\"; i += 1\n                else:\n\
+          \                    buf += s[i]; i += 1\n            cells.append(buf.strip())\n            return cells\n    \
+          \    header = [h.strip().lstrip(\"\\ufeff\") for h in split_md(lines[0])]\n        rows = []\n        for ln in\
+          \ lines[1:]:\n            cells = split_md(ln)\n            if cells and all(re.fullmatch(r\":?-+:?\", c.strip())\
+          \ for c in cells if c.strip()):\n                continue\n            if len(cells) < len(header):\n          \
+          \      cells += [\"\"] * (len(header) - len(cells))\n            rows.append({header[i]: cells[i] if i < len(cells)\
+          \ else \"\" for i in range(len(header))})\n        return header, rows\n    reader = csv.DictReader(io.StringIO(text))\n\
+          \    header = [h.strip().lstrip(\"\\ufeff\") for h in (reader.fieldnames or [])]\n    rows = []\n    for r in reader:\n\
+          \        d = {}\n        for k, v in r.items():\n            if k is None:\n                continue\n         \
+          \   d[k.strip().lstrip(\"\\ufeff\")] = v.strip() if isinstance(v, str) else v\n        rows.append(d)\n    return\
+          \ header, rows\n\ndef _parse_table(name, text, required, float_cols, int_cols):\n    header, raw_rows = _split_table(text)\n\
+          \    issues, rows = [], []\n    missing = [c for c in required if c not in header]\n    if missing:\n        return\
+          \ rows, [f\"{name} 缺少必要列 {missing}\"]\n    for idx, r in enumerate(raw_rows, start=2):\n        out = {}\n     \
+          \   for c in required:\n            v = str(r.get(c, \"\")).strip()\n            if v == \"\":\n               \
+          \ issues.append({\"table\": name, \"row\": idx, \"col\": c, \"issue\": \"必填字段为空\"})\n                v = \"0\" if\
+          \ c in float_cols or c in int_cols else \"\"\n            try:\n                if c in float_cols:\n          \
+          \          out[c] = float(v)\n                elif c in int_cols:\n                    out[c] = int(float(v))\n\
+          \                else:\n                    out[c] = v\n            except Exception:\n                issues.append({\"\
+          table\": name, \"row\": idx, \"col\": c, \"issue\": f\"类型无法解析：{v}\"})\n                out[c] = 0.0 if c in float_cols\
+          \ else (0 if c in int_cols else v)\n        rows.append(out)\n    return rows, issues\n\ndef main(slot_text, cell_text,\
+          \ demand_text, coverage_text, transfer_text, power_text, restriction_text, rule_text):\n    specs = OrderedDict([\n\
+          \        (\"slots\", (slot_text, [\"case_id\",\"slot_id\",\"start_time\",\"end_time\",\"duration_hours\"], {\"duration_hours\"\
+          }, set())),\n        (\"cells\", (cell_text, [\"cell_id\",\"cell_name\",\"site_id\",\"scene\",\"coverage_group\"\
+          ,\"role\",\"model_id\",\"x\",\"y\",\"initial_state\",\"initial_deep_slots\"], {\"x\",\"y\"}, {\"initial_deep_slots\"\
+          })),\n        (\"demands\", (demand_text, [\"slot_id\",\"cell_id\",\"demand_units\"], {\"demand_units\"}, set())),\n\
+          \        (\"coverage\", (coverage_text, [\"group_id\",\"anchor_cell_id\",\"min_active_cells\"], set(), {\"min_active_cells\"\
+          })),\n        (\"transfer\", (transfer_text, [\"source_cell_id\",\"target_cell_id\",\"priority\",\"max_transfer_units\"\
+          ], {\"max_transfer_units\"}, {\"priority\"})),\n        (\"power\", (power_text, [\"model_id\",\"state\",\"capacity_units\"\
+          ,\"base_power_w\",\"slope_w_per_unit\"], {\"capacity_units\",\"base_power_w\",\"slope_w_per_unit\"}, set())),\n\
+          \        (\"restrictions\", (restriction_text, [\"restriction_id\",\"cell_id\",\"restriction_type\",\"start_time\"\
+          ,\"end_time\",\"reason\"], set(), set())),\n        (\"rules\", (rule_text, [\"rule_key\",\"value\",\"description\"\
+          ], set(), set())),\n    ])\n    tables, batch, row_issues = OrderedDict(), [], []\n    for name, (text, required,\
+          \ float_cols, int_cols) in specs.items():\n        rows, issues = _parse_table(name, text, required, float_cols,\
+          \ int_cols)\n        tables[name] = rows\n        if any(\"缺少必要列\" in x for x in issues):\n            batch.extend(issues)\n\
+          \        else:\n            row_issues.extend(issues)\n\n    key_funcs = {\n        \"slots\": lambda r: r.get(\"\
+          slot_id\", \"\"),\n        \"cells\": lambda r: r.get(\"cell_id\", \"\"),\n        \"demands\": lambda r: (r.get(\"\
+          slot_id\", \"\"), r.get(\"cell_id\", \"\")),\n        \"coverage\": lambda r: r.get(\"group_id\", \"\"),\n     \
+          \   \"transfer\": lambda r: (r.get(\"source_cell_id\", \"\"), r.get(\"target_cell_id\", \"\")),\n        \"power\"\
+          : lambda r: (r.get(\"model_id\", \"\"), r.get(\"state\", \"\")),\n        \"restrictions\": lambda r: r.get(\"restriction_id\"\
+          , \"\"),\n        \"rules\": lambda r: r.get(\"rule_key\", \"\"),\n    }\n    for name, rows in tables.items():\n\
+          \        seen = set()\n        for i, r in enumerate(rows, start=2):\n            k = key_funcs[name](r)\n     \
+          \       if k in seen:\n                row_issues.append({\"table\": name, \"row\": i, \"issue\": f\"主键重复：{k}\"\
+          })\n            seen.add(k)\n\n    slots = {r[\"slot_id\"] for r in tables[\"slots\"]}\n    cells = {r[\"cell_id\"\
+          ]: r for r in tables[\"cells\"]}\n    models = {r[\"model_id\"] for r in tables[\"power\"]}\n    power_keys = {(r[\"\
+          model_id\"], r[\"state\"]) for r in tables[\"power\"]}\n    groups = {r[\"group_id\"] for r in tables[\"coverage\"\
+          ]}\n\n    for r in tables[\"demands\"]:\n        if r[\"slot_id\"] not in slots:\n            row_issues.append({\"\
+          table\":\"demands\",\"issue\":f\"未知 slot_id {r['slot_id']}\"})\n        if r[\"cell_id\"] not in cells:\n      \
+          \      row_issues.append({\"table\":\"demands\",\"issue\":f\"未知 cell_id {r['cell_id']}\"})\n    for cid, c in cells.items():\n\
+          \        if c[\"model_id\"] not in models:\n            row_issues.append({\"table\":\"cells\",\"cell_id\":cid,\"\
+          issue\":f\"未知 model_id {c['model_id']}\"})\n        if (c[\"model_id\"], c[\"initial_state\"]) not in power_keys:\n\
+          \            row_issues.append({\"table\":\"cells\",\"cell_id\":cid,\"issue\":\"initial_state 与 model_id 无对应功耗参数\"\
+          })\n        if c[\"coverage_group\"] not in groups:\n            row_issues.append({\"table\":\"cells\",\"cell_id\"\
+          :cid,\"issue\":f\"coverage_group {c['coverage_group']} 无覆盖约束\"})\n    for r in tables[\"coverage\"]:\n        if\
+          \ r[\"anchor_cell_id\"] not in cells:\n            row_issues.append({\"table\":\"coverage\",\"group_id\":r[\"group_id\"\
+          ],\"issue\":\"anchor_cell_id 不存在\"})\n    for r in tables[\"transfer\"]:\n        if r[\"source_cell_id\"] not in\
+          \ cells:\n            row_issues.append({\"table\":\"transfer\",\"issue\":f\"source_cell_id 不存在 {r['source_cell_id']}\"\
+          })\n        if r[\"target_cell_id\"] not in cells:\n            row_issues.append({\"table\":\"transfer\",\"issue\"\
+          :f\"target_cell_id 不存在 {r['target_cell_id']}\"})\n    for r in tables[\"restrictions\"]:\n        if r[\"cell_id\"\
+          ] not in cells:\n            row_issues.append({\"table\":\"restrictions\",\"issue\":f\"cell_id 不存在 {r['cell_id']}\"\
+          })\n\n    rules = {r[\"rule_key\"]: r[\"value\"] for r in tables[\"rules\"]}\n    summary = {\n        \"slot_count\"\
+          : len(tables[\"slots\"]),\n        \"cell_count\": len(tables[\"cells\"]),\n        \"demand_rows\": len(tables[\"\
+          demands\"]),\n        \"coverage_rows\": len(tables[\"coverage\"]),\n        \"transfer_rows\": len(tables[\"transfer\"\
+          ]),\n        \"power_rows\": len(tables[\"power\"]),\n        \"restriction_rows\": len(tables[\"restrictions\"\
+          ]),\n        \"rule_rows\": len(tables[\"rules\"]),\n    }\n    parse_ok = \"true\" if len(batch) == 0 and len(row_issues)\
+          \ == 0 else \"false\"\n    return {\n        \"parse_ok\": parse_ok,\n        \"batch_issues_json\": json.dumps(batch,\
+          \ ensure_ascii=False),\n        \"row_issues_json\": json.dumps(row_issues, ensure_ascii=False),\n        \"tables_json\"\
+          : json.dumps(tables, ensure_ascii=False),\n        \"rules_json\": json.dumps(rules, ensure_ascii=False),\n    \
+          \    \"summary_json\": json.dumps(summary, ensure_ascii=False),\n    }\n"
+        code_language: python3
+        outputs:
+          batch_issues_json:
+            children: null
+            type: string
+          parse_ok:
+            children: null
+            type: string
+          row_issues_json:
+            children: null
+            type: string
+          rules_json:
+            children: null
+            type: string
+          summary_json:
+            children: null
+            type: string
+          tables_json:
+            children: null
+            type: string
+        selected: false
+        title: 02 解析校验与索引
+        type: code
+        variables:
+        - value_selector:
+          - ext01
+          - text
+          value_type: string
+          variable: slot_text
+        - value_selector:
+          - ext02
+          - text
+          value_type: string
+          variable: cell_text
+        - value_selector:
+          - ext03
+          - text
+          value_type: string
+          variable: demand_text
+        - value_selector:
+          - ext04
+          - text
+          value_type: string
+          variable: coverage_text
+        - value_selector:
+          - ext05
+          - text
+          value_type: string
+          variable: transfer_text
+        - value_selector:
+          - ext06
+          - text
+          value_type: string
+          variable: power_text
+        - value_selector:
+          - ext07
+          - text
+          value_type: string
+          variable: restriction_text
+        - value_selector:
+          - ext08
+          - text
+          value_type: string
+          variable: rule_text
+      height: 51
+      id: parse
+      position:
+        x: 680
+        y: 480
+      positionAbsolute:
+        x: 680
+        y: 480
+      type: custom
+      width: 241
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: is
+            id: cond-parse-true
+            value: 'true'
+            varType: string
+            variable_selector:
+            - parse
+            - parse_ok
+          id: 'true'
+          logical_operator: and
+        selected: false
+        title: 03 输入校验分支
+        type: if-else
+      height: 147
+      id: if_parse
+      position:
+        x: 1000
+        y: 480
+      positionAbsolute:
+        x: 1000
+        y: 480
+      type: custom
+      width: 241
+    - data:
+        code: "import json\ndef main(batch_issues_json, row_issues_json):\n    try:\n        batch = json.loads(batch_issues_json\
+          \ or \"[]\")\n    except Exception:\n        batch = []\n    try:\n        rows = json.loads(row_issues_json or\
+          \ \"[]\")\n    except Exception:\n        rows = []\n    lines = [\"⚠️ 输入数据校验未通过，已停止策略计算。\", \"\"]\n    if batch:\n\
+          \        lines.append(\"【批次级问题】\")\n        for x in batch[:20]:\n            lines.append(f\"- {x}\")\n    if rows:\n\
+          \        lines.append(\"\")\n        lines.append(\"【行级问题（前20条）】\")\n        for x in rows[:20]:\n            lines.append(f\"\
+          - 表 {x.get('table')} 第 {x.get('row','')} 行：{x.get('issue')}\")\n    if len(rows) > 20:\n        lines.append(f\"\
+          - …… 还有 {len(rows)-20} 条问题\")\n    return {\"error_msg\": \"\\n\".join(lines)}\n"
+        code_language: python3
+        outputs:
+          error_msg:
+            children: null
+            type: string
+        selected: false
+        title: 03-1 输入异常报告
+        type: code
+        variables:
+        - value_selector:
+          - parse
+          - batch_issues_json
+          value_type: string
+          variable: batch_issues_json
+        - value_selector:
+          - parse
+          - row_issues_json
+          value_type: string
+          variable: row_issues_json
+      height: 51
+      id: parse_error
+      position:
+        x: 1300
+        y: 650
+      positionAbsolute:
+        x: 1300
+        y: 650
+      type: custom
+      width: 241
+    - data:
+        outputs:
+        - value_selector:
+          - parse_error
+          - error_msg
+          value_type: string
+          variable: error_msg
+        selected: false
+        title: 输入异常结束
+        type: end
+      height: 87
+      id: end_error
+      position:
+        x: 1391
+        y: 1174
+      positionAbsolute:
+        x: 1391
+        y: 1174
+      type: custom
+      width: 241
+    - data:
+        code: "import json\nfrom datetime import datetime\n\nSTATE_CN = {\"KEEP_ACTIVE\": \"保持运行\", \"LIGHT_SLEEP\": \"轻载节能\"\
+          , \"DEEP_SLEEP\": \"深度休眠\"}\nREASON_CN = {\n    \"COVERAGE_ANCHOR\": \"覆盖锚点保障\",\n    \"TEMP_GUARANTEE\": \"临时保障限制\"\
+          ,\n    \"LOAD_ABOVE_DEEP\": \"负载高于深休眠阈值，采用轻载节能\",\n    \"DEEP_ALLOWED\": \"负载满足深度休眠条件\",\n    \"DEEP_ELIGIBLE\"\
+          : \"负载满足深度休眠条件\",\n    \"DEEP_DURATION_LIMIT\": \"达到连续深度休眠上限\",\n    \"LOAD_ABOVE_LIGHT\": \"负载较高，保持运行\",\n    \"\
+          LIGHT_ELIGIBLE\": \"负载满足轻载节能条件\",\n    \"LIGHT_NOT_FEASIBLE\": \"轻载条件不满足，保持运行\",\n    \"NO_NET_SAVING\": \"无正净收益\"\
+          ,\n    \"RECEIVER_CAPACITY\": \"承接方容量不足\",\n}\n\ndef _fmt2(x):\n    try:\n        return f\"{float(x):.2f}\"\n \
+          \   except Exception:\n        return \"-\"\n\ndef _fmt_qty(x):\n    try:\n        v = float(x)\n        return\
+          \ str(int(v)) if abs(v - int(v)) < 1e-9 else f\"{v:.2f}\"\n    except Exception:\n        return str(x)\n\ndef main(tables_json,\
+          \ rules_json):\n    tables = json.loads(tables_json)\n    rules = json.loads(rules_json or \"{}\")\n\n    def rnum(key,\
+          \ default):\n        try:\n            return float(rules.get(key, default))\n        except Exception:\n      \
+          \      return float(default)\n\n    deep_ratio = rnum(\"deep_load_ratio_max\", 0.2)\n    light_ratio = rnum(\"light_load_ratio_max\"\
+          , 0.5)\n    max_util = rnum(\"max_utilization_ratio\", 0.8)\n    max_consec = int(rnum(\"max_consecutive_deep_slots\"\
+          , 2))\n    switch_wh = rnum(\"switch_energy_wh\", 5)\n    min_save = rnum(\"minimum_incremental_saving_wh\", 0)\n\
+          \n    params = {}\n    for p in tables[\"power\"]:\n        params[(p[\"model_id\"], p[\"state\"])] = {\n      \
+          \      \"cap\": float(p[\"capacity_units\"]),\n            \"base\": float(p[\"base_power_w\"]),\n            \"\
+          slope\": float(p[\"slope_w_per_unit\"]),\n        }\n\n    def pget(model_id, state):\n        if (model_id, state)\
+          \ not in params:\n            raise Exception(f\"缺少功耗参数 {model_id}/{state}\")\n        return params[(model_id,\
+          \ state)]\n\n    cells = {c[\"cell_id\"]: c for c in tables[\"cells\"]}\n    cell_ids = sorted(cells.keys())\n \
+          \   slots = sorted(tables[\"slots\"], key=lambda x: datetime.fromisoformat(x[\"start_time\"]))\n    demand_map =\
+          \ {(d[\"slot_id\"], d[\"cell_id\"]): float(d[\"demand_units\"]) for d in tables[\"demands\"]}\n\n    restrictions\
+          \ = []\n    for r in tables[\"restrictions\"]:\n        restrictions.append({\n            \"cell_id\": r[\"cell_id\"\
+          ],\n            \"type\": r[\"restriction_type\"],\n            \"start\": datetime.fromisoformat(r[\"start_time\"\
+          ]),\n            \"end\": datetime.fromisoformat(r[\"end_time\"]),\n        })\n\n    transfers_by_source = {}\n\
+          \    for t in tables[\"transfer\"]:\n        transfers_by_source.setdefault(t[\"source_cell_id\"], []).append(t)\n\
+          \    for k in transfers_by_source:\n        transfers_by_source[k].sort(key=lambda x: (int(x[\"priority\"]), x[\"\
+          target_cell_id\"]))\n\n    coverage = [{\n        \"group_id\": r[\"group_id\"],\n        \"anchor_cell_id\": r[\"\
+          anchor_cell_id\"],\n        \"min_active_cells\": int(r[\"min_active_cells\"]),\n    } for r in tables[\"coverage\"\
+          ]]\n\n    prev_state = {c: cells[c][\"initial_state\"] for c in cell_ids}\n    deep_count = {c: int(cells[c][\"\
+          initial_deep_slots\"]) for c in cell_ids}\n\n    rows = []\n    slot_summaries = []\n    \n    # 收集异常\n    cell_errors\
+          \ = {}\n    slot_errors = {}\n    global_errors = []\n    energy_recheck_ok = True\n\n    for slot in slots:\n \
+          \       sid = slot[\"slot_id\"]\n        dur = float(slot[\"duration_hours\"])\n        start_time = slot[\"start_time\"\
+          ]\n        end_time = slot[\"end_time\"]\n        sdt = datetime.fromisoformat(start_time)\n        edt = datetime.fromisoformat(end_time)\n\
+          \n        demand = {c: float(demand_map.get((sid, c), 0.0)) for c in cell_ids}\n        final_load = dict(demand)\n\
+          \        chosen = {}\n        reason_code = {}\n        receiver = {}\n        t_out = {c: 0.0 for c in cell_ids}\n\
+          \        t_in = {c: 0.0 for c in cell_ids}\n\n        for c in cell_ids:\n            cell = cells[c]\n        \
+          \    model_id = cell[\"model_id\"]\n\n            if cell[\"role\"] == \"ANCHOR\":\n                chosen[c] =\
+          \ \"KEEP_ACTIVE\"\n                reason_code[c] = \"COVERAGE_ANCHOR\"\n                continue\n\n          \
+          \  forced = False\n            for r in restrictions:\n                if r[\"cell_id\"] == c and r[\"type\"] ==\
+          \ \"FORCE_ACTIVE\" and r[\"start\"] < edt and r[\"end\"] > sdt:\n                    forced = True\n           \
+          \         break\n            if forced:\n                chosen[c] = \"KEEP_ACTIVE\"\n                reason_code[c]\
+          \ = \"TEMP_GUARANTEE\"\n                continue\n\n            orig = demand[c]\n            normal_cap = pget(model_id,\
+          \ \"KEEP_ACTIVE\")[\"cap\"]\n            ratio = orig / normal_cap if normal_cap > 0 else 999.0\n            deep_reason\
+          \ = None\n            light_reason = None\n\n            if ratio > deep_ratio:\n                deep_reason = \"\
+          LOAD_ABOVE_DEEP\"\n            elif deep_count[c] >= max_consec:\n                deep_reason = \"DEEP_DURATION_LIMIT\"\
+          \n            else:\n                rels = transfers_by_source.get(c, [])\n                if not rels:\n     \
+          \               deep_reason = \"RECEIVER_CAPACITY\"\n                else:\n                    rel = rels[0]\n\
+          \                    target = rel[\"target_cell_id\"]\n                    amount = final_load[c]\n            \
+          \        if orig > float(rel[\"max_transfer_units\"]) or amount > float(rel[\"max_transfer_units\"]):\n        \
+          \                deep_reason = \"RECEIVER_CAPACITY\"\n                    else:\n                        tmodel\
+          \ = cells[target][\"model_id\"]\n                        tcap = pget(tmodel, \"KEEP_ACTIVE\")[\"cap\"]\n       \
+          \                 if final_load[target] + amount > tcap * max_util + 1e-9:\n                            deep_reason\
+          \ = \"RECEIVER_CAPACITY\"\n                        else:\n                            switch_deep = 0.0 if prev_state[c]\
+          \ == \"DEEP_SLEEP\" else switch_wh\n                            dp = pget(model_id, \"DEEP_SLEEP\")\n          \
+          \                  deep_energy = (dp[\"base\"] + dp[\"slope\"] * 0.0) * dur\n                            rec_delta\
+          \ = pget(tmodel, \"KEEP_ACTIVE\")[\"slope\"] * amount * dur\n                            kp = pget(model_id, \"\
+          KEEP_ACTIVE\")\n                            baseline = (kp[\"base\"] + kp[\"slope\"] * orig) * dur\n           \
+          \                 inc = baseline - (deep_energy + switch_deep + rec_delta)\n                            if inc <=\
+          \ min_save + 1e-9:\n                                deep_reason = \"NO_NET_SAVING\"\n                          \
+          \  else:\n                                chosen[c] = \"DEEP_SLEEP\"\n                                reason_code[c]\
+          \ = \"DEEP_ELIGIBLE\"\n                                receiver[c] = target\n                                t_out[c]\
+          \ = amount\n                                t_in[target] += amount\n                                final_load[target]\
+          \ += amount\n                                final_load[c] = 0.0\n\n            if c not in chosen:\n          \
+          \      if ratio > light_ratio:\n                    light_reason = \"LOAD_ABOVE_LIGHT\"\n                else:\n\
+          \                    lp = params.get((model_id, \"LIGHT_SLEEP\"))\n                    if not lp or lp[\"cap\"]\
+          \ <= 0 or final_load[c] > lp[\"cap\"] * max_util + 1e-9:\n                        light_reason = \"LIGHT_NOT_FEASIBLE\"\
+          \n                    else:\n                        switch_light = 0.0 if prev_state[c] == \"LIGHT_SLEEP\" else\
+          \ switch_wh\n                        light_energy = (lp[\"base\"] + lp[\"slope\"] * orig) * dur\n              \
+          \          kp = pget(model_id, \"KEEP_ACTIVE\")\n                        baseline = (kp[\"base\"] + kp[\"slope\"\
+          ] * orig) * dur\n                        inc = baseline - (light_energy + switch_light)\n                      \
+          \  if inc <= min_save + 1e-9:\n                            light_reason = \"NO_NET_SAVING\"\n                  \
+          \      else:\n                            chosen[c] = \"LIGHT_SLEEP\"\n                            reason_code[c]\
+          \ = deep_reason or \"LIGHT_ELIGIBLE\"\n\n            if c not in chosen:\n                chosen[c] = \"KEEP_ACTIVE\"\
+          \n                if ratio > light_ratio:\n                    reason_code[c] = \"LOAD_ABOVE_LIGHT\"\n         \
+          \       elif light_reason:\n                    reason_code[c] = light_reason\n                elif deep_reason:\n\
+          \                    reason_code[c] = deep_reason\n                else:\n                    reason_code[c] = \"\
+          LIGHT_NOT_FEASIBLE\"\n\n        for c in cell_ids:\n            cell = cells[c]\n            model_id = cell[\"\
+          model_id\"]\n            st = chosen[c]\n            pst = pget(model_id, st)\n            cap = pst[\"cap\"]\n\
+          \            orig = demand[c]\n            final = final_load[c]\n            util = final / cap if cap > 0 else\
+          \ None\n            \n            row_risk = \"PASS\"\n            # 核心容量校验\n            if cap > 0 and util > max_util\
+          \ + 1e-6:\n                row_risk = \"FAIL\"\n                err_msg = f\"最终业务量 {float(final)} 超过容量上限 {float(cap)}\
+          \ × {max_util} = {cap * max_util}\"\n                cell_errors.setdefault(f\"{sid}-{c}\", []).append(err_msg)\n\
+          \            if st == \"DEEP_SLEEP\" and abs(final) > 1e-9:\n                row_risk = \"FAIL\"\n             \
+          \   cell_errors.setdefault(f\"{sid}-{c}\", []).append(\"深休眠最终业务量不为0\")\n\n            switch = 0.0 if prev_state[c]\
+          \ == st else switch_wh\n            kp = pget(model_id, \"KEEP_ACTIVE\")\n            baseline = (kp[\"base\"] +\
+          \ kp[\"slope\"] * orig) * dur\n            strategy_energy = (pst[\"base\"] + pst[\"slope\"] * final) * dur + switch\n\
+          \            saving = baseline - strategy_energy\n            \n            rows.append({\n                \"slot_id\"\
+          : sid, \"start_time\": start_time, \"end_time\": end_time,\n                \"duration_hours\": dur, \"cell_id\"\
+          : c, \"scene\": cell[\"scene\"],\n                \"role\": cell[\"role\"], \"coverage_group\": cell[\"coverage_group\"\
+          ],\n                \"model_id\": model_id, \"state\": st, \"state_cn\": STATE_CN.get(st, st),\n               \
+          \ \"reason_code\": reason_code.get(c, \"\"), \"reason_cn\": REASON_CN.get(reason_code.get(c, \"\"), reason_code.get(c,\
+          \ \"\")),\n                \"demand\": orig, \"transfer_in\": t_in[c], \"transfer_out\": t_out[c],\n           \
+          \     \"final_load\": final, \"capacity\": cap, \"utilization\": util,\n                \"receiver\": receiver.get(c,\
+          \ \"-\") if st == \"DEEP_SLEEP\" else \"-\",\n                \"switch_energy_wh\": switch, \"baseline_energy_wh\"\
+          : baseline,\n                \"strategy_energy_wh\": strategy_energy, \"saving_wh\": saving,\n                \"\
+          risk_status\": row_risk,\n            })\n\n        slot_rows = rows[-len(cell_ids):]\n        counts = {\"KEEP_ACTIVE\"\
+          : 0, \"LIGHT_SLEEP\": 0, \"DEEP_SLEEP\": 0}\n        for r in slot_rows:\n            counts[r[\"state\"]] += 1\n\
+          \        slot_summaries.append({\n            \"slot_id\": sid, \"start_time\": start_time, \"end_time\": end_time,\
+          \ \"duration_hours\": dur,\n            \"KEEP_ACTIVE\": counts[\"KEEP_ACTIVE\"], \"LIGHT_SLEEP\": counts[\"LIGHT_SLEEP\"\
+          ], \"DEEP_SLEEP\": counts[\"DEEP_SLEEP\"],\n            \"baseline_energy_wh\": round(sum(r[\"baseline_energy_wh\"\
+          ] for r in slot_rows), 2),\n            \"strategy_energy_wh\": round(sum(r[\"strategy_energy_wh\"] for r in slot_rows),\
+          \ 2),\n            \"switch_energy_wh\": round(sum(r[\"switch_energy_wh\"] for r in slot_rows), 2),\n          \
+          \  \"saving_wh\": round(sum(r[\"saving_wh\"] for r in slot_rows), 2),\n            \"transfer_count\": sum(1 for\
+          \ r in slot_rows if r[\"transfer_out\"] > 0),\n        })\n\n        for c in cell_ids:\n            if chosen[c]\
+          \ == \"DEEP_SLEEP\":\n                deep_count[c] += 1\n            else:\n                deep_count[c] = 0\n\
+          \            prev_state[c] = chosen[c]\n\n    strategy_counts = {\"KEEP_ACTIVE\": 0, \"LIGHT_SLEEP\": 0, \"DEEP_SLEEP\"\
+          : 0}\n    for r in rows:\n        strategy_counts[r[\"state\"]] += 1\n\n    total_base = sum(r[\"baseline_energy_wh\"\
+          ] for r in rows)\n    total_strategy = sum(r[\"strategy_energy_wh\"] for r in rows)\n    total_switch = sum(r[\"\
+          switch_energy_wh\"] for r in rows)\n    total_saving = total_base - total_strategy\n    total_transfer = sum(1 for\
+          \ r in rows if r[\"transfer_out\"] > 0)\n    saving_rate = (total_saving / total_base * 100.0) if total_base else\
+          \ 0.0\n\n    summary_obj = {\n        \"baseline_energy_wh\": round(total_base, 2), \"cell_count\": len(cell_ids),\n\
+          \        \"saving_rate_percent\": round(saving_rate, 6), \"saving_wh\": round(total_saving, 2),\n        \"slot_count\"\
+          : len(slots), \"slot_summaries\": slot_summaries,\n        \"strategy_counts\": strategy_counts, \"strategy_energy_wh\"\
+          : round(total_strategy, 2),\n        \"switch_energy_wh\": round(total_switch, 2), \"total_rows\": len(rows),\n\
+          \        \"transfer_count\": total_transfer,\n    }\n\n    detail_lines = [\n        \"| 时段 | 小区 | 场景 | 策略 | 原因说明\
+          \ | 原始业务量 | 转入 | 转出 | 最终业务量 | 容量 | 利用率 | 承接小区 | 切换能耗(Wh) | 基准能耗(Wh) | 策略能耗(Wh) | 节能量(Wh) | 风险状态 |\",\n        \"\
+          | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\",\n   \
+          \ ]\n    for r in rows:\n        util = \"-\" if r[\"capacity\"] <= 0 else f\"{r['utilization'] * 100:.2f}%\"\n\
+          \        receiver = r[\"receiver\"] if r[\"state\"] == \"DEEP_SLEEP\" else \"-\"\n        detail_lines.append(\n\
+          \            \"| \" + \" | \".join([\n                r[\"slot_id\"], r[\"cell_id\"], r[\"scene\"], r[\"state_cn\"\
+          ], r[\"reason_cn\"],\n                _fmt_qty(r[\"demand\"]), _fmt_qty(r[\"transfer_in\"]), _fmt_qty(r[\"transfer_out\"\
+          ]),\n                _fmt_qty(r[\"final_load\"]), _fmt_qty(r[\"capacity\"]), util, receiver,\n                _fmt2(r[\"\
+          switch_energy_wh\"]), _fmt2(r[\"baseline_energy_wh\"]),\n                _fmt2(r[\"strategy_energy_wh\"]), _fmt2(r[\"\
+          saving_wh\"]), r[\"risk_status\"],\n            ]) + \" |\"\n        )\n    detail_table_text = \"\\n\".join(detail_lines)\n\
+          \n    stat_cell_count = str(len(cell_ids))\n    stat_slot_count = str(len(slots))\n    stat_total_rows = str(len(rows))\n\
+          \    stat_keep = str(strategy_counts[\"KEEP_ACTIVE\"])\n    stat_light = str(strategy_counts[\"LIGHT_SLEEP\"])\n\
+          \    stat_deep = str(strategy_counts[\"DEEP_SLEEP\"])\n    stat_transfer = str(total_transfer)\n    stat_base_energy\
+          \ = f\"{total_base:.2f}\"\n    stat_strategy_energy = f\"{total_strategy:.2f}\"\n    stat_switch_energy = f\"{total_switch:.2f}\"\
+          \n    stat_saving_energy = f\"{total_saving:.2f}\"\n    stat_saving_rate = f\"{saving_rate:.2f}\"\n\n    section2_slot_lines\
+          \ = []\n    for s in slot_summaries:\n        section2_slot_lines.append(\n            f\"{s['slot_id']}：保持运行{s['KEEP_ACTIVE']}，轻载节能{s['LIGHT_SLEEP']}，深度休眠{s['DEEP_SLEEP']}，业务转移{s['transfer_count']}次；基准能耗{s['baseline_energy_wh']:.2f}Wh，策略能耗{s['strategy_energy_wh']:.2f}Wh，节能量{s['saving_wh']:.2f}Wh。\"\
+          \n        )\n    section2_slot_text = \"\\n\".join(section2_slot_lines)\n\n    row_map = {(r[\"slot_id\"], r[\"\
+          cell_id\"]): r for r in rows}\n    section2_transfer_lines = []\n    for s in slot_summaries:\n        sid = s[\"\
+          slot_id\"]\n        trs = [r for r in rows if r[\"slot_id\"] == sid and r[\"transfer_out\"] > 0]\n        if not\
+          \ trs:\n            section2_transfer_lines.append(f\"{sid}：无业务转移\")\n        else:\n            parts = []\n  \
+          \          for r in trs:\n                rr = row_map.get((sid, r[\"receiver\"]))\n                util_txt = \"\
+          -\" if not rr or rr[\"capacity\"] <= 0 else f\"{rr['utilization'] * 100:.2f}%\"\n                parts.append(f\"\
+          {r['cell_id']} → {r['receiver']}，转移{_fmt_qty(r['transfer_out'])}，承接后利用率{util_txt}\")\n            section2_transfer_lines.append(f\"\
+          {sid}：\" + \"；\".join(parts))\n    section2_transfer_text = \"\\n\".join(section2_transfer_lines)\n\n    section3_slot_lines\
+          \ = []\n    for s in slot_summaries:\n        section3_slot_lines.append(\n            f\"{s['slot_id']}｜保持 {s['KEEP_ACTIVE']}｜轻载\
+          \ {s['LIGHT_SLEEP']}｜深休眠 {s['DEEP_SLEEP']}｜转移 {s['transfer_count']} 次｜基准 {s['baseline_energy_wh']:.2f}Wh｜策略 {s['strategy_energy_wh']:.2f}Wh｜节能\
+          \ {s['saving_wh']:.2f}Wh\"\n        )\n    section3_slot_text = \"\\n\".join(section3_slot_lines)\n\n    chart1_data\
+          \ = []\n    chart2_data = []\n    for s in slot_summaries:\n        chart1_data.append({\"category\": s[\"slot_id\"\
+          ], \"value\": s[\"baseline_energy_wh\"], \"group\": \"基准能耗\"})\n        chart1_data.append({\"category\": s[\"slot_id\"\
+          ], \"value\": s[\"strategy_energy_wh\"], \"group\": \"策略能耗\"})\n        chart2_data.append({\"category\": s[\"slot_id\"\
+          ], \"value\": s[\"KEEP_ACTIVE\"], \"group\": \"保持运行\"})\n        chart2_data.append({\"category\": s[\"slot_id\"\
+          ], \"value\": s[\"LIGHT_SLEEP\"], \"group\": \"轻载节能\"})\n        chart2_data.append({\"category\": s[\"slot_id\"\
+          ], \"value\": s[\"DEEP_SLEEP\"], \"group\": \"深度休眠\"})\n    chart3_data = [{\"time\": r[\"slot_id\"], \"value\"\
+          : round(r[\"final_load\"], 2), \"group\": r[\"cell_id\"]} for r in rows]\n\n    # ==== 全局校验和统计 ====\n    expected\
+          \ = {(s[\"slot_id\"], c) for s in slots for c in cell_ids}\n    actual = {(r[\"slot_id\"], r[\"cell_id\"]) for r\
+          \ in rows}\n    if expected != actual:\n        global_errors.append(\"结果未覆盖全部时段×小区组合或存在多余记录\")\n    if len(rows)\
+          \ != len(actual):\n        global_errors.append(\"结果存在重复时段×小区记录\")\n\n    # 能耗复算\n    prev_track = {c: cells[c][\"\
+          initial_state\"] for c in cell_ids}\n    for s in slots:\n        sid = s[\"slot_id\"]\n        dur = float(s[\"\
+          duration_hours\"])\n        for c in cell_ids:\n            r = row_map[(sid, c)]\n            switch = 0.0 if prev_track[c]\
+          \ == r[\"state\"] else switch_wh\n            kp = pget(cells[c][\"model_id\"], \"KEEP_ACTIVE\")\n            base\
+          \ = (kp[\"base\"] + kp[\"slope\"] * r[\"demand\"]) * dur\n            sp = pget(cells[c][\"model_id\"], r[\"state\"\
+          ])\n            strat = (sp[\"base\"] + sp[\"slope\"] * r[\"final_load\"]) * dur + switch\n            if abs(r[\"\
+          switch_energy_wh\"] - switch) > 1e-6 or abs(r[\"baseline_energy_wh\"] - base) > 1e-6 or abs(r[\"strategy_energy_wh\"\
+          ] - strat) > 1e-6:\n                energy_recheck_ok = False\n                cell_errors.setdefault(f\"{sid}-{c}\"\
+          , []).append(\"能耗复算不一致\")\n            prev_track[c] = r[\"state\"]\n\n    # 覆盖及临时保障校验\n    for s in slots:\n  \
+          \      sid = s[\"slot_id\"]\n        slot_rows = [r for r in rows if r[\"slot_id\"] == sid]\n        for cov in\
+          \ coverage:\n            active = sum(1 for r in slot_rows if cells[r[\"cell_id\"]][\"coverage_group\"] == cov[\"\
+          group_id\"] and r[\"state\"] != \"DEEP_SLEEP\")\n            if active < cov[\"min_active_cells\"]:\n          \
+          \      slot_errors.setdefault(sid, []).append(f\"{cov['group_id']}: 活跃小区数不足\")\n            ar = next((r for r in\
+          \ slot_rows if r[\"cell_id\"] == cov[\"anchor_cell_id\"]), None)\n            if ar and ar[\"state\"] != \"KEEP_ACTIVE\"\
+          :\n                slot_errors.setdefault(sid, []).append(f\"{cov['anchor_cell_id']}: 锚点未保持运行\")\n\n    for r in\
+          \ rows:\n        for rest in restrictions:\n            if rest[\"cell_id\"] == r[\"cell_id\"] and rest[\"type\"\
+          ] == \"FORCE_ACTIVE\":\n                if rest[\"start\"] < datetime.fromisoformat(r[\"end_time\"]) and rest[\"\
+          end\"] > datetime.fromisoformat(r[\"start_time\"]):\n                    if r[\"state\"] != \"KEEP_ACTIVE\":\n \
+          \                       slot_errors.setdefault(r[\"slot_id\"], []).append(f\"{r['cell_id']}: 临时保障期间未保持运行\")\n\n\
+          \    # 连续深休眠校验\n    deep_track = {c: int(cells[c][\"initial_deep_slots\"]) for c in cell_ids}\n    for s in slots:\n\
+          \        sid = s[\"slot_id\"]\n        for c in cell_ids:\n            r = row_map[(sid, c)]\n            if r[\"\
+          state\"] == \"DEEP_SLEEP\":\n                deep_track[c] += 1\n                if deep_track[c] > max_consec:\n\
+          \                    slot_errors.setdefault(sid, []).append(f\"{c}: 连续深休眠超过上限\")\n            else:\n          \
+          \      deep_track[c] = 0\n\n    total_rows = len(rows)\n    expected_rows = len(slots) * len(cell_ids)\n    fail_rows\
+          \ = 0\n    for r in rows:\n        if f\"{r['slot_id']}-{r['cell_id']}\" in cell_errors:\n            fail_rows\
+          \ += 1\n    pass_rows = total_rows - fail_rows\n\n    audit = {\n        \"cell_errors\": cell_errors,\n       \
+          \ \"slot_errors\": slot_errors,\n        \"global_errors\": global_errors,\n        \"expected_rows\": expected_rows,\n\
+          \        \"total_rows\": total_rows,\n        \"pass_rows\": pass_rows,\n        \"fail_rows\": fail_rows,\n   \
+          \     \"energy_recheck_ok\": energy_recheck_ok\n    }\n\n    risk_ok = \"true\" if (len(cell_errors) == 0 and len(slot_errors)\
+          \ == 0 and len(global_errors) == 0 and energy_recheck_ok) else \"false\"\n    risk_issues_json = json.dumps(audit,\
+          \ ensure_ascii=False)\n\n    return {\n        \"risk_ok\": risk_ok,\n        \"risk_issues_json\": risk_issues_json,\n\
+          \        \"summary_json\": json.dumps(summary_obj, ensure_ascii=False),\n        \"detail_table_text\": detail_table_text,\n\
+          \        \"chart1_data\": json.dumps(chart1_data, ensure_ascii=False),\n        \"chart2_data\": json.dumps(chart2_data,\
+          \ ensure_ascii=False),\n        \"chart3_data\": json.dumps(chart3_data, ensure_ascii=False),\n        \"stat_cell_count\"\
+          : stat_cell_count,\n        \"stat_slot_count\": stat_slot_count,\n        \"stat_total_rows\": stat_total_rows,\n\
+          \        \"stat_keep\": stat_keep,\n        \"stat_light\": stat_light,\n        \"stat_deep\": stat_deep,\n   \
+          \     \"stat_transfer\": stat_transfer,\n        \"stat_base_energy\": stat_base_energy,\n        \"stat_strategy_energy\"\
+          : stat_strategy_energy,\n        \"stat_switch_energy\": stat_switch_energy,\n        \"stat_saving_energy\": stat_saving_energy,\n\
+          \        \"stat_saving_rate\": stat_saving_rate,\n        \"section2_slot_text\": section2_slot_text,\n        \"\
+          section2_transfer_text\": section2_transfer_text,\n        \"section3_slot_text\": section3_slot_text,\n       \
+          \ \"slot_summaries_list\": summary_obj.get(\"slot_summaries\", [])\n    }"
+        code_language: python3
+        outputs:
+          chart1_data:
+            children: null
+            type: string
+          chart2_data:
+            children: null
+            type: string
+          chart3_data:
+            children: null
+            type: string
+          detail_table_text:
+            children: null
+            type: string
+          risk_issues_json:
+            children: null
+            type: string
+          risk_ok:
+            children: null
+            type: string
+          section2_slot_text:
+            children: null
+            type: string
+          section2_transfer_text:
+            children: null
+            type: string
+          section3_slot_text:
+            children: null
+            type: string
+          slot_summaries_list:
+            children: null
+            type: array[object]
+          stat_base_energy:
+            children: null
+            type: string
+          stat_cell_count:
+            children: null
+            type: string
+          stat_deep:
+            children: null
+            type: string
+          stat_keep:
+            children: null
+            type: string
+          stat_light:
+            children: null
+            type: string
+          stat_saving_energy:
+            children: null
+            type: string
+          stat_saving_rate:
+            children: null
+            type: string
+          stat_slot_count:
+            children: null
+            type: string
+          stat_strategy_energy:
+            children: null
+            type: string
+          stat_switch_energy:
+            children: null
+            type: string
+          stat_total_rows:
+            children: null
+            type: string
+          stat_transfer:
+            children: null
+            type: string
+          summary_json:
+            children: null
+            type: string
+        selected: false
+        title: 04 策略编排与独立风险校验
+        type: code
+        variables:
+        - value_selector:
+          - parse
+          - tables_json
+          value_type: string
+          variable: tables_json
+        - value_selector:
+          - parse
+          - rules_json
+          value_type: string
+          variable: rules_json
+      height: 51
+      id: strategy
+      position:
+        x: 1320
+        y: 480
+      positionAbsolute:
+        x: 1320
+        y: 480
+      selected: false
+      type: custom
+      width: 241
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: is
+            id: cond-risk-true
+            value: 'true'
+            varType: string
+            variable_selector:
+            - strategy
+            - risk_ok
+          id: 'true'
+          logical_operator: and
+        selected: false
+        title: 05 风险校验分支
+        type: if-else
+      height: 123
+      id: if_risk
+      position:
+        x: 1583
+        y: 331
+      positionAbsolute:
+        x: 1583
+        y: 331
+      selected: false
+      type: custom
+      width: 241
+    - data:
+        code: "import json\n\ndef main(risk_issues_json):\n    try:\n        issues = json.loads(risk_issues_json or \"{}\"\
+          )\n    except Exception:\n        issues = {}\n    \n    summary_errors = []\n    for k, v in issues.get(\"cell_errors\"\
+          , {}).items():\n        summary_errors.append(f\"{k}: {v[0]}\")\n    for k, v in issues.get(\"slot_errors\", {}).items():\n\
+          \        for msg in v:\n            summary_errors.append(f\"{k}: {msg}\")\n    for msg in issues.get(\"global_errors\"\
+          , []):\n        summary_errors.append(msg)\n    \n    if not issues.get(\"energy_recheck_ok\", True):\n        summary_errors.append(\"\
+          能耗复算不一致\")\n\n    lines = [\"策略风险校验未通过\", \"\"]\n    lines.append(\"校验结论：\")\n    lines.append(f\"风险校验失败 | \" +\
+          \ \" | \".join(summary_errors[:3]) + \" | 工作流停止生成正式节能方案\")\n    lines.append(\"\")\n    lines.append(\"风险明细：\")\n\
+          \    lines.append(json.dumps(issues, ensure_ascii=False, indent=2))\n    lines.append(\"\")\n    lines.append(\"\
+          处理结果：\")\n    lines.append(\"工作流已停止生成正式节能方案及可视化图表，请检查输入数据或策略计算结果。\")\n    \n    return {\"error_msg\": \"\\n\".join(lines)}"
+        code_language: python3
+        outputs:
+          error_msg:
+            children: null
+            type: string
+        selected: false
+        title: 05-1 风险异常报告
+        type: code
+        variables:
+        - value_selector:
+          - strategy
+          - risk_issues_json
+          value_type: string
+          variable: risk_issues_json
+      height: 51
+      id: risk_error
+      position:
+        x: 1849
+        y: 1223
+      positionAbsolute:
+        x: 1849
+        y: 1223
+      selected: false
+      type: custom
+      width: 241
+    - data:
+        outputs:
+        - value_selector:
+          - risk_error
+          - error_msg
+          value_type: string
+          variable: error_msg
+        selected: false
+        title: 风险异常结束
+        type: end
+      height: 87
+      id: end_risk
+      position:
+        x: 2636
+        y: 1045
+      positionAbsolute:
+        x: 2636
+        y: 1045
+      selected: false
+      type: custom
+      width: 241
+    - data:
+        error_handle_mode: terminated
+        flatten_output: true
+        height: 175
+        is_parallel: false
+        iterator_input_type: array[object]
+        iterator_selector:
+        - strategy
+        - slot_summaries_list
+        output_selector:
+        - code_iter_inner
+        - iter_result
+        output_type: array[string]
+        parallel_nums: 10
+        selected: false
+        start_node_id: iter_reviewstart
+        title: 13 按时段循环复核
+        type: iteration
+        width: 686
+      height: 175
+      id: iter_review
+      position:
+        x: 1532
+        y: 860
+      positionAbsolute:
+        x: 1532
+        y: 860
+      selected: false
+      type: custom
+      width: 686
+      zIndex: 1
+    - data:
+        desc: ''
+        isInIteration: true
+        selected: false
+        title: ''
+        type: iteration-start
+      draggable: false
+      height: 48
+      id: iter_reviewstart
+      parentId: iter_review
+      position:
+        x: 24
+        y: 68
+      positionAbsolute:
+        x: 1556
+        y: 928
+      selectable: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-iteration-start
+      width: 44
+      zIndex: 1002
+    - data:
+        code: "import json\n\ndef main(item):\n    try:\n        # 14/15: 迭代内部仅做格式化处理，计算逻辑已在04节点完成\n        summary = f\"\
+          {item['slot_id']}时段：基准能耗{item['baseline_energy_wh']}Wh，策略能耗{item['strategy_energy_wh']}Wh，节能{item['saving_wh']}Wh\"\
+          \n        return {\"iter_result\": summary}\n    except Exception as e:\n        return {\"iter_result\": str(e)}"
+        code_language: python3
+        isInIteration: true
+        isInLoop: false
+        iteration_id: iter_review
+        outputs:
+          iter_result:
+            children: null
+            type: string
+        selected: false
+        title: 14/15 提取时段摘要
+        type: code
+        variables:
+        - value_selector:
+          - iter_review
+          - item
+          value_type: object
+          variable: item
+      height: 51
+      id: code_iter_inner
+      parentId: iter_review
+      position:
+        x: 128
+        y: 68
+      positionAbsolute:
+        x: 1660
+        y: 928
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+      zIndex: 1002
+    - data:
+        code: "import json\n\ndef main(results):\n    # 18 汇总统计：将迭代结果拼接\n    text = \"\\n\".join(results)\n    return {\"\
+          summary_text\": text}"
+        code_language: python3
+        outputs:
+          summary_text:
+            children: null
+            type: string
+        selected: false
+        title: 18 汇总统计
+        type: code
+        variables:
+        - value_selector:
+          - iter_review
+          - output
+          value_type: array[string]
+          variable: results
+      height: 51
+      id: code_summary_llm
+      position:
+        x: 2300
+        y: 900
+      positionAbsolute:
+        x: 2300
+        y: 900
+      type: custom
+      width: 241
+    - data:
+        selected: true
+        template: '## 基站分时节能策略分析报告
+
+
+          ## 零、智能解读
+
+          {{ llm_text }}
+
+
+          ## 一、策略分析结论
+
+
+          一、整体节能效果
+
+          策略范围：共{{ stat_cell_count }}个小区、{{ stat_slot_count }}个时段、{{ stat_total_rows }}条策略记录。
+
+          策略组成：保持运行{{ stat_keep }}次，轻载节能{{ stat_light }}次，深度休眠{{ stat_deep }}次，业务转移{{ stat_transfer }}次。
+
+          能耗结果：基准总能耗{{ stat_base_energy }}Wh，策略总能耗{{ stat_strategy_energy }}Wh，其中已包含状态切换能耗{{ stat_switch_energy }}Wh；总节能量{{
+          stat_saving_energy }}Wh，整体节能率{{ stat_saving_rate }}%。
+
+          校验结论：全部策略已通过覆盖、容量、保障、连续休眠和能耗校验。
+
+
+          二、分时段策略分析
+
+          {{ section2_slot_text }}
+
+
+          三、业务转移说明
+
+          {{ section2_transfer_text }}
+
+          容量结论：所有承接小区均通过容量校验，未出现容量超限。
+
+
+          ## 二、策略统计汇总
+
+
+          策略汇总｜小区 {{ stat_cell_count }}｜时段 {{ stat_slot_count }}｜记录 {{ stat_total_rows }}｜保持运行 {{ stat_keep }}｜轻载节能 {{ stat_light
+          }}｜深度休眠 {{ stat_deep }}｜业务转移 {{ stat_transfer }} 次
+
+          基准总能耗 {{ stat_base_energy }} Wh｜策略总能耗 {{ stat_strategy_energy }} Wh｜切换总能耗 {{ stat_switch_energy }} Wh｜总节能量 {{ stat_saving_energy
+          }} Wh｜整体节能率 {{ stat_saving_rate }}%
+
+          {{ section3_slot_text }}
+
+
+          ## 三、策略明细
+
+
+          {{ detail_table_text }}
+
+
+          ## 四、可视化分析
+
+
+          ### 1. 分时段能耗对比
+
+
+          ![分时段基准能耗与策略能耗对比]({{ chart1_url }})
+
+
+          ### 2. 分时段策略数量分布
+
+
+          ![分时段节能策略数量分布]({{ chart2_url }})
+
+
+          ### 3. 小区最终业务量趋势
+
+
+          ![小区最终业务量趋势]({{ chart3_url }})
+
+
+          ## 五、结构化汇总数据
+
+
+          ```json
+
+          {{ summary_json }}
+
+          ```'
+        title: 09 报告生成
+        type: template-transform
+        variables:
+        - value_selector:
+          - strategy
+          - stat_cell_count
+          value_type: string
+          variable: stat_cell_count
+        - value_selector:
+          - strategy
+          - stat_slot_count
+          value_type: string
+          variable: stat_slot_count
+        - value_selector:
+          - strategy
+          - stat_total_rows
+          value_type: string
+          variable: stat_total_rows
+        - value_selector:
+          - strategy
+          - stat_keep
+          value_type: string
+          variable: stat_keep
+        - value_selector:
+          - strategy
+          - stat_light
+          value_type: string
+          variable: stat_light
+        - value_selector:
+          - strategy
+          - stat_deep
+          value_type: string
+          variable: stat_deep
+        - value_selector:
+          - strategy
+          - stat_transfer
+          value_type: string
+          variable: stat_transfer
+        - value_selector:
+          - strategy
+          - stat_base_energy
+          value_type: string
+          variable: stat_base_energy
+        - value_selector:
+          - strategy
+          - stat_strategy_energy
+          value_type: string
+          variable: stat_strategy_energy
+        - value_selector:
+          - strategy
+          - stat_switch_energy
+          value_type: string
+          variable: stat_switch_energy
+        - value_selector:
+          - strategy
+          - stat_saving_energy
+          value_type: string
+          variable: stat_saving_energy
+        - value_selector:
+          - strategy
+          - stat_saving_rate
+          value_type: string
+          variable: stat_saving_rate
+        - value_selector:
+          - strategy
+          - section2_slot_text
+          value_type: string
+          variable: section2_slot_text
+        - value_selector:
+          - strategy
+          - section2_transfer_text
+          value_type: string
+          variable: section2_transfer_text
+        - value_selector:
+          - strategy
+          - section3_slot_text
+          value_type: string
+          variable: section3_slot_text
+        - value_selector:
+          - strategy
+          - detail_table_text
+          value_type: string
+          variable: detail_table_text
+        - value_selector:
+          - chart1
+          - text
+          value_type: string
+          variable: chart1_url
+        - value_selector:
+          - chart2
+          - text
+          value_type: string
+          variable: chart2_url
+        - value_selector:
+          - chart3
+          - text
+          value_type: string
+          variable: chart3_url
+        - value_selector:
+          - strategy
+          - summary_json
+          value_type: string
+          variable: summary_json
+        - value_selector:
+          - '1793278892832'
+          - text
+          value_type: string
+          variable: llm_text
+      height: 51
+      id: report
+      position:
+        x: 2900
+        y: 360
+      positionAbsolute:
+        x: 2900
+        y: 360
+      selected: true
+      type: custom
+      width: 241
+    - data:
+        is_team_authorization: true
+        plugin_id: bowenliang123/md_exporter
+        plugin_unique_identifier: bowenliang123/md_exporter:3.6.9@3f027d63e80b44d5d5a9f706871afaef37905b8f8a89a2d152dc530211a8acb1
+        provider_id: bowenliang123/md_exporter/md_exporter
+        provider_name: bowenliang123/md_exporter/md_exporter
+        provider_type: builtin
+        selected: false
+        title: 结果报告文档
+        tool_configurations: {}
+        tool_label: Markdown ⮕ MD
+        tool_name: md_to_md
+        tool_node_version: '2'
+        tool_parameters:
+          md_text:
+            type: mixed
+            value: '{{#report.output#}}'
+          output_filename:
+            type: mixed
+            value: result
+        type: tool
+      height: 51
+      id: md_export
+      position:
+        x: 3200
+        y: 360
+      positionAbsolute:
+        x: 3200
+        y: 360
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        outputs:
+        - value_selector:
+          - md_export
+          - files
+          value_type: array[file]
+          variable: result_file
+        - value_selector:
+          - report
+          - output
+          value_type: string
+          variable: result_md
+        selected: false
+        title: 输出
+        type: end
+      height: 113
+      id: end
+      position:
+        x: 3500
+        y: 360
+      positionAbsolute:
+        x: 3500
+        y: 360
+      type: custom
+      width: 241
+    - data:
+        is_team_authorization: true
+        plugin_id: antv/visualization
+        plugin_unique_identifier: antv/visualization:0.2.0@798a255e7bf02e93b8a5717be235b833482be58daab1c64c79c954281da14b9c
+        provider_id: antv/visualization/visualization
+        provider_name: antv/visualization/visualization
+        provider_type: builtin
+        selected: false
+        title: 06 分时段能耗对比图
+        tool_configurations:
+          height:
+            type: constant
+            value: 400
+          style:
+            type: mixed
+            value: ''
+          theme:
+            type: constant
+            value: default
+          width:
+            type: constant
+            value: 700
+        tool_label: 生成柱状图
+        tool_name: generate_column_chart
+        tool_node_version: '2'
+        tool_parameters:
+          axisXTitle:
+            type: mixed
+            value: 时段
+          axisYTitle:
+            type: mixed
+            value: 能耗（Wh）
+          data:
+            type: mixed
+            value: '{{#strategy.chart1_data#}}'
+          group:
+            type: constant
+            value: true
+          stack:
+            type: constant
+            value: false
+          title:
+            type: mixed
+            value: 分时段基准能耗与策略能耗对比
+        type: tool
+      height: 165
+      id: chart1
+      position:
+        x: 2000
+        y: 120
+      positionAbsolute:
+        x: 2000
+        y: 120
+      type: custom
+      width: 241
+    - data:
+        is_team_authorization: true
+        plugin_id: antv/visualization
+        plugin_unique_identifier: antv/visualization:0.2.0@798a255e7bf02e93b8a5717be235b833482be58daab1c64c79c954281da14b9c
+        provider_id: antv/visualization/visualization
+        provider_name: antv/visualization/visualization
+        provider_type: builtin
+        selected: false
+        title: 07 分时段策略数量分布图
+        tool_configurations:
+          height:
+            type: constant
+            value: 400
+          style:
+            type: mixed
+            value: ''
+          theme:
+            type: constant
+            value: default
+          width:
+            type: constant
+            value: 700
+        tool_label: 生成柱状图
+        tool_name: generate_column_chart
+        tool_node_version: '2'
+        tool_parameters:
+          axisXTitle:
+            type: mixed
+            value: 时段
+          axisYTitle:
+            type: mixed
+            value: 小区数量（个）
+          data:
+            type: mixed
+            value: '{{#strategy.chart2_data#}}'
+          group:
+            type: constant
+            value: true
+          stack:
+            type: constant
+            value: false
+          title:
+            type: mixed
+            value: 分时段节能策略数量分布
+        type: tool
+      height: 165
+      id: chart2
+      position:
+        x: 2000
+        y: 340
+      positionAbsolute:
+        x: 2000
+        y: 340
+      type: custom
+      width: 241
+    - data:
+        is_team_authorization: true
+        plugin_id: antv/visualization
+        plugin_unique_identifier: antv/visualization:0.2.0@798a255e7bf02e93b8a5717be235b833482be58daab1c64c79c954281da14b9c
+        provider_id: antv/visualization/visualization
+        provider_name: antv/visualization/visualization
+        provider_type: builtin
+        selected: false
+        title: 08 小区最终业务量趋势图
+        tool_configurations:
+          height:
+            type: constant
+            value: 420
+          style:
+            type: mixed
+            value: ''
+          theme:
+            type: constant
+            value: default
+          width:
+            type: constant
+            value: 760
+        tool_label: 生成折线图
+        tool_name: generate_line_chart
+        tool_node_version: '2'
+        tool_parameters:
+          axisXTitle:
+            type: mixed
+            value: 时段
+          axisYTitle:
+            type: mixed
+            value: 最终业务量（业务量单位）
+          data:
+            type: mixed
+            value: '{{#strategy.chart3_data#}}'
+          title:
+            type: mixed
+            value: 小区最终业务量趋势
+        type: tool
+      height: 165
+      id: chart3
+      position:
+        x: 1987
+        y: 578
+      positionAbsolute:
+        x: 1987
+        y: 578
+      selected: false
+      type: custom
+      width: 241
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - code_summary_llm
+          - summary_text
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: qwen3.8-max
+          provider: langgenius/tongyi/tongyi
+        prompt_template:
+        - id: 77f3dc2b-2c23-4aaa-ba28-a17ba8a30dca
+          role: system
+          text: ''
+        - id: 415d9471-cdfa-4444-b018-8e7dcd61ba30
+          role: user
+          text: '你是一个通信节能专家，请对以下时段节能结果进行简短解读：
+
+
+            {{#code_summary_llm.summary_text#}}'
+        selected: false
+        title: LLM
+        type: llm
+        vision:
+          enabled: false
+      height: 87
+      id: '1793278892832'
+      position:
+        x: 2601
+        y: 900
+      positionAbsolute:
+        x: 2601
+        y: 900
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    viewport:
+      x: -2820.5
+      y: 249
+      zoom: 1
+  rag_pipeline_variables: []

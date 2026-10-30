@@ -1,0 +1,29 @@
+[
+  {
+    "id": "ES",
+    "name": "TomJ-ES",
+    "description": "Energy scheduling",
+    "filename": "TomJ-ES.yml",
+    "bytes": 79271,
+    "parts": 18,
+    "sha256": "bf648125f6d9cb39e37f9f45c3dfb7e30839f0a1dc05509973dbc3577bf0fdcf"
+  },
+  {
+    "id": "CR",
+    "name": "TomJ-CR",
+    "description": "Complaint routing",
+    "filename": "TomJ-CR.yml",
+    "bytes": 97663,
+    "parts": 22,
+    "sha256": "153f292a170a39974b2f13d13f6db89d7de848f2e22561d34bfa7c27662fd9ad"
+  },
+  {
+    "id": "DC",
+    "name": "TomJ-DC",
+    "description": "Data cleaning",
+    "filename": "TomJ-DC.yml",
+    "bytes": 77544,
+    "parts": 18,
+    "sha256": "22f4607000159ef3ff7a45d23da97ce815ef12edd074e602718662943575db97"
+  }
+]

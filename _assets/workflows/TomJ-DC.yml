@@ -1,0 +1,1606 @@
+app:
+  description: 对投诉记录、处理记录、客户、员工和营业厅五张表进行字段名称统一、时间格式统一、ID 格式还原与缺失数据处理。适用于结构固定的通信业务表格清洗与流程教学，输出五份文本结果文件和清洗统计报告。
+  icon: 🧹
+  icon_background: '#FFEAD5'
+  icon_type: emoji
+  mode: workflow
+  name: TomJ-DC
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: bowenliang123/md_exporter:3.6.9@3f027d63e80b44d5d5a9f706871afaef37905b8f8a89a2d152dc530211a8acb1
+    version: null
+kind: app
+version: 0.6.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        attachment_image_file_size_limit: 2
+        audio_file_size_limit: 50
+        batch_count_limit: 10
+        file_size_limit: 30
+        file_upload_limit: 20
+        image_file_batch_limit: 10
+        image_file_size_limit: 10
+        single_chunk_attachment_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 15
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: document-extractor
+      id: 1793152255606-source-1793152377262-target
+      source: '1793152255606'
+      sourceHandle: source
+      target: '1793152377262'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: document-extractor
+      id: 1793152255606-source-1793152385462-target
+      source: '1793152255606'
+      sourceHandle: source
+      target: '1793152385462'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: document-extractor
+      id: 1793152255606-source-1793152388940-target
+      source: '1793152255606'
+      sourceHandle: source
+      target: '1793152388940'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: document-extractor
+      id: 1793152255606-source-1793152391977-target
+      source: '1793152255606'
+      sourceHandle: source
+      target: '1793152391977'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: document-extractor
+      id: 1793152255606-source-1793152394679-target
+      source: '1793152255606'
+      sourceHandle: source
+      target: '1793152394679'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: code
+      id: 1793152377262-source-1793153333510-target
+      source: '1793152377262'
+      sourceHandle: source
+      target: '1793153333510'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: code
+      id: 1793152385462-source-1793153333510-target
+      source: '1793152385462'
+      sourceHandle: source
+      target: '1793153333510'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: code
+      id: 1793152388940-source-1793153333510-target
+      source: '1793152388940'
+      sourceHandle: source
+      target: '1793153333510'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: code
+      id: 1793152391977-source-1793153333510-target
+      source: '1793152391977'
+      sourceHandle: source
+      target: '1793153333510'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: code
+      id: 1793152394679-source-1793153333510-target
+      source: '1793152394679'
+      sourceHandle: source
+      target: '1793153333510'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 1793153333510-source-1793155141294-target
+      source: '1793153333510'
+      sourceHandle: source
+      target: '1793155141294'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 1793155141294-source-17931554111390-target
+      source: '1793155141294'
+      sourceHandle: source
+      target: '17931554111390'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 17931554111390-source-17931554994820-target
+      source: '17931554111390'
+      sourceHandle: source
+      target: '17931554994820'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: tool
+      id: 17931554994820-source-1793154507309-target
+      source: '17931554994820'
+      sourceHandle: source
+      target: '1793154507309'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: tool
+      id: 17931554994820-source-1793154512022-target
+      source: '17931554994820'
+      sourceHandle: source
+      target: '1793154512022'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: tool
+      id: 17931554994820-source-1793154516241-target
+      source: '17931554994820'
+      sourceHandle: source
+      target: '1793154516241'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: tool
+      id: 17931554994820-source-1793154523870-target
+      source: '17931554994820'
+      sourceHandle: source
+      target: '1793154523870'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: tool
+      id: 17931554994820-source-1793154520193-target
+      source: '17931554994820'
+      sourceHandle: source
+      target: '1793154520193'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: tool
+        targetType: end
+      id: 1793154507309-source-1793155927065-target
+      source: '1793154507309'
+      sourceHandle: source
+      target: '1793155927065'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: end
+      id: 1793154512022-source-1793155927065-target
+      source: '1793154512022'
+      sourceHandle: source
+      target: '1793155927065'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: end
+      id: 1793154516241-source-1793155927065-target
+      source: '1793154516241'
+      sourceHandle: source
+      target: '1793155927065'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: end
+      id: 1793154520193-source-1793155927065-target
+      source: '1793154520193'
+      sourceHandle: source
+      target: '1793155927065'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: end
+      id: 1793154523870-source-1793155927065-target
+      source: '1793154523870'
+      sourceHandle: source
+      target: '1793155927065'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        selected: false
+        title: 用户输入
+        type: start
+        variables:
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          default: ''
+          hide: false
+          hint: ''
+          label: complaint_record
+          options: []
+          placeholder: ''
+          required: true
+          type: file
+          variable: complaint_record
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          default: ''
+          hide: false
+          hint: ''
+          label: complaint_handling
+          options: []
+          placeholder: ''
+          required: true
+          type: file
+          variable: complaint_handling
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          default: ''
+          hide: false
+          hint: ''
+          label: customer_info
+          options: []
+          placeholder: ''
+          required: true
+          type: file
+          variable: customer_info
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          default: ''
+          hide: false
+          hint: ''
+          label: employee_info
+          options: []
+          placeholder: ''
+          required: true
+          type: file
+          variable: employee_info
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          default: ''
+          hide: false
+          hint: ''
+          label: hall_info
+          options: []
+          placeholder: ''
+          required: true
+          type: file
+          variable: hall_info
+      height: 212
+      id: '1793152255606'
+      position:
+        x: -19
+        y: 234
+      positionAbsolute:
+        x: -19
+        y: 234
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_array_file: false
+        selected: false
+        title: complaint_record提取
+        type: document-extractor
+        variable_selector:
+        - '1793152255606'
+        - complaint_record
+      height: 103
+      id: '1793152377262'
+      position:
+        x: 249
+        y: 130
+      positionAbsolute:
+        x: 249
+        y: 130
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        is_array_file: false
+        selected: false
+        title: complaint_handling提取
+        type: document-extractor
+        variable_selector:
+        - '1793152255606'
+        - complaint_handling
+      height: 103
+      id: '1793152385462'
+      position:
+        x: 249
+        y: 243
+      positionAbsolute:
+        x: 249
+        y: 243
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        is_array_file: false
+        selected: false
+        title: customer_info提取
+        type: document-extractor
+        variable_selector:
+        - '1793152255606'
+        - customer_info
+      height: 103
+      id: '1793152388940'
+      position:
+        x: 249
+        y: 385
+      positionAbsolute:
+        x: 249
+        y: 385
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        is_array_file: false
+        selected: false
+        title: employee_info提取
+        type: document-extractor
+        variable_selector:
+        - '1793152255606'
+        - employee_info
+      height: 103
+      id: '1793152391977'
+      position:
+        x: 249
+        y: 503
+      positionAbsolute:
+        x: 249
+        y: 503
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        is_array_file: false
+        selected: false
+        title: hall_info提取
+        type: document-extractor
+        variable_selector:
+        - '1793152255606'
+        - hall_info
+      height: 103
+      id: '1793152394679'
+      position:
+        x: 249
+        y: 654.2209002108661
+      positionAbsolute:
+        x: 249
+        y: 654.2209002108661
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        code: "import re\nfrom collections import OrderedDict\n\nCOLUMN_MAP = {\n    \"complaint_id\": \"complaint_id\", \"\
+          投诉id\": \"complaint_id\", \"投诉号\": \"complaint_id\",\n    \"accept_time\": \"accept_time\",\n    \"customer_id\"\
+          : \"customer_id\", \"客户编号\": \"customer_id\", \"客户id\": \"customer_id\",\n    \"handler_name\": \"handler_name\"\
+          , \"员工姓名\": \"handler_name\",\n    \"package_type\": \"package_type\",\n    \"complaint_description\": \"complaint_description\"\
+          ,\n    \"complaint_type\": \"complaint_type\",\n    \"complaint_subtype\": \"complaint_subtype\",\n    \"handler_id\"\
+          : \"handler_id\", \"员工id\": \"handler_id\", \"员工编号\": \"handler_id\",\n    \"hall_id\": \"hall_id\", \"营业厅id\":\
+          \ \"hall_id\", \"营业厅编号\": \"hall_id\",\n    \"customer_feedback\": \"customer_feedback\",\n    \"customer_name\"\
+          : \"customer_name\", \"客户姓名\": \"customer_name\",\n    \"customer_level\": \"customer_level\",\n    \"hall_name\"\
+          : \"hall_name\", \"营业厅名称\": \"hall_name\",\n    \"region\": \"region\",\n}\n\nREC_FIELDS      = [\"complaint_id\"\
+          , \"accept_time\", \"customer_id\", \"handler_name\", \"package_type\", \"complaint_description\", \"complaint_type\"\
+          , \"complaint_subtype\", \"source_row_index\"]\nHAND_FIELDS     = [\"complaint_id\", \"handler_id\", \"hall_id\"\
+          , \"accept_time\", \"customer_feedback\", \"customer_name\", \"source_row_index\"]\nCUSTOMER_FIELDS = [\"customer_id\"\
+          , \"customer_name\", \"customer_level\", \"source_row_index\"]\nEMPLOYEE_FIELDS = [\"handler_id\", \"handler_name\"\
+          , \"hall_id\", \"source_row_index\"]\nHALL_FIELDS     = [\"hall_id\", \"hall_name\", \"region\", \"source_row_index\"\
+          ]\n\ndef _norm_header(h): return str(h).strip().lstrip(\"\\ufeff\").lower()\n\ndef _split_md_row(line):\n    s =\
+          \ line.strip()\n    if s.startswith(\"|\"): s = s[1:]\n    if s.endswith(\"|\"): s = s[:-1]\n    cells, buf, i =\
+          \ [], \"\", 0\n    while i < len(s):\n        if s[i] == \"\\\\\" and i + 1 < len(s) and s[i + 1] == \"|\":\n  \
+          \          buf += \"|\"\n            i += 2\n        elif s[i] == \"|\":\n            cells.append(buf.strip())\n\
+          \            buf = \"\"\n            i += 1\n        else:\n            buf += s[i]\n            i += 1\n    cells.append(buf.strip())\n\
+          \    return cells\n\ndef _is_separator_row(cells):\n    has_dash = False\n    for c in cells:\n        c = c.strip()\n\
+          \        if not c: continue\n        if not re.fullmatch(r\":?-+:?\", c): return False\n        has_dash = True\n\
+          \    return has_dash\n\ndef _parse_markdown_table(text):\n    if not text or not str(text).strip(): return []\n\
+          \    lines = str(text).split(\"\\n\")\n    table_lines, in_table = [], False\n    for line in lines:\n        s\
+          \ = line.strip()\n        if s.startswith(\"|\"):\n            in_table = True\n            table_lines.append(s)\n\
+          \        elif in_table:\n            if s == \"\": continue\n            break\n    if len(table_lines) < 2: return\
+          \ []\n    header = [_norm_header(h) for h in _split_md_row(table_lines[0])]\n    rows, idx = [], 0\n    for line\
+          \ in table_lines[1:]:\n        cells = _split_md_row(line)\n        if _is_separator_row(cells): continue\n    \
+          \    if len(cells) < len(header): cells = cells + [\"\"] * (len(header) - len(cells))\n        d = OrderedDict()\n\
+          \        for i, h in enumerate(header): d[h] = cells[i] if i < len(cells) else \"\"\n        rows.append((idx, d))\n\
+          \        idx += 1\n    return rows\n\ndef _standardize(parsed, fields):\n    std_fields = fields[:-1]\n    all_have_sri\
+          \ = len(parsed) > 0\n    for _, raw in parsed:\n        v = raw.get(\"source_row_index\", \"\")\n        if v is\
+          \ None or not str(v).strip().isdigit():\n            all_have_sri = False\n            break\n    out = []\n   \
+          \ for idx, raw in parsed:\n        mapped, extras = {}, OrderedDict()\n        for h, val in raw.items():\n    \
+          \        std = COLUMN_MAP.get(h)\n            if std:\n                if std not in mapped: mapped[std] = val\n\
+          \            else:\n                extras[h] = val\n        row = OrderedDict()\n        for f in std_fields: row[f]\
+          \ = mapped.get(f, \"\")\n        for k, v in extras.items():\n            if k == \"source_row_index\": continue\n\
+          \            if k not in row: row[k] = v\n        row[\"source_row_index\"] = str(extras.get(\"source_row_index\"\
+          , \"\")).strip() if all_have_sri else str(idx)\n        out.append(row)\n    return out\n\ndef _esc(v):\n    s =\
+          \ \"\" if v is None else str(v)\n    return s.replace(\"\\r\\n\", \"\\n\").replace(\"\\r\", \"\\n\").replace(\"\
+          |\", \"\\\\|\").replace(\"\\n\", \"<br>\")\n\ndef _markdown_table(fields, rows):\n    lines = [\"| \" + \" | \"\
+          .join(fields) + \" |\", \"| \" + \" | \".join([\"---\"] * len(fields)) + \" |\"]\n    for r in rows:\n        lines.append(\"\
+          | \" + \" | \".join(_esc(r.get(f, \"\")) for f in fields) + \" |\")\n    return \"\\n\".join(lines)\n\ndef main(complaint_record_text=\"\
+          \", complaint_handling_text=\"\", customer_info_text=\"\", employee_info_text=\"\", hall_info_text=\"\"):\n    try:\n\
+          \        rec_rows = _standardize(_parse_markdown_table(complaint_record_text), REC_FIELDS)\n        hand_rows =\
+          \ _standardize(_parse_markdown_table(complaint_handling_text), HAND_FIELDS)\n        cust_rows = _standardize(_parse_markdown_table(customer_info_text),\
+          \ CUSTOMER_FIELDS)\n        emp_rows = _standardize(_parse_markdown_table(employee_info_text), EMPLOYEE_FIELDS)\n\
+          \        hall_rows = _standardize(_parse_markdown_table(hall_info_text), HALL_FIELDS)\n\n        return {\n    \
+          \        \"record_text\": _markdown_table(REC_FIELDS, rec_rows),\n            \"handling_text\": _markdown_table(HAND_FIELDS,\
+          \ hand_rows),\n            \"customer_text\": _markdown_table(CUSTOMER_FIELDS, cust_rows),\n            \"employee_text\"\
+          : _markdown_table(EMPLOYEE_FIELDS, emp_rows),\n            \"hall_text\": _markdown_table(HALL_FIELDS, hall_rows),\n\
+          \            \"parse_ok\": True,\n            \"parse_msg\": \"解析成功\"\n        }\n    except Exception as e:\n \
+          \       return {\n            \"record_text\": \"\", \"handling_text\": \"\", \"customer_text\": \"\", \"employee_text\"\
+          : \"\", \"hall_text\": \"\",\n            \"parse_ok\": False, \"parse_msg\": str(e)\n        }"
+        code_language: python3
+        outputs:
+          customer_text:
+            children: null
+            type: string
+          employee_text:
+            children: null
+            type: string
+          hall_text:
+            children: null
+            type: string
+          handling_text:
+            children: null
+            type: string
+          parse_msg:
+            children: null
+            type: string
+          parse_ok:
+            children: null
+            type: boolean
+          record_text:
+            children: null
+            type: string
+        selected: false
+        title: 03表格解析与字段名称统一
+        type: code
+        variables:
+        - value_selector:
+          - '1793152377262'
+          - text
+          value_type: string
+          variable: complaint_record_text
+        - value_selector:
+          - '1793152385462'
+          - text
+          value_type: string
+          variable: complaint_handling_text
+        - value_selector:
+          - '1793152388940'
+          - text
+          value_type: string
+          variable: customer_info_text
+        - value_selector:
+          - '1793152391977'
+          - text
+          value_type: string
+          variable: employee_info_text
+        - value_selector:
+          - '1793152394679'
+          - text
+          value_type: string
+          variable: hall_info_text
+      height: 51
+      id: '1793153333510'
+      position:
+        x: 556.1993767107251
+        y: 402.15784162060186
+      positionAbsolute:
+        x: 556.1993767107251
+        y: 402.15784162060186
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Markdown text
+            ja_JP: Markdown text
+            pt_BR: Markdown text
+            zh_Hans: Markdown格式文本
+          label:
+            en_US: Markdown text
+            ja_JP: Markdown text
+            pt_BR: Markdown text
+            zh_Hans: Markdown格式文本
+          llm_description: ''
+          max: null
+          min: null
+          name: md_text
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Optional custom output file name, and the filename suffix is not required.
+            ja_JP: Optional custom output file name, and the filename suffix is not required.
+            pt_BR: Optional custom output file name, and the filename suffix is not required.
+            zh_Hans: 可选的自定义输出文件名，后缀名无需指定
+          label:
+            en_US: Output Filename
+            ja_JP: Output Filename
+            pt_BR: Output Filename
+            zh_Hans: 输出文件名
+          llm_description: ''
+          max: null
+          min: null
+          name: output_filename
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        params:
+          md_text: ''
+          output_filename: ''
+        plugin_id: bowenliang123/md_exporter
+        plugin_unique_identifier: bowenliang123/md_exporter:3.6.9@3f027d63e80b44d5d5a9f706871afaef37905b8f8a89a2d152dc530211a8acb1
+        provider_icon: /console/api/workspaces/current/plugin/icon?tenant_id=ebcaa89c-7a8a-4b41-a834-e868685c7b87&filename=94713265c9473c3bd2bc8b0dd0794ad40955b7431610243bbd00ab02dae281cf.png
+        provider_id: bowenliang123/md_exporter/md_exporter
+        provider_name: bowenliang123/md_exporter/md_exporter
+        provider_type: builtin
+        selected: false
+        title: complaint_record输出
+        tool_configurations: {}
+        tool_description: 将 Markdown 转换为 .md 文件的工具
+        tool_label: Markdown ⮕ MD
+        tool_name: md_to_md
+        tool_node_version: '2'
+        tool_parameters:
+          md_text:
+            type: mixed
+            value: '{{#17931554994820.complaint_record_text#}}'
+          output_filename:
+            type: mixed
+            value: complaint_record
+        type: tool
+      height: 51
+      id: '1793154507309'
+      position:
+        x: 1222.098278997877
+        y: 60.487616983079874
+      positionAbsolute:
+        x: 1222.098278997877
+        y: 60.487616983079874
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Markdown text
+            ja_JP: Markdown text
+            pt_BR: Markdown text
+            zh_Hans: Markdown格式文本
+          label:
+            en_US: Markdown text
+            ja_JP: Markdown text
+            pt_BR: Markdown text
+            zh_Hans: Markdown格式文本
+          llm_description: ''
+          max: null
+          min: null
+          name: md_text
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Optional custom output file name, and the filename suffix is not required.
+            ja_JP: Optional custom output file name, and the filename suffix is not required.
+            pt_BR: Optional custom output file name, and the filename suffix is not required.
+            zh_Hans: 可选的自定义输出文件名，后缀名无需指定
+          label:
+            en_US: Output Filename
+            ja_JP: Output Filename
+            pt_BR: Output Filename
+            zh_Hans: 输出文件名
+          llm_description: ''
+          max: null
+          min: null
+          name: output_filename
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        params:
+          md_text: ''
+          output_filename: ''
+        plugin_id: bowenliang123/md_exporter
+        plugin_unique_identifier: bowenliang123/md_exporter:3.6.9@3f027d63e80b44d5d5a9f706871afaef37905b8f8a89a2d152dc530211a8acb1
+        provider_icon: /console/api/workspaces/current/plugin/icon?tenant_id=ebcaa89c-7a8a-4b41-a834-e868685c7b87&filename=94713265c9473c3bd2bc8b0dd0794ad40955b7431610243bbd00ab02dae281cf.png
+        provider_id: bowenliang123/md_exporter/md_exporter
+        provider_name: bowenliang123/md_exporter/md_exporter
+        provider_type: builtin
+        selected: false
+        title: complaint_handling输出
+        tool_configurations: {}
+        tool_description: 将 Markdown 转换为 .md 文件的工具
+        tool_label: Markdown ⮕ MD
+        tool_name: md_to_md
+        tool_node_version: '2'
+        tool_parameters:
+          md_text:
+            type: mixed
+            value: '{{#17931554994820.complaint_handling_text#}}'
+          output_filename:
+            type: mixed
+            value: complaint_handling
+        type: tool
+      height: 51
+      id: '1793154512022'
+      position:
+        x: 1222.098278997877
+        y: 176.39097643094073
+      positionAbsolute:
+        x: 1222.098278997877
+        y: 176.39097643094073
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Markdown text
+            ja_JP: Markdown text
+            pt_BR: Markdown text
+            zh_Hans: Markdown格式文本
+          label:
+            en_US: Markdown text
+            ja_JP: Markdown text
+            pt_BR: Markdown text
+            zh_Hans: Markdown格式文本
+          llm_description: ''
+          max: null
+          min: null
+          name: md_text
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Optional custom output file name, and the filename suffix is not required.
+            ja_JP: Optional custom output file name, and the filename suffix is not required.
+            pt_BR: Optional custom output file name, and the filename suffix is not required.
+            zh_Hans: 可选的自定义输出文件名，后缀名无需指定
+          label:
+            en_US: Output Filename
+            ja_JP: Output Filename
+            pt_BR: Output Filename
+            zh_Hans: 输出文件名
+          llm_description: ''
+          max: null
+          min: null
+          name: output_filename
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        params:
+          md_text: ''
+          output_filename: ''
+        plugin_id: bowenliang123/md_exporter
+        plugin_unique_identifier: bowenliang123/md_exporter:3.6.9@3f027d63e80b44d5d5a9f706871afaef37905b8f8a89a2d152dc530211a8acb1
+        provider_icon: /console/api/workspaces/current/plugin/icon?tenant_id=ebcaa89c-7a8a-4b41-a834-e868685c7b87&filename=94713265c9473c3bd2bc8b0dd0794ad40955b7431610243bbd00ab02dae281cf.png
+        provider_id: bowenliang123/md_exporter/md_exporter
+        provider_name: bowenliang123/md_exporter/md_exporter
+        provider_type: builtin
+        selected: false
+        title: customer_info输出
+        tool_configurations: {}
+        tool_description: 将 Markdown 转换为 .md 文件的工具
+        tool_label: Markdown ⮕ MD
+        tool_name: md_to_md
+        tool_node_version: '2'
+        tool_parameters:
+          md_text:
+            type: mixed
+            value: '{{#17931554994820.customer_info_text#}}'
+          output_filename:
+            type: mixed
+            value: customer_info
+        type: tool
+      height: 51
+      id: '1793154516241'
+      position:
+        x: 1222.098278997877
+        y: 309.1336473472299
+      positionAbsolute:
+        x: 1222.098278997877
+        y: 309.1336473472299
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Markdown text
+            ja_JP: Markdown text
+            pt_BR: Markdown text
+            zh_Hans: Markdown格式文本
+          label:
+            en_US: Markdown text
+            ja_JP: Markdown text
+            pt_BR: Markdown text
+            zh_Hans: Markdown格式文本
+          llm_description: ''
+          max: null
+          min: null
+          name: md_text
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Optional custom output file name, and the filename suffix is not required.
+            ja_JP: Optional custom output file name, and the filename suffix is not required.
+            pt_BR: Optional custom output file name, and the filename suffix is not required.
+            zh_Hans: 可选的自定义输出文件名，后缀名无需指定
+          label:
+            en_US: Output Filename
+            ja_JP: Output Filename
+            pt_BR: Output Filename
+            zh_Hans: 输出文件名
+          llm_description: ''
+          max: null
+          min: null
+          name: output_filename
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        params:
+          md_text: ''
+          output_filename: ''
+        plugin_id: bowenliang123/md_exporter
+        plugin_unique_identifier: bowenliang123/md_exporter:3.6.9@3f027d63e80b44d5d5a9f706871afaef37905b8f8a89a2d152dc530211a8acb1
+        provider_icon: /console/api/workspaces/current/plugin/icon?tenant_id=ebcaa89c-7a8a-4b41-a834-e868685c7b87&filename=94713265c9473c3bd2bc8b0dd0794ad40955b7431610243bbd00ab02dae281cf.png
+        provider_id: bowenliang123/md_exporter/md_exporter
+        provider_name: bowenliang123/md_exporter/md_exporter
+        provider_type: builtin
+        selected: false
+        title: employee_info输出
+        tool_configurations: {}
+        tool_description: 将 Markdown 转换为 .md 文件的工具
+        tool_label: Markdown ⮕ MD
+        tool_name: md_to_md
+        tool_node_version: '2'
+        tool_parameters:
+          md_text:
+            type: mixed
+            value: '{{#17931554994820.employee_info_text#}}'
+          output_filename:
+            type: mixed
+            value: employee_info
+        type: tool
+      height: 51
+      id: '1793154520193'
+      position:
+        x: 1222.098278997877
+        y: 454.2811295846139
+      positionAbsolute:
+        x: 1222.098278997877
+        y: 454.2811295846139
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Markdown text
+            ja_JP: Markdown text
+            pt_BR: Markdown text
+            zh_Hans: Markdown格式文本
+          label:
+            en_US: Markdown text
+            ja_JP: Markdown text
+            pt_BR: Markdown text
+            zh_Hans: Markdown格式文本
+          llm_description: ''
+          max: null
+          min: null
+          name: md_text
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Optional custom output file name, and the filename suffix is not required.
+            ja_JP: Optional custom output file name, and the filename suffix is not required.
+            pt_BR: Optional custom output file name, and the filename suffix is not required.
+            zh_Hans: 可选的自定义输出文件名，后缀名无需指定
+          label:
+            en_US: Output Filename
+            ja_JP: Output Filename
+            pt_BR: Output Filename
+            zh_Hans: 输出文件名
+          llm_description: ''
+          max: null
+          min: null
+          name: output_filename
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        params:
+          md_text: ''
+          output_filename: ''
+        plugin_id: bowenliang123/md_exporter
+        plugin_unique_identifier: bowenliang123/md_exporter:3.6.9@3f027d63e80b44d5d5a9f706871afaef37905b8f8a89a2d152dc530211a8acb1
+        provider_icon: /console/api/workspaces/current/plugin/icon?tenant_id=ebcaa89c-7a8a-4b41-a834-e868685c7b87&filename=94713265c9473c3bd2bc8b0dd0794ad40955b7431610243bbd00ab02dae281cf.png
+        provider_id: bowenliang123/md_exporter/md_exporter
+        provider_name: bowenliang123/md_exporter/md_exporter
+        provider_type: builtin
+        selected: false
+        title: hall_info输出
+        tool_configurations: {}
+        tool_description: 将 Markdown 转换为 .md 文件的工具
+        tool_label: Markdown ⮕ MD
+        tool_name: md_to_md
+        tool_node_version: '2'
+        tool_parameters:
+          md_text:
+            type: mixed
+            value: '{{#17931554994820.hall_info_text#}}'
+          output_filename:
+            type: mixed
+            value: hall_info
+        type: tool
+      height: 51
+      id: '1793154523870'
+      position:
+        x: 1222.098278997877
+        y: 607.5598305501626
+      positionAbsolute:
+        x: 1222.098278997877
+        y: 607.5598305501626
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        code: "import re\nimport datetime\nimport json\nfrom collections import OrderedDict\n\nREC_FIELDS      = [\"complaint_id\"\
+          , \"accept_time\", \"customer_id\", \"handler_name\", \"package_type\", \"complaint_description\", \"complaint_type\"\
+          , \"complaint_subtype\", \"source_row_index\"]\nHAND_FIELDS     = [\"complaint_id\", \"handler_id\", \"hall_id\"\
+          , \"accept_time\", \"customer_feedback\", \"customer_name\", \"source_row_index\"]\nCUSTOMER_FIELDS = [\"customer_id\"\
+          , \"customer_name\", \"customer_level\", \"source_row_index\"]\nEMPLOYEE_FIELDS = [\"handler_id\", \"handler_name\"\
+          , \"hall_id\", \"source_row_index\"]\nHALL_FIELDS     = [\"hall_id\", \"hall_name\", \"region\", \"source_row_index\"\
+          ]\nMONTHS = {\"jan\": 1, \"feb\": 2, \"mar\": 3, \"apr\": 4, \"may\": 5, \"jun\": 6, \"jul\": 7, \"aug\": 8, \"\
+          sep\": 9, \"oct\": 10, \"nov\": 11, \"dec\": 12}\n\ndef _norm_header(h): return str(h).strip().lstrip(\"\\ufeff\"\
+          ).lower()\n\ndef _split_md_row(line):\n    s = line.strip()\n    if s.startswith(\"|\"): s = s[1:]\n    if s.endswith(\"\
+          |\"): s = s[:-1]\n    cells, buf, i = [], \"\", 0\n    while i < len(s):\n        if s[i] == \"\\\\\" and i + 1\
+          \ < len(s) and s[i + 1] == \"|\":\n            buf += \"|\"\n            i += 2\n        elif s[i] == \"|\":\n \
+          \           cells.append(buf.strip())\n            buf = \"\"\n            i += 1\n        else:\n            buf\
+          \ += s[i]\n            i += 1\n    cells.append(buf.strip())\n    return cells\n\ndef _is_separator_row(cells):\n\
+          \    has_dash = False\n    for c in cells:\n        c = c.strip()\n        if not c: continue\n        if not re.fullmatch(r\"\
+          :?-+:?\", c): return False\n        has_dash = True\n    return has_dash\n\ndef _parse_markdown_table(text):\n \
+          \   if not text or not str(text).strip(): return []\n    lines = str(text).split(\"\\n\")\n    table_lines, in_table\
+          \ = [], False\n    for line in lines:\n        s = line.strip()\n        if s.startswith(\"|\"):\n            in_table\
+          \ = True\n            table_lines.append(s)\n        elif in_table:\n            if s == \"\": continue\n      \
+          \      break\n    if len(table_lines) < 2: return []\n    header = [_norm_header(h) for h in _split_md_row(table_lines[0])]\n\
+          \    rows = []\n    for line in table_lines[1:]:\n        cells = _split_md_row(line)\n        if _is_separator_row(cells):\
+          \ continue\n        if len(cells) < len(header): cells = cells + [\"\"] * (len(header) - len(cells))\n        d\
+          \ = OrderedDict()\n        for i, h in enumerate(header): d[h] = cells[i] if i < len(cells) else \"\"\n        rows.append(d)\n\
+          \    return rows\n\ndef _parse_numeric_date_parts(a, b, c, sep):\n    if len(a) == 4: return int(a), int(b), int(c)\n\
+          \    if len(c) == 4:\n        x, y = int(a), int(b)\n        if x > 12: return int(c), y, x\n        if y > 12:\
+          \ return int(c), x, y\n        if sep == \"/\": return int(c), x, y\n        return int(c), y, x\n    year = 2000\
+          \ + int(a) if len(a) == 2 else int(a)\n    return year, int(b), int(c)\n\ndef _parse_time_smart(s):\n    orig =\
+          \ \"\" if s is None else str(s).strip()\n    if orig == \"\": return \"\", False\n    text = orig.replace(\"：\"\
+          , \":\").replace(\"／\", \"/\").replace(\"．\", \".\")\n    base = bool(re.fullmatch(r\"\\d{4}/\\d{1,2}/\\d{1,2}\\\
+          s+\\d{1,2}:\\d{1,2}(?::\\d{1,2})?\", text))\n    tm = re.search(r\"(\\d{1,2}):(\\d{1,2})(?::(\\d{1,2}))?\\s*([AaPp][Mm])?\"\
+          , text)\n    hour = minute = 0\n    has_colon_time = False\n    if tm:\n        has_colon_time = True\n        hour,\
+          \ minute = int(tm.group(1)), int(tm.group(2))\n        if tm.group(4):\n            ap = tm.group(4).upper()\n \
+          \           if ap == \"PM\" and hour < 12: hour += 12\n            if ap == \"AM\" and hour == 12: hour = 0\n  \
+          \      if hour > 23 or minute > 59: return \"\", False\n    date_parts, extra_time = None, None\n    m = re.search(r\"\
+          (\\d{4})\\s*年\\s*(\\d{1,2})\\s*月\\s*(\\d{1,2})\\s*日\", text)\n    if m: date_parts = (int(m.group(1)), int(m.group(2)),\
+          \ int(m.group(3)))\n    if date_parts is None:\n        m = re.search(r\"([A-Za-z]{3,9})\\s+(\\d{1,2}),?\\s+(\\\
+          d{4})\", text)\n        if m:\n            mon = MONTHS.get(m.group(1).lower()[:3])\n            if mon: date_parts\
+          \ = (int(m.group(3)), mon, int(m.group(2)))\n        else:\n            m = re.search(r\"(\\d{1,2})\\s+([A-Za-z]{3,9})\\\
+          s+(\\d{4})\", text)\n            if m:\n                mon = MONTHS.get(m.group(2).lower()[:3])\n             \
+          \   if mon: date_parts = (int(m.group(3)), mon, int(m.group(1)))\n    if date_parts is None:\n        m = re.search(r\"\
+          (\\d{1,4})[/\\-.](\\d{1,2})[/\\-.](\\d{1,4})\", text)\n        if m:\n            sep_m = re.search(r\"[/\\-.]\"\
+          , m.group(0))\n            sep = sep_m.group(0) if sep_m else \"/\"\n            date_parts = _parse_numeric_date_parts(m.group(1),\
+          \ m.group(2), m.group(3), sep)\n    if date_parts is None:\n        m = re.search(r\"(?<!\\d)(\\d{14}|\\d{12}|\\\
+          d{8})(?!\\d)\", text)\n        if m:\n            digits = m.group(1)\n            if len(digits) == 14:\n     \
+          \           date_parts = (int(digits[0:4]), int(digits[4:6]), int(digits[6:8]))\n                extra_time = (int(digits[8:10]),\
+          \ int(digits[10:12]))\n            elif len(digits) == 12:\n                date_parts = (int(digits[0:4]), int(digits[4:6]),\
+          \ int(digits[6:8]))\n                extra_time = (int(digits[8:10]), int(digits[10:12]))\n            else: date_parts\
+          \ = (int(digits[0:4]), int(digits[4:6]), int(digits[6:8]))\n    if date_parts is None: return \"\", False\n    if\
+          \ extra_time is not None and not has_colon_time:\n        hour, minute = extra_time\n        if hour > 23 or minute\
+          \ > 59: return \"\", False\n    year, month, day = date_parts\n    try: dt = datetime.datetime(year, month, day,\
+          \ hour, minute)\n    except: return \"\", False\n    out = dt.strftime(\"%Y/%m/%d %H:%M\")\n    return out, (not\
+          \ base)\n\ndef _esc(v):\n    s = \"\" if v is None else str(v)\n    return s.replace(\"\\r\\n\", \"\\n\").replace(\"\
+          \\r\", \"\\n\").replace(\"|\", \"\\\\|\").replace(\"\\n\", \"<br>\")\n\ndef _markdown_table(fields, rows):\n   \
+          \ lines = [\"| \" + \" | \".join(fields) + \" |\", \"| \" + \" | \".join([\"---\"] * len(fields)) + \" |\"]\n  \
+          \  for r in rows:\n        lines.append(\"| \" + \" | \".join(_esc(r.get(f, \"\")) for f in fields) + \" |\")\n\
+          \    return \"\\n\".join(lines)\n\ndef main(record_text=\"\", handling_text=\"\", customer_text=\"\", employee_text=\"\
+          \", hall_text=\"\"):\n    rec_rows = _parse_markdown_table(record_text)\n    hand_rows = _parse_markdown_table(handling_text)\n\
+          \    cust_rows = _parse_markdown_table(customer_text)\n    emp_rows = _parse_markdown_table(employee_text)\n   \
+          \ hall_rows = _parse_markdown_table(hall_text)\n\n    rec_fix, hand_fix = 0, 0\n    for r in rec_rows:\n       \
+          \ new, repaired = _parse_time_smart(r.get(\"accept_time\", \"\"))\n        r[\"accept_time\"] = new\n        if\
+          \ repaired: rec_fix += 1\n    for r in hand_rows:\n        new, repaired = _parse_time_smart(r.get(\"accept_time\"\
+          , \"\"))\n        r[\"accept_time\"] = new\n        if repaired: hand_fix += 1\n\n    stats = {\n        \"complaint_record_time_repair_count\"\
+          : rec_fix,\n        \"complaint_handling_time_repair_count\": hand_fix\n    }\n\n    return {\n        \"record_text\"\
+          : _markdown_table(REC_FIELDS, rec_rows),\n        \"handling_text\": _markdown_table(HAND_FIELDS, hand_rows),\n\
+          \        \"customer_text\": _markdown_table(CUSTOMER_FIELDS, cust_rows),\n        \"employee_text\": _markdown_table(EMPLOYEE_FIELDS,\
+          \ emp_rows),\n        \"hall_text\": _markdown_table(HALL_FIELDS, hall_rows),\n        \"stats_04\": json.dumps(stats,\
+          \ ensure_ascii=False)\n    }"
+        code_language: python3
+        outputs:
+          customer_text:
+            children: null
+            type: string
+          employee_text:
+            children: null
+            type: string
+          hall_text:
+            children: null
+            type: string
+          handling_text:
+            children: null
+            type: string
+          record_text:
+            children: null
+            type: string
+          stats_04:
+            children: null
+            type: string
+        selected: false
+        title: 04时间格式统一
+        type: code
+        variables:
+        - value_selector:
+          - '1793153333510'
+          - record_text
+          value_type: string
+          variable: record_text
+        - value_selector:
+          - '1793153333510'
+          - handling_text
+          value_type: string
+          variable: handling_text
+        - value_selector:
+          - '1793153333510'
+          - customer_text
+          value_type: string
+          variable: customer_text
+        - value_selector:
+          - '1793153333510'
+          - employee_text
+          value_type: string
+          variable: employee_text
+        - value_selector:
+          - '1793153333510'
+          - hall_text
+          value_type: string
+          variable: hall_text
+      height: 51
+      id: '1793155141294'
+      position:
+        x: 764.840204587682
+        y: 176.39097643094073
+      positionAbsolute:
+        x: 764.840204587682
+        y: 176.39097643094073
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        code: "import re\nimport json\nfrom collections import OrderedDict\n\nREC_FIELDS      = [\"complaint_id\", \"accept_time\"\
+          , \"customer_id\", \"handler_name\", \"package_type\", \"complaint_description\", \"complaint_type\", \"complaint_subtype\"\
+          , \"source_row_index\"]\nHAND_FIELDS     = [\"complaint_id\", \"handler_id\", \"hall_id\", \"accept_time\", \"customer_feedback\"\
+          , \"customer_name\", \"source_row_index\"]\nCUSTOMER_FIELDS = [\"customer_id\", \"customer_name\", \"customer_level\"\
+          , \"source_row_index\"]\nEMPLOYEE_FIELDS = [\"handler_id\", \"handler_name\", \"hall_id\", \"source_row_index\"\
+          ]\nHALL_FIELDS     = [\"hall_id\", \"hall_name\", \"region\", \"source_row_index\"]\n\ndef _norm_header(h): return\
+          \ str(h).strip().lstrip(\"\\ufeff\").lower()\n\ndef _split_md_row(line):\n    s = line.strip()\n    if s.startswith(\"\
+          |\"): s = s[1:]\n    if s.endswith(\"|\"): s = s[:-1]\n    cells, buf, i = [], \"\", 0\n    while i < len(s):\n\
+          \        if s[i] == \"\\\\\" and i + 1 < len(s) and s[i + 1] == \"|\":\n            buf += \"|\"\n            i\
+          \ += 2\n        elif s[i] == \"|\":\n            cells.append(buf.strip())\n            buf = \"\"\n           \
+          \ i += 1\n        else:\n            buf += s[i]\n            i += 1\n    cells.append(buf.strip())\n    return\
+          \ cells\n\ndef _is_separator_row(cells):\n    has_dash = False\n    for c in cells:\n        c = c.strip()\n   \
+          \     if not c: continue\n        if not re.fullmatch(r\":?-+:?\", c): return False\n        has_dash = True\n \
+          \   return has_dash\n\ndef _parse_markdown_table(text):\n    if not text or not str(text).strip(): return []\n \
+          \   lines = str(text).split(\"\\n\")\n    table_lines, in_table = [], False\n    for line in lines:\n        s =\
+          \ line.strip()\n        if s.startswith(\"|\"):\n            in_table = True\n            table_lines.append(s)\n\
+          \        elif in_table:\n            if s == \"\": continue\n            break\n    if len(table_lines) < 2: return\
+          \ []\n    header = [_norm_header(h) for h in _split_md_row(table_lines[0])]\n    rows = []\n    for line in table_lines[1:]:\n\
+          \        cells = _split_md_row(line)\n        if _is_separator_row(cells): continue\n        if len(cells) < len(header):\
+          \ cells = cells + [\"\"] * (len(header) - len(cells))\n        d = OrderedDict()\n        for i, h in enumerate(header):\
+          \ d[h] = cells[i] if i < len(cells) else \"\"\n        rows.append(d)\n    return rows\n\ndef _format_complaint_id(v):\n\
+          \    orig = \"\" if v is None else str(v).strip()\n    if orig == \"\": return \"\", False\n    m = re.fullmatch(r\"\
+          投诉单\\s*(\\d+)\", orig)\n    if m:\n        n = int(m.group(1)) - 1\n        out = \"TS202507\" + f\"{n:04d}\" if\
+          \ n >= 0 else \"\"\n        return out, (out != orig and out != \"\")\n    m = re.fullmatch(r\"[Tt][Ss]\\s*(\\d+)\"\
+          , orig)\n    if m:\n        digits = m.group(1)\n        if len(digits) == 10: out = \"TS\" + digits\n        elif\
+          \ len(digits) <= 4: out = \"TS202507\" + digits.zfill(4)\n        else: out = \"\"\n        return out, (out !=\
+          \ orig and out != \"\")\n    if re.fullmatch(r\"\\d+\", orig):\n        if len(orig) == 10: out = \"TS\" + orig\n\
+          \        elif len(orig) <= 4: out = \"TS202507\" + orig.zfill(4)\n        else: out = \"\"\n        return out,\
+          \ (out != orig and out != \"\")\n    return \"\", True\n\ndef _format_customer_id(v):\n    orig = \"\" if v is None\
+          \ else str(v).strip()\n    if orig == \"\": return \"\", False\n    m = re.fullmatch(r\"客户\\s*(\\d+)\", orig)\n\
+          \    if m:\n        n = int(m.group(1)) - 1\n        out = \"CUST\" + f\"{n:04d}\" if n >= 0 else \"\"\n       \
+          \ return out, (out != orig and out != \"\")\n    m = re.fullmatch(r\"[Cc][Uu][Ss][Tt]\\s*(\\d+)\", orig)\n    if\
+          \ m:\n        digits = m.group(1)\n        out = \"CUST\" + digits.zfill(4) if len(digits) <= 4 else \"\"\n    \
+          \    return out, (out != orig and out != \"\")\n    if re.fullmatch(r\"\\d+\", orig):\n        out = \"CUST\" +\
+          \ orig.zfill(4) if len(orig) <= 4 else \"\"\n        return out, (out != orig and out != \"\")\n    return \"\"\
+          , True\n\ndef _format_employee_id(v):\n    orig = \"\" if v is None else str(v).strip()\n    if orig == \"\": return\
+          \ \"\", False\n    m = re.fullmatch(r\"员工\\s*(\\d+)\", orig)\n    if m:\n        n = int(m.group(1)) - 1\n     \
+          \   out = \"EMP\" + f\"{n:04d}\" if n >= 0 else \"\"\n        return out, (out != orig and out != \"\")\n    m =\
+          \ re.fullmatch(r\"[Ee][Mm][Pp]\\s*(\\d+)\", orig)\n    if m:\n        digits = m.group(1)\n        out = \"EMP\"\
+          \ + digits.zfill(4) if len(digits) <= 4 else \"\"\n        return out, (out != orig and out != \"\")\n    if re.fullmatch(r\"\
+          \\d+\", orig):\n        out = \"EMP\" + orig.zfill(4) if len(orig) <= 4 else \"\"\n        return out, (out != orig\
+          \ and out != \"\")\n    return \"\", True\n\ndef _format_hall_id(v):\n    orig = \"\" if v is None else str(v).strip()\n\
+          \    if orig == \"\": return \"\", False\n    m = re.fullmatch(r\"营业厅\\s*(\\d+)\", orig)\n    if m:\n        n =\
+          \ int(m.group(1)) - 1\n        out = \"HALL\" + f\"{n:03d}\" if n >= 0 else \"\"\n        return out, (out != orig\
+          \ and out != \"\")\n    m = re.fullmatch(r\"[Hh][Aa][Ll][Ll]\\s*(\\d+)\", orig)\n    if m:\n        digits = m.group(1)\n\
+          \        out = \"HALL\" + digits.zfill(3) if len(digits) <= 3 else \"\"\n        return out, (out != orig and out\
+          \ != \"\")\n    if re.fullmatch(r\"\\d+\", orig):\n        out = \"HALL\" + orig.zfill(3) if len(orig) <= 3 else\
+          \ \"\"\n        return out, (out != orig and out != \"\")\n    return \"\", True\n\ndef _esc(v):\n    s = \"\" if\
+          \ v is None else str(v)\n    return s.replace(\"\\r\\n\", \"\\n\").replace(\"\\r\", \"\\n\").replace(\"|\", \"\\\
+          \\|\").replace(\"\\n\", \"<br>\")\n\ndef _markdown_table(fields, rows):\n    lines = [\"| \" + \" | \".join(fields)\
+          \ + \" |\", \"| \" + \" | \".join([\"---\"] * len(fields)) + \" |\"]\n    for r in rows:\n        lines.append(\"\
+          | \" + \" | \".join(_esc(r.get(f, \"\")) for f in fields) + \" |\")\n    return \"\\n\".join(lines)\n\ndef main(record_text=\"\
+          \", handling_text=\"\", customer_text=\"\", employee_text=\"\", hall_text=\"\", stats_04=\"{}\"):\n    rec_rows\
+          \ = _parse_markdown_table(record_text)\n    hand_rows = _parse_markdown_table(handling_text)\n    cust_rows = _parse_markdown_table(customer_text)\n\
+          \    emp_rows = _parse_markdown_table(employee_text)\n    hall_rows = _parse_markdown_table(hall_text)\n\n    try:\
+          \ stats = json.loads(stats_04)\n    except: stats = {}\n\n    rec_pid_fix, rec_cid_fix = 0, 0\n    for r in rec_rows:\n\
+          \        r[\"complaint_id\"], f1 = _format_complaint_id(r.get(\"complaint_id\", \"\"))\n        r[\"customer_id\"\
+          ], f2 = _format_customer_id(r.get(\"customer_id\", \"\"))\n        if f1: rec_pid_fix += 1\n        if f2: rec_cid_fix\
+          \ += 1\n\n    hand_pid_fix, hand_hid_fix, hand_hall_fix = 0, 0, 0\n    for r in hand_rows:\n        r[\"complaint_id\"\
+          ], f1 = _format_complaint_id(r.get(\"complaint_id\", \"\"))\n        r[\"handler_id\"], f2 = _format_employee_id(r.get(\"\
+          handler_id\", \"\"))\n        r[\"hall_id\"], f3 = _format_hall_id(r.get(\"hall_id\", \"\"))\n        if f1: hand_pid_fix\
+          \ += 1\n        if f2: hand_hid_fix += 1\n        if f3: hand_hall_fix += 1\n        \n    cust_fix = 0\n    for\
+          \ r in cust_rows:\n        r[\"customer_id\"], f1 = _format_customer_id(r.get(\"customer_id\", \"\"))\n        if\
+          \ f1: cust_fix += 1\n        \n    emp_hid_fix, emp_hall_fix = 0, 0\n    for r in emp_rows:\n        r[\"handler_id\"\
+          ], f1 = _format_employee_id(r.get(\"handler_id\", \"\"))\n        r[\"hall_id\"], f2 = _format_hall_id(r.get(\"\
+          hall_id\", \"\"))\n        if f1: emp_hid_fix += 1\n        if f2: emp_hall_fix += 1\n        \n    hall_fix = 0\n\
+          \    for r in hall_rows:\n        r[\"hall_id\"], f1 = _format_hall_id(r.get(\"hall_id\", \"\"))\n        if f1:\
+          \ hall_fix += 1\n\n    stats.update({\n        \"complaint_record_complaint_id_id_repair_count\": rec_pid_fix,\n\
+          \        \"complaint_record_customer_id_id_repair_count\": rec_cid_fix,\n        \"complaint_handling_complaint_id_id_repair_count\"\
+          : hand_pid_fix,\n        \"complaint_handling_handler_id_id_repair_count\": hand_hid_fix,\n        \"complaint_handling_hall_id_id_repair_count\"\
+          : hand_hall_fix,\n        \"customer_info_customer_id_id_repair_count\": cust_fix,\n        \"employee_info_handler_id_id_repair_count\"\
+          : emp_hid_fix,\n        \"employee_info_hall_id_id_repair_count\": emp_hall_fix,\n        \"hall_info_hall_id_id_repair_count\"\
+          : hall_fix\n    })\n\n    return {\n        \"record_text\": _markdown_table(REC_FIELDS, rec_rows),\n        \"\
+          handling_text\": _markdown_table(HAND_FIELDS, hand_rows),\n        \"customer_text\": _markdown_table(CUSTOMER_FIELDS,\
+          \ cust_rows),\n        \"employee_text\": _markdown_table(EMPLOYEE_FIELDS, emp_rows),\n        \"hall_text\": _markdown_table(HALL_FIELDS,\
+          \ hall_rows),\n        \"stats_05\": json.dumps(stats, ensure_ascii=False)\n    }"
+        code_language: python3
+        desc: ''
+        isInIteration: false
+        isInLoop: false
+        outputs:
+          customer_text:
+            children: null
+            type: string
+          employee_text:
+            children: null
+            type: string
+          hall_text:
+            children: null
+            type: string
+          handling_text:
+            children: null
+            type: string
+          record_text:
+            children: null
+            type: string
+          stats_05:
+            children: null
+            type: string
+        selected: false
+        title: 05ID 值格式还原
+        type: code
+        variables:
+        - value_selector:
+          - '1793155141294'
+          - record_text
+          value_type: string
+          variable: record_text
+        - value_selector:
+          - '1793155141294'
+          - handling_text
+          value_type: string
+          variable: handling_text
+        - value_selector:
+          - '1793155141294'
+          - customer_text
+          value_type: string
+          variable: customer_text
+        - value_selector:
+          - '1793155141294'
+          - employee_text
+          value_type: string
+          variable: employee_text
+        - value_selector:
+          - '1793155141294'
+          - hall_text
+          value_type: string
+          variable: hall_text
+        - value_selector:
+          - '1793155141294'
+          - stats_04
+          value_type: string
+          variable: stats_04
+      height: 51
+      id: '17931554111390'
+      position:
+        x: 841.8335300816018
+        y: 357.3610106900624
+      positionAbsolute:
+        x: 841.8335300816018
+        y: 357.3610106900624
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        code: "import re\nimport json\nimport bisect\nfrom collections import OrderedDict, defaultdict\n\nMISSING_BY_FIELD\
+          \ = {\n    \"complaint_id\": \"该条投诉号记录丢失\", \"accept_time\": \"该条时间记录丢失\",\n    \"customer_id\": \"该条客户记录丢失\", \"\
+          customer_name\": \"该条客户记录丢失\",\n    \"handler_id\": \"该条员工记录丢失\", \"handler_name\": \"该条员工记录丢失\",\n    \"hall_id\"\
+          : \"该条营业厅记录丢失\", \"package_type\": \"该条套餐记录丢失\",\n    \"complaint_type\": \"该条投诉类型记录丢失\", \"complaint_subtype\"\
+          : \"该条投诉子类记录丢失\",\n    \"customer_feedback\": \"该条反馈记录丢失\",\n}\n\nREC_FIELDS      = [\"complaint_id\", \"accept_time\"\
+          , \"customer_id\", \"handler_name\", \"package_type\", \"complaint_description\", \"complaint_type\", \"complaint_subtype\"\
+          , \"source_row_index\"]\nHAND_FIELDS     = [\"complaint_id\", \"handler_id\", \"hall_id\", \"accept_time\", \"customer_feedback\"\
+          , \"customer_name\", \"source_row_index\"]\nCUSTOMER_FIELDS = [\"customer_id\", \"customer_name\", \"customer_level\"\
+          , \"source_row_index\"]\nEMPLOYEE_FIELDS = [\"handler_id\", \"handler_name\", \"hall_id\", \"source_row_index\"\
+          ]\nHALL_FIELDS     = [\"hall_id\", \"hall_name\", \"region\", \"source_row_index\"]\n\ndef _norm_header(h): return\
+          \ str(h).strip().lstrip(\"\\ufeff\").lower()\n\ndef _split_md_row(line):\n    s = line.strip()\n    if s.startswith(\"\
+          |\"): s = s[1:]\n    if s.endswith(\"|\"): s = s[:-1]\n    cells, buf, i = [], \"\", 0\n    while i < len(s):\n\
+          \        if s[i] == \"\\\\\" and i + 1 < len(s) and s[i + 1] == \"|\":\n            buf += \"|\"\n            i\
+          \ += 2\n        elif s[i] == \"|\":\n            cells.append(buf.strip())\n            buf = \"\"\n           \
+          \ i += 1\n        else:\n            buf += s[i]\n            i += 1\n    cells.append(buf.strip())\n    return\
+          \ cells\n\ndef _is_separator_row(cells):\n    has_dash = False\n    for c in cells:\n        c = c.strip()\n   \
+          \     if not c: continue\n        if not re.fullmatch(r\":?-+:?\", c): return False\n        has_dash = True\n \
+          \   return has_dash\n\ndef _parse_markdown_table(text):\n    if not text or not str(text).strip(): return []\n \
+          \   lines = str(text).split(\"\\n\")\n    table_lines, in_table = [], False\n    for line in lines:\n        s =\
+          \ line.strip()\n        if s.startswith(\"|\"):\n            in_table = True\n            table_lines.append(s)\n\
+          \        elif in_table:\n            if s == \"\": continue\n            break\n    if len(table_lines) < 2: return\
+          \ []\n    header = [_norm_header(h) for h in _split_md_row(table_lines[0])]\n    rows = []\n    for line in table_lines[1:]:\n\
+          \        cells = _split_md_row(line)\n        if _is_separator_row(cells): continue\n        if len(cells) < len(header):\
+          \ cells = cells + [\"\"] * (len(header) - len(cells))\n        d = OrderedDict()\n        for i, h in enumerate(header):\
+          \ d[h] = cells[i] if i < len(cells) else \"\"\n        rows.append(d)\n    return rows\n\ndef _esc(v):\n    s =\
+          \ \"\" if v is None else str(v)\n    return s.replace(\"\\r\\n\", \"\\n\").replace(\"\\r\", \"\\n\").replace(\"\
+          |\", \"\\\\|\").replace(\"\\n\", \"<br>\")\n\ndef _markdown_table(fields, rows):\n    lines = [\"| \" + \" | \"\
+          .join(fields) + \" |\", \"| \" + \" | \".join([\"---\"] * len(fields)) + \" |\"]\n    for r in rows:\n        lines.append(\"\
+          | \" + \" | \".join(_esc(r.get(f, \"\")) for f in fields) + \" |\")\n    return \"\\n\".join(lines)\n\ndef _add_issue(stats,\
+          \ category, item):\n    arr = stats.setdefault(\"issues\", [])\n    if len(arr) < 300:\n        arr.append({\n \
+          \           \"category\": category, \"source_row_index\": item[0] if len(item) > 0 else \"\",\n            \"value\"\
+          : str(item[1]) if len(item) > 1 else \"\", \"detail\": item[2] if len(item) > 2 else \"\",\n        })\n\ndef _build_report(stats):\n\
+          \    \"\"\"构建 Markdown 格式的清洗变更报告\"\"\"\n    rec_input = stats.get(\"complaint_record_input_rows\", 0)\n    hand_input\
+          \ = stats.get(\"complaint_handling_input_rows\", 0)\n    deleted = stats.get(\"deleted_invalid_description_rows\"\
+          , 0)\n    retained = stats.get(\"retained_rows\", 0)\n    \n    rec_t_fix = stats.get(\"complaint_record_time_repair_count\"\
+          , 0)\n    hand_t_fix = stats.get(\"complaint_handling_time_repair_count\", 0)\n    rec_t_issue = stats.get(\"complaint_record_time_issue_count\"\
+          , 0)\n    hand_t_issue = stats.get(\"complaint_handling_time_issue_count\", 0)\n    \n    rec_pid = stats.get(\"\
+          complaint_record_complaint_id_id_repair_count\", 0)\n    rec_cid = stats.get(\"complaint_record_customer_id_id_repair_count\"\
+          , 0)\n    hand_pid = stats.get(\"complaint_handling_complaint_id_id_repair_count\", 0)\n    hand_hid = stats.get(\"\
+          complaint_handling_handler_id_id_repair_count\", 0)\n    hand_hall = stats.get(\"complaint_handling_hall_id_id_repair_count\"\
+          , 0)\n    cust_cid = stats.get(\"customer_info_customer_id_id_repair_count\", 0)\n    emp_hid = stats.get(\"employee_info_handler_id_id_repair_count\"\
+          , 0)\n    emp_hall = stats.get(\"employee_info_hall_id_id_repair_count\", 0)\n    hall_hall = stats.get(\"hall_info_hall_id_id_repair_count\"\
+          , 0)\n    \n    issues = stats.get(\"issues\", [])\n    cust_conflict = sum(1 for i in issues if i[\"category\"\
+          ] == \"customer_name_conflict\")\n    emp_conflict = sum(1 for i in issues if i[\"category\"] == \"handler_name_conflict\"\
+          )\n\n    lines = []\n    lines.append(\"### \U0001F4CA 数据清洗变更报告\\n\")\n    \n    lines.append(\"#### 1. 数据量与删除统计\"\
+          )\n    lines.append(\"| 表名 | 原始行数 | 删除无效行数 | 保留行数 |\")\n    lines.append(\"| --- | --- | --- | --- |\")\n    lines.append(f\"\
+          | 投诉记录表 | {rec_input} | {deleted} | {retained} |\")\n    lines.append(f\"| 投诉处理表 | {hand_input} | {deleted} | {retained}\
+          \ |\")\n    lines.append(\"\")\n    \n    lines.append(\"#### 2. 时间格式修复统计\")\n    lines.append(\"| 表名 | 修复行数 | 无法识别/缺失行数\
+          \ |\")\n    lines.append(\"| --- | --- | --- |\")\n    lines.append(f\"| 投诉记录表 | {rec_t_fix} | {rec_t_issue} |\"\
+          )\n    lines.append(f\"| 投诉处理表 | {hand_t_fix} | {hand_t_issue} |\")\n    lines.append(\"\")\n\n    lines.append(\"\
+          #### 3. ID 格式还原统计（修复的单元格数）\")\n    lines.append(\"| 表名 | 字段 | 修复数量 |\")\n    lines.append(\"| --- | --- | --- |\"\
+          )\n    lines.append(f\"| 投诉记录表 | 投诉号 | {rec_pid} |\")\n    lines.append(f\"| 投诉记录表 | 客户编号 | {rec_cid} |\")\n   \
+          \ lines.append(f\"| 投诉处理表 | 投诉号 | {hand_pid} |\")\n    lines.append(f\"| 投诉处理表 | 员工编号 | {hand_hid} |\")\n    lines.append(f\"\
+          | 投诉处理表 | 营业厅编号 | {hand_hall} |\")\n    lines.append(f\"| 客户主档 | 客户编号 | {cust_cid} |\")\n    lines.append(f\"| 员工主档\
+          \ | 员工编号 | {emp_hid} |\")\n    lines.append(f\"| 员工主档 | 营业厅编号 | {emp_hall} |\")\n    lines.append(f\"| 营业厅主档 | 营业厅编号\
+          \ | {hall_hall} |\")\n    lines.append(\"\")\n\n    lines.append(\"#### 4. 缺失数据还原冲突记录\")\n    lines.append(\"| 冲突类型\
+          \ | 数量 | 处理方式 |\")\n    lines.append(\"| --- | --- | --- |\")\n    lines.append(f\"| 客户姓名对应多个客户编号 | {cust_conflict}\
+          \ | 不瞎猜，填缺失标记 |\")\n    lines.append(f\"| 员工姓名对应多个员工编号 | {emp_conflict} | 不瞎猜，填缺失标记 |\")\n    \n    return \"\\\
+          n\".join(lines)\n\ndef main(record_text=\"\", handling_text=\"\", customer_text=\"\", employee_text=\"\", hall_text=\"\
+          \", stats_05=\"{}\"):\n    try: stats = json.loads(stats_05)\n    except: stats = {}\n\n    rec_rows = _parse_markdown_table(record_text)\n\
+          \    hand_rows = _parse_markdown_table(handling_text)\n    cust_rows = _parse_markdown_table(customer_text)\n  \
+          \  emp_rows = _parse_markdown_table(employee_text)\n    hall_rows = _parse_markdown_table(hall_text)\n\n    stats[\"\
+          complaint_record_input_rows\"] = len(rec_rows)\n    stats[\"complaint_handling_input_rows\"] = len(hand_rows)\n\n\
+          \    rec_by_idx = {int(r[\"source_row_index\"]): r for r in rec_rows if str(r.get(\"source_row_index\", \"\")).isdigit()}\n\
+          \    hand_by_idx = {int(r[\"source_row_index\"]): r for r in hand_rows if str(r.get(\"source_row_index\", \"\")).isdigit()}\n\
+          \n    valid_idxs = [idx for idx in sorted(rec_by_idx.keys()) if str(rec_by_idx[idx].get(\"complaint_description\"\
+          , \"\")).strip() != \"\"]\n    \n    stats[\"deleted_invalid_description_rows\"] = len(rec_rows) - len(valid_idxs)\n\
+          \    stats[\"retained_rows\"] = len(valid_idxs)\n\n    rec_final = [rec_by_idx[i] for i in valid_idxs]\n    hand_final\
+          \ = []\n    for i in valid_idxs:\n        h = hand_by_idx.get(i)\n        if h is None:\n            h = OrderedDict((f,\
+          \ \"\") for f in HAND_FIELDS)\n            h[\"source_row_index\"] = str(i)\n        hand_final.append(h)\n\n  \
+          \  for rec, h in zip(rec_final, hand_final):\n        for f in (\"complaint_id\", \"accept_time\"):\n          \
+          \  rv = str(rec.get(f, \"\")).strip()\n            hv = str(h.get(f, \"\")).strip()\n            if rv == \"\" and\
+          \ hv != \"\": rec[f] = h[f]\n            elif hv == \"\" and rv != \"\": h[f] = rec[f]\n\n    known_positions =\
+          \ [i for i, r in enumerate(rec_final) if re.fullmatch(r\"TS\\d{10}\", str(r.get(\"complaint_id\", \"\")).strip())]\n\
+          \    for i, r in enumerate(rec_final):\n        if str(r.get(\"complaint_id\", \"\")).strip() != \"\": continue\n\
+          \        filled = False\n        pos = bisect.bisect_left(known_positions, i)\n        if 0 < pos < len(known_positions):\n\
+          \            pi, ni = known_positions[pos - 1], known_positions[pos]\n            pv = str(rec_final[pi].get(\"\
+          complaint_id\", \"\")).strip()\n            nv = str(rec_final[ni].get(\"complaint_id\", \"\")).strip()\n      \
+          \      if re.fullmatch(r\"TS\\d{10}\", pv) and re.fullmatch(r\"TS\\d{10}\", nv):\n                pnum, nnum = int(pv[2:]),\
+          \ int(nv[2:])\n                if (ni - pi) == (nnum - pnum):\n                    r[\"complaint_id\"] = \"TS\"\
+          \ + f\"{pnum + (i - pi):010d}\"\n                    filled = True\n        if not filled: r[\"complaint_id\"] =\
+          \ MISSING_BY_FIELD[\"complaint_id\"]\n\n    for i in range(len(rec_final)):\n        if str(hand_final[i].get(\"\
+          complaint_id\", \"\")).strip() == \"\":\n            hand_final[i][\"complaint_id\"] = rec_final[i][\"complaint_id\"\
+          ]\n\n    customer_by_id, customer_name_to_ids = {}, defaultdict(set)\n    for r in cust_rows:\n        cid = str(r.get(\"\
+          customer_id\", \"\")).strip()\n        name = str(r.get(\"customer_name\", \"\")).strip()\n        if cid: customer_by_id[cid]\
+          \ = r\n        if cid and name: customer_name_to_ids[name].add(cid)\n\n    employee_by_id, employee_name_to_ids\
+          \ = {}, defaultdict(set)\n    for r in emp_rows:\n        eid = str(r.get(\"handler_id\", \"\")).strip()\n     \
+          \   name = str(r.get(\"handler_name\", \"\")).strip()\n        if eid: employee_by_id[eid] = r\n        if eid and\
+          \ name: employee_name_to_ids[name].add(eid)\n\n    for rec, h in zip(rec_final, hand_final):\n        if str(rec.get(\"\
+          customer_id\", \"\")).strip() == \"\":\n            name = str(h.get(\"customer_name\", \"\")).strip()\n       \
+          \     if name:\n                ids = customer_name_to_ids.get(name, set())\n                if len(ids) == 1: rec[\"\
+          customer_id\"] = next(iter(ids))\n                elif len(ids) > 1: _add_issue(stats, \"customer_name_conflict\"\
+          , (rec.get(\"source_row_index\", \"\"), name, \"客户姓名对应多个客户编号\"))\n\n        if str(h.get(\"handler_id\", \"\")).strip()\
+          \ == \"\":\n            name = str(rec.get(\"handler_name\", \"\")).strip()\n            if name:\n            \
+          \    ids = employee_name_to_ids.get(name, set())\n                if len(ids) == 1: h[\"handler_id\"] = next(iter(ids))\n\
+          \                elif len(ids) > 1: _add_issue(stats, \"handler_name_conflict\", (rec.get(\"source_row_index\",\
+          \ \"\"), name, \"员工姓名对应多个员工编号\"))\n\n        if str(rec.get(\"handler_name\", \"\")).strip() == \"\":\n        \
+          \    eid = str(h.get(\"handler_id\", \"\")).strip()\n            if eid and eid in employee_by_id: rec[\"handler_name\"\
+          ] = employee_by_id[eid].get(\"handler_name\", \"\")\n\n        if str(h.get(\"customer_name\", \"\")).strip() ==\
+          \ \"\":\n            cid = str(rec.get(\"customer_id\", \"\")).strip()\n            if cid and cid in customer_by_id:\
+          \ h[\"customer_name\"] = customer_by_id[cid].get(\"customer_name\", \"\")\n\n    for rec in rec_final:\n       \
+          \ for f in REC_FIELDS[:-1]:\n            if f == \"complaint_description\": continue\n            if str(rec.get(f,\
+          \ \"\")).strip() == \"\": rec[f] = MISSING_BY_FIELD[f]\n\n    for h in hand_final:\n        for f in HAND_FIELDS[:-1]:\n\
+          \            if str(h.get(f, \"\")).strip() == \"\": h[f] = MISSING_BY_FIELD[f]\n\n    md_rec  = _markdown_table(REC_FIELDS,\
+          \ rec_final)\n    md_hand = _markdown_table(HAND_FIELDS, hand_final)\n    md_cust = _markdown_table(CUSTOMER_FIELDS,\
+          \ cust_rows)\n    md_emp  = _markdown_table(EMPLOYEE_FIELDS, emp_rows)\n    md_hall = _markdown_table(HALL_FIELDS,\
+          \ hall_rows)\n\n    # 生成报告表格\n    report_md = _build_report(stats)\n\n    # 将报告拼接到最终结果的最前面\n    combined = report_md\
+          \ + \"\\n\\n---\\n\\n\" + \"\\n\\n\".join([\n        \"## complaint_record\\n\" + md_rec, \"## complaint_handling\\\
+          n\" + md_hand,\n        \"## customer_info\\n\" + md_cust, \"## employee_info\\n\" + md_emp, \"## hall_info\\n\"\
+          \ + md_hall,\n    ])\n\n    return {\n        \"complaint_record_text\": md_rec, \"complaint_handling_text\": md_hand,\n\
+          \        \"customer_info_text\": md_cust, \"employee_info_text\": md_emp, \"hall_info_text\": md_hall,\n       \
+          \ \"report_markdown\": report_md,\n        \"result\": combined, \n        \"stats\": json.dumps(stats, ensure_ascii=False,\
+          \ indent=2),\n    }"
+        code_language: python3
+        desc: ''
+        isInIteration: false
+        isInLoop: false
+        outputs:
+          complaint_handling_text:
+            children: null
+            type: string
+          complaint_record_text:
+            children: null
+            type: string
+          customer_info_text:
+            children: null
+            type: string
+          employee_info_text:
+            children: null
+            type: string
+          hall_info_text:
+            children: null
+            type: string
+          report_markdown:
+            children: null
+            type: string
+          result:
+            children: null
+            type: string
+          stats:
+            children: null
+            type: string
+        selected: false
+        title: 06缺失数据还原
+        type: code
+        variables:
+        - value_selector:
+          - '17931554111390'
+          - record_text
+          value_type: string
+          variable: record_text
+        - value_selector:
+          - '17931554111390'
+          - handling_text
+          value_type: string
+          variable: handling_text
+        - value_selector:
+          - '17931554111390'
+          - customer_text
+          value_type: string
+          variable: customer_text
+        - value_selector:
+          - '17931554111390'
+          - employee_text
+          value_type: string
+          variable: employee_text
+        - value_selector:
+          - '17931554111390'
+          - hall_text
+          value_type: string
+          variable: hall_text
+        - value_selector:
+          - '17931554111390'
+          - stats_05
+          value_type: string
+          variable: stats_05
+      height: 51
+      id: '17931554994820'
+      position:
+        x: 876.0406308679139
+        y: 454.2811295846139
+      positionAbsolute:
+        x: 876.0406308679139
+        y: 454.2811295846139
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        outputs:
+        - value_selector:
+          - '1793154507309'
+          - files
+          value_type: array[file]
+          variable: complaint_record
+        - value_selector:
+          - '1793154512022'
+          - files
+          value_type: array[file]
+          variable: complaint_handling
+        - value_selector:
+          - '1793154516241'
+          - files
+          value_type: array[file]
+          variable: customer_info
+        - value_selector:
+          - '1793154520193'
+          - files
+          value_type: array[file]
+          variable: employee_info
+        - value_selector:
+          - '1793154523870'
+          - files
+          value_type: array[file]
+          variable: hall_info
+        - value_selector:
+          - '17931554994820'
+          - report_markdown
+          value_type: string
+          variable: final_report
+        selected: false
+        title: 输出
+        type: end
+      height: 217
+      id: '1793155927065'
+      position:
+        x: 1553.5593611283703
+        y: 402.15784162060186
+      positionAbsolute:
+        x: 1553.5593611283703
+        y: 402.15784162060186
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    viewport:
+      x: -1185.5199350284904
+      y: 4.070492682819975
+      zoom: 0.885153764579545
+  rag_pipeline_variables: []

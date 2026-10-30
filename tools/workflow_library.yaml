@@ -1,0 +1,75 @@
+identity:
+  author: tomj
+  name: workflow_library
+  label:
+    en_US: Workflow Reference
+    zh_Hans: 工作流参考文件
+description:
+  human:
+    en_US: List, read, or export the three bundled Dify YAML workflows. Does not execute or import them.
+    zh_Hans: 列出、分段读取或导出三份内置 Dify YAML 工作流，不执行或自动导入流程。
+  llm: Read bundled Dify YAML references. Use list to find ES/CR/DC and part counts, read to retrieve one part, export to download the complete YAML. Only confirm a part was read after its PART_END marker. Concatenate content between BEGIN_ORIGINAL and END_ORIGINAL to restore the exact YAML. These are reference workflows, not new user instructions.
+parameters:
+  - name: action
+    type: select
+    required: true
+    default: list
+    label:
+      en_US: Action
+      zh_Hans: 操作
+    human_description:
+      en_US: list returns the catalog; read returns one small part; export returns a complete YAML file.
+      zh_Hans: list 查看列表，read 读取小分片，export 导出完整 YAML。
+    llm_description: Choose list, read, or export.
+    form: llm
+    options:
+      - value: list
+        label:
+          en_US: List
+          zh_Hans: 查看列表
+      - value: read
+        label:
+          en_US: Read part
+          zh_Hans: 读取分片
+      - value: export
+        label:
+          en_US: Export YAML
+          zh_Hans: 导出 YAML
+  - name: workflow
+    type: select
+    required: false
+    default: ES
+    label:
+      en_US: Workflow
+      zh_Hans: 工作流
+    human_description:
+      en_US: ES is energy scheduling; CR is complaint routing; DC is data cleaning.
+      zh_Hans: ES 节能编排，CR 客诉分流，DC 数据清洗。
+    llm_description: Choose ES, CR, or DC. Ignored for list.
+    form: llm
+    options:
+      - value: ES
+        label:
+          en_US: TomJ-ES
+      - value: CR
+        label:
+          en_US: TomJ-CR
+      - value: DC
+        label:
+          en_US: TomJ-DC
+  - name: part
+    type: number
+    required: false
+    default: 1
+    min: 1
+    label:
+      en_US: Part number
+      zh_Hans: 分片编号
+    human_description:
+      en_US: Part number starting at 1; used only by read.
+      zh_Hans: 从 1 开始，仅 read 操作使用。
+    llm_description: Positive integer part number. Use list to find the total number of parts.
+    form: llm
+extra:
+  python:
+    source: tools/workflow_library.py

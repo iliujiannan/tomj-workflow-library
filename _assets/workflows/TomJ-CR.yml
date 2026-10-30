@@ -1,0 +1,2216 @@
+app:
+  description: 对通信客户诉求进行逐条意图识别，并结合客户资料、业务核验快照、分流规则和历史工单生成工单处理建议。适用于通信客户服务分析与流程教学，输出新建、合并、人工复核和无需工单的分类结果、统计图及 Markdown 报告。
+  icon: 🎫
+  icon_background: '#FFEAD5'
+  icon_type: emoji
+  mode: workflow
+  name: TomJ-CR
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: antv/visualization:0.2.0@798a255e7bf02e93b8a5717be235b833482be58daab1c64c79c954281da14b9c
+    version: null
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: bowenliang123/md_exporter:3.6.9@3f027d63e80b44d5d5a9f706871afaef37905b8f8a89a2d152dc530211a8acb1
+    version: null
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/tongyi:0.2.26@6c75a6b95954ef3c97f0d3225bad7cbfbff7cdbc82d9425074aae121cc056a64
+    version: null
+kind: app
+version: 0.6.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        attachment_image_file_size_limit: 2
+        audio_file_size_limit: 50
+        batch_count_limit: 10
+        file_size_limit: 30
+        file_upload_limit: 20
+        image_file_batch_limit: 10
+        image_file_size_limit: 10
+        single_chunk_attachment_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 15
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: document-extractor
+      id: 1793174085787-source-1793174435916-target
+      selected: false
+      source: '1793174085787'
+      sourceHandle: source
+      target: '1793174435916'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: document-extractor
+      id: 1793174085787-source-1793174440685-target
+      selected: false
+      source: '1793174085787'
+      sourceHandle: source
+      target: '1793174440685'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: document-extractor
+      id: 1793174085787-source-1793174443252-target
+      selected: false
+      source: '1793174085787'
+      sourceHandle: source
+      target: '1793174443252'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: document-extractor
+      id: 1793174085787-source-1793174446008-target
+      selected: false
+      source: '1793174085787'
+      sourceHandle: source
+      target: '1793174446008'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: document-extractor
+      id: 1793174085787-source-1793174448436-target
+      selected: false
+      source: '1793174085787'
+      sourceHandle: source
+      target: '1793174448436'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: code
+      id: 1793174435916-source-1793174699147-target
+      selected: false
+      source: '1793174435916'
+      sourceHandle: source
+      target: '1793174699147'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: code
+      id: 1793174440685-source-1793174699147-target
+      selected: false
+      source: '1793174440685'
+      sourceHandle: source
+      target: '1793174699147'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: code
+      id: 1793174443252-source-1793174699147-target
+      selected: false
+      source: '1793174443252'
+      sourceHandle: source
+      target: '1793174699147'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: code
+      id: 1793174446008-source-1793174699147-target
+      selected: false
+      source: '1793174446008'
+      sourceHandle: source
+      target: '1793174699147'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: code
+      id: 1793174448436-source-1793174699147-target
+      selected: false
+      source: '1793174448436'
+      sourceHandle: source
+      target: '1793174699147'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: if-else
+      id: 1793174699147-source-1793175927633-target
+      selected: false
+      source: '1793174699147'
+      sourceHandle: source
+      target: '1793175927633'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: code
+      id: 1793175927633-false-1793176059029-target
+      selected: false
+      source: '1793175927633'
+      sourceHandle: 'false'
+      target: '1793176059029'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: end
+      id: 1793176059029-source-1793176141766-target
+      selected: false
+      source: '1793176059029'
+      sourceHandle: source
+      target: '1793176141766'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: iteration
+      id: 1793175927633-true-1793176186719-target
+      selected: false
+      source: '1793175927633'
+      sourceHandle: 'true'
+      target: '1793176186719'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1793176186719'
+        sourceType: iteration-start
+        targetType: llm
+      id: 1793176186719start-source-1793176630478-target
+      selected: false
+      source: 1793176186719start
+      sourceHandle: source
+      target: '1793176630478'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1793176186719'
+        sourceType: llm
+        targetType: code
+      id: 1793176630478-source-1793177933149-target
+      source: '1793176630478'
+      sourceHandle: source
+      target: '1793177933149'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: iteration
+        targetType: code
+      id: 1793176186719-source-1793178783368-target
+      selected: false
+      source: '1793176186719'
+      sourceHandle: source
+      target: '1793178783368'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: tool
+      id: 1793178783368-source-1793178729841-target
+      source: '1793178783368'
+      sourceHandle: source
+      target: '1793178729841'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: tool
+      id: 1793178783368-source-1793178745542-target
+      source: '1793178783368'
+      sourceHandle: source
+      target: '1793178745542'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: tool
+        targetType: code
+      id: 1793178729841-source-1793179903233-target
+      source: '1793178729841'
+      sourceHandle: source
+      target: '1793179903233'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: code
+      id: 1793178745542-source-1793179903233-target
+      source: '1793178745542'
+      sourceHandle: source
+      target: '1793179903233'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: end
+      id: 1793180210048-source-1793180037076-target
+      source: '1793180210048'
+      sourceHandle: source
+      target: '1793180037076'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: template-transform
+      id: 1793179903233-source-1793180326881-target
+      source: '1793179903233'
+      sourceHandle: source
+      target: '1793180326881'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: template-transform
+        targetType: tool
+      id: 1793180326881-source-1793180210048-target
+      source: '1793180326881'
+      sourceHandle: source
+      target: '1793180210048'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        selected: false
+        title: 01用户输入
+        type: start
+        variables:
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          default: ''
+          hide: false
+          hint: ''
+          label: todo_list_csv
+          options: []
+          placeholder: ''
+          required: true
+          type: file
+          variable: todo_list_csv
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          default: ''
+          hide: false
+          hint: ''
+          label: ywhykz_csv
+          options: []
+          placeholder: ''
+          required: true
+          type: file
+          variable: ywhykz_csv
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          default: ''
+          hide: false
+          hint: ''
+          label: flysxgz_csv
+          options: []
+          placeholder: ''
+          required: true
+          type: file
+          variable: flysxgz_csv
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          default: ''
+          hide: false
+          hint: ''
+          label: ztylsgz_csv
+          options: []
+          placeholder: ''
+          required: true
+          type: file
+          variable: ztylsgz_csv
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          default: ''
+          hide: false
+          hint: ''
+          label: customer_info
+          options: []
+          placeholder: ''
+          required: true
+          type: file
+          variable: customer_info
+      height: 212
+      id: '1793174085787'
+      position:
+        x: 44
+        y: 311
+      positionAbsolute:
+        x: 44
+        y: 311
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_array_file: false
+        selected: false
+        title: 01提取
+        type: document-extractor
+        variable_selector:
+        - '1793174085787'
+        - todo_list_csv
+      height: 103
+      id: '1793174435916'
+      position:
+        x: 337.43957992090066
+        y: 83.42416803163974
+      positionAbsolute:
+        x: 337.43957992090066
+        y: 83.42416803163974
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        is_array_file: false
+        selected: false
+        title: 02提取
+        type: document-extractor
+        variable_selector:
+        - '1793174085787'
+        - ywhykz_csv
+      height: 103
+      id: '1793174440685'
+      position:
+        x: 344.0738056238865
+        y: 206.65369028119432
+      positionAbsolute:
+        x: 344.0738056238865
+        y: 206.65369028119432
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        is_array_file: false
+        selected: false
+        title: 03提取
+        type: document-extractor
+        variable_selector:
+        - '1793174085787'
+        - flysxgz_csv
+      height: 103
+      id: '1793174443252'
+      position:
+        x: 337.43957992090066
+        y: 332
+      positionAbsolute:
+        x: 337.43957992090066
+        y: 332
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        is_array_file: false
+        selected: false
+        title: 04提取
+        type: document-extractor
+        variable_selector:
+        - '1793174085787'
+        - ztylsgz_csv
+      height: 103
+      id: '1793174446008'
+      position:
+        x: 337.43957992090066
+        y: 459.57583196836026
+      positionAbsolute:
+        x: 337.43957992090066
+        y: 459.57583196836026
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        is_array_file: false
+        selected: false
+        title: 05提取
+        type: document-extractor
+        variable_selector:
+        - '1793174085787'
+        - customer_info
+      height: 103
+      id: '1793174448436'
+      position:
+        x: 344.0738056238865
+        y: 617.9261943761136
+      positionAbsolute:
+        x: 344.0738056238865
+        y: 617.9261943761136
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        code: "import json\nfrom datetime import datetime\n\n\n# ============================================================\n\
+          # 1. Schema 常量\n# ============================================================\nCOMPLAINT_COLS = [\n    \"case_id\"\
+          , \"received_at\", \"channel\", \"customer_id\", \"service_id\",\n    \"service_type\", \"region\", \"complaint_text\"\
+          ,\n]\nSNAPSHOT_COLS = [\n    \"service_id\", \"customer_id\", \"service_type\", \"region\", \"snapshot_at\",\n \
+          \   \"account_status\", \"bill_cycle\", \"contract_monthly_fee_yuan\",\n    \"charged_monthly_fee_yuan\", \"network_incident_status\"\
+          ,\n    \"access_line_status\", \"install_order_id\", \"install_order_status\",\n    \"planned_complete_at\", \"\
+          evidence_id\",\n]\nRULE_COLS = [\n    \"rule_id\", \"intent_code\", \"service_type\", \"verification_result\",\n\
+          \    \"required_fields\", \"queue_id\", \"precedence\",\n    \"priority_normal\", \"priority_vip\", \"priority_enterprise\"\
+          ,\n    \"sla_hours_normal\", \"sla_hours_vip\", \"sla_hours_enterprise\",\n    \"ticket_action\",\n]\nTICKET_COLS\
+          \ = [\n    \"ticket_id\", \"customer_id\", \"service_id\", \"intent_code\",\n    \"status\", \"created_at\", \"\
+          last_updated_at\", \"owner_queue\",\n]\nCUSTOMER_COLS = [\n    \"customer_id\", \"customer_name\", \"customer_level\"\
+          , \"source_row_index\",\n]\n\nTABLE_SCHEMA = {\n    \"complaints\": (\"01 待处理新诉求\", COMPLAINT_COLS, \"case_id\"\
+          ),\n    \"snapshots\":  (\"02 业务核验快照\", SNAPSHOT_COLS,  \"service_id\"),\n    \"rules\":      (\"03 分流与时限规则\", RULE_COLS,\
+          \   \"rule_id\"),\n    \"tickets\":    (\"04 在途与历史工单\", TICKET_COLS, \"ticket_id\"),\n    \"customers\":  (\"05\
+          \ 客户主档\",     CUSTOMER_COLS, \"customer_id\"),\n}\n\nFIELD_TYPES = {\n    \"complaints\": {\n        \"case_id\"\
+          : \"text\", \"received_at\": \"datetime\", \"channel\": \"text\",\n        \"customer_id\": \"text\", \"service_id\"\
+          : \"text\",\n        \"service_type\": \"enum\", \"region\": \"text\", \"complaint_text\": \"text\",\n    },\n \
+          \   \"snapshots\": {\n        \"service_id\": \"text\", \"customer_id\": \"text\", \"service_type\": \"enum\",\n\
+          \        \"region\": \"text\", \"snapshot_at\": \"datetime\", \"account_status\": \"text\",\n        \"bill_cycle\"\
+          : \"text\",\n        \"contract_monthly_fee_yuan\": \"number\",\n        \"charged_monthly_fee_yuan\": \"number\"\
+          ,\n        \"network_incident_status\": \"text\", \"access_line_status\": \"text\",\n        \"install_order_id\"\
+          : \"text\", \"install_order_status\": \"text\",\n        \"planned_complete_at\": \"datetime\", \"evidence_id\"\
+          : \"text\",\n    },\n    \"rules\": {\n        \"rule_id\": \"text\", \"intent_code\": \"text\", \"service_type\"\
+          : \"enum\",\n        \"verification_result\": \"text\", \"required_fields\": \"text\",\n        \"queue_id\": \"\
+          text\", \"precedence\": \"int\",\n        \"priority_normal\": \"text\", \"priority_vip\": \"text\",\n        \"\
+          priority_enterprise\": \"text\",\n        \"sla_hours_normal\": \"int\", \"sla_hours_vip\": \"int\",\n        \"\
+          sla_hours_enterprise\": \"int\", \"ticket_action\": \"text\",\n    },\n    \"tickets\": {\n        \"ticket_id\"\
+          : \"text\", \"customer_id\": \"text\", \"service_id\": \"text\",\n        \"intent_code\": \"text\", \"status\"\
+          : \"enum\",\n        \"created_at\": \"datetime\", \"last_updated_at\": \"datetime\",\n        \"owner_queue\":\
+          \ \"text\",\n    },\n    \"customers\": {\n        \"customer_id\": \"text\", \"customer_name\": \"text\",\n   \
+          \     \"customer_level\": \"enum\", \"source_row_index\": \"int\",\n    },\n}\n\nENUMS = {\n    (\"complaints\"\
+          , \"service_type\"): {\"MOBILE\", \"BROADBAND\"},\n    (\"snapshots\",  \"service_type\"): {\"MOBILE\", \"BROADBAND\"\
+          },\n    (\"rules\",      \"service_type\"): {\"MOBILE\", \"BROADBAND\", \"ANY\"},\n    (\"rules\",      \"verification_result\"\
+          ):\n        {\"CONFIRMED\", \"NOT_CONFIRMED\", \"UNKNOWN\", \"NOT_CHECKED\", \"NOT_REQUIRED\"},\n    (\"rules\"\
+          ,      \"ticket_action\"):\n        {\"CREATE_OR_MERGE\", \"MANUAL_REVIEW\", \"NO_TICKET\"},\n    (\"tickets\",\
+          \    \"status\"): {\"OPEN\", \"IN_PROGRESS\", \"CLOSED\"},\n    (\"customers\",  \"customer_level\"): {\"普通客户\"\
+          , \"VIP客户\", \"企业客户\"},\n}\n\n\n# ============================================================\n# 2. 表格解析 / 类型转换\
+          \ / 单表校验\n# ============================================================\ndef _split_rows(text: str):\n    if not\
+          \ text or not text.strip():\n        return [], []\n    lines = [ln.rstrip(\"\\r\") for ln in text.split(\"\\n\"\
+          )]\n    lines = [ln for ln in lines if ln.strip() != \"\"]\n    if not lines:\n        return [], []\n    first\
+          \ = lines[0]\n    use_pipe = first.lstrip().startswith(\"|\") or (\"\\t\" not in first and \"|\" in first)\n\n \
+          \   def split_line(s: str):\n        if use_pipe:\n            s = s.strip()\n            if s.startswith(\"|\"\
+          ):\n                s = s[1:]\n            if s.endswith(\"|\"):\n                s = s[:-1]\n            return\
+          \ [c.strip() for c in s.split(\"|\")]\n        return [c.strip() for c in s.split(\"\\t\")]\n\n    header = split_line(lines[0])\n\
+          \    rows = []\n    for ln in lines[1:]:\n        cells = split_line(ln)\n        if cells and all(c and set(c)\
+          \ <= set(\"-: \") for c in cells):\n            if set(\"\".join(cells)) <= set(\"-: \"):\n                continue\n\
+          \        rows.append(cells)\n    return header, rows\n\n\ndef _coerce(value: str, ftype: str):\n    s = (value or\
+          \ \"\").strip()\n    if ftype in (\"text\", \"enum\"):\n        return s, True, s\n    if ftype == \"datetime\"\
+          :\n        if s == \"\":\n            return \"\", True, s\n        try:\n            return datetime.fromisoformat(s).isoformat(),\
+          \ True, s\n        except Exception:\n            return s, False, s\n    if ftype == \"number\":\n        if s\
+          \ == \"\" or s.upper() == \"UNKNOWN\":\n            return s, True, s\n        try:\n            return float(s),\
+          \ True, s\n        except Exception:\n            return s, False, s\n    if ftype == \"int\":\n        if s ==\
+          \ \"\":\n            return \"\", True, s\n        try:\n            return int(s), True, s\n        except Exception:\n\
+          \            return s, False, s\n    return s, True, s\n\n\ndef _parse_one_table(table_name: str, raw_text: str)\
+          \ -> dict:\n    cn_name, required_cols, pk = TABLE_SCHEMA[table_name]\n    out = {\"table\": table_name, \"cn_name\"\
+          : cn_name, \"header\": [], \"rows\": [],\n           \"parse_ok\": True, \"batch_issues\": [], \"row_issues\": []}\n\
+          \n    header, raw_rows = _split_rows(raw_text)\n    if not header:\n        out[\"parse_ok\"] = False\n        out[\"\
+          batch_issues\"].append(f\"{cn_name}：输入为空或无法识别表头\")\n        return out\n\n    missing = [c for c in required_cols\
+          \ if c not in header]\n    if missing:\n        out[\"parse_ok\"] = False\n        out[\"batch_issues\"].append(f\"\
+          {cn_name}：缺少必要列 {missing}\")\n        out[\"header\"] = header\n        return out\n\n    out[\"header\"] = header\n\
+          \    col_idx = {c: header.index(c) for c in required_cols}\n    header_len = len(header)\n    pk_seen = {}\n\n \
+          \   for i, cells in enumerate(raw_rows, start=2):\n        if len(cells) < header_len:\n            cells = cells\
+          \ + [\"\"] * (header_len - len(cells))\n            out[\"row_issues\"].append({\"table\": table_name, \"row\":\
+          \ i,\n                                      \"issue\": f\"列数不足（{len(cells)}<{header_len}），已补空\"})\n        elif\
+          \ len(cells) > header_len:\n            cells = cells[:header_len]\n            out[\"row_issues\"].append({\"table\"\
+          : table_name, \"row\": i,\n                                      \"issue\": f\"列数过多（>{header_len}），已截断\"})\n\n \
+          \       rec = {}\n        for c in required_cols:\n            raw = cells[col_idx[c]]\n            val, ok, raw_val\
+          \ = _coerce(raw, FIELD_TYPES[table_name][c])\n            rec[c] = val\n            if not ok:\n               \
+          \ out[\"row_issues\"].append({\"table\": table_name, \"row\": i, \"col\": c,\n                                 \
+          \         \"issue\": f\"类型无法解析为 {FIELD_TYPES[table_name][c]}\",\n                                          \"raw\"\
+          : raw_val})\n\n        for c in required_cols:\n            ekey = (table_name, c)\n            if ekey in ENUMS\
+          \ and rec[c] != \"\" and rec[c] not in ENUMS[ekey]:\n                out[\"row_issues\"].append({\"table\": table_name,\
+          \ \"row\": i, \"col\": c,\n                                          \"issue\": \"枚举值不在允许集合\",\n               \
+          \                           \"raw\": rec[c], \"allowed\": sorted(ENUMS[ekey])})\n\n        pk_val = rec.get(pk,\
+          \ \"\")\n        if pk_val == \"\":\n            out[\"row_issues\"].append({\"table\": table_name, \"row\": i,\n\
+          \                                      \"issue\": f\"主键 {pk} 为空\"})\n        elif pk_val in pk_seen:\n         \
+          \   out[\"row_issues\"].append({\"table\": table_name, \"row\": i,\n                                      \"issue\"\
+          : f\"主键 {pk} 重复（首次出现在第 {pk_seen[pk_val]} 行）\",\n                                      \"raw\": pk_val})\n      \
+          \  else:\n            pk_seen[pk_val] = i\n\n        out[\"rows\"].append(rec)\n\n    return out\n\n\n# ============================================================\n\
+          # 3. 索引构建 + 主流程\n# ============================================================\ndef _build_indexes(tables: dict)\
+          \ -> dict:\n    snap_by_service, dup_snaps = {}, {}\n    for r in tables[\"snapshots\"][\"rows\"]:\n        sid\
+          \ = r.get(\"service_id\", \"\")\n        if not sid:\n            continue\n        if sid in snap_by_service:\n\
+          \            dup_snaps.setdefault(sid, [snap_by_service[sid]]).append(r)\n        else:\n            snap_by_service[sid]\
+          \ = r\n\n    customer_by_id = {}\n    for r in tables[\"customers\"][\"rows\"]:\n        cid = r.get(\"customer_id\"\
+          , \"\")\n        if cid:\n            customer_by_id.setdefault(cid, r)\n\n    rules_by_key = {}\n    for r in tables[\"\
+          rules\"][\"rows\"]:\n        k = (r.get(\"intent_code\", \"\"), r.get(\"service_type\", \"\"),\n             r.get(\"\
+          verification_result\", \"\"))\n        rules_by_key.setdefault(k, []).append(r)\n\n    tickets_by_key = {}\n   \
+          \ for r in tables[\"tickets\"][\"rows\"]:\n        if r.get(\"status\", \"\") not in {\"OPEN\", \"IN_PROGRESS\"\
+          }:\n            continue\n        k = (r.get(\"customer_id\", \"\"), r.get(\"service_id\", \"\"),\n            \
+          \ r.get(\"intent_code\", \"\"))\n        tickets_by_key.setdefault(k, []).append(r)\n\n    return {\n        \"\
+          snapshot_by_service\": snap_by_service,\n        \"duplicate_snapshot_services\": dup_snaps,\n        \"customer_by_id\"\
+          : customer_by_id,\n        \"rules_by_key\": rules_by_key,\n        \"open_tickets_by_key\": tickets_by_key,\n \
+          \   }\n\n\ndef parse_and_validate_inputs(str_01, str_02, str_03, str_04, str_05) -> dict:\n    raw_map = {\n   \
+          \     \"complaints\": str_01 or \"\",\n        \"snapshots\":  str_02 or \"\",\n        \"rules\":      str_03 or\
+          \ \"\",\n        \"tickets\":    str_04 or \"\",\n        \"customers\":  str_05 or \"\",\n    }\n    tables, batch_issues,\
+          \ row_issues = {}, [], []\n    for name, text in raw_map.items():\n        parsed = _parse_one_table(name, text)\n\
+          \        tables[name] = {\"header\": parsed[\"header\"], \"rows\": parsed[\"rows\"]}\n        batch_issues.extend(parsed[\"\
+          batch_issues\"])\n        row_issues.extend(parsed[\"row_issues\"])\n\n    parse_ok = not batch_issues\n    indexes\
+          \ = _build_indexes(tables)\n\n    summary = {\n        \"complaints\": len(tables[\"complaints\"][\"rows\"]),\n\
+          \        \"snapshots\":  len(tables[\"snapshots\"][\"rows\"]),\n        \"rules\":      len(tables[\"rules\"][\"\
+          rows\"]),\n        \"tickets\":    len(tables[\"tickets\"][\"rows\"]),\n        \"customers\":  len(tables[\"customers\"\
+          ][\"rows\"]),\n        \"batch_issue_count\": len(batch_issues),\n        \"row_issue_count\":   len(row_issues),\n\
+          \        \"duplicate_snapshot_service_ids\":\n            sorted(indexes[\"duplicate_snapshot_services\"].keys()),\n\
+          \    }\n\n    return {\n        \"parse_ok\": parse_ok,\n        \"batch_issues\": batch_issues,\n        \"row_issues\"\
+          : row_issues,\n        \"summary\": summary,\n        \"tables\": tables,\n        \"indexes\": {\n            \"\
+          snapshot_by_service\": indexes[\"snapshot_by_service\"],\n            \"duplicate_snapshot_services\": indexes[\"\
+          duplicate_snapshot_services\"],\n            \"customer_by_id\": indexes[\"customer_by_id\"],\n            \"rules_by_key\"\
+          : {\"||\".join(k): v for k, v in indexes[\"rules_by_key\"].items()},\n            \"open_tickets_by_key\": {\"||\"\
+          .join(k): v for k, v in indexes[\"open_tickets_by_key\"].items()},\n        },\n    }\n\n\n# ============================================================\n\
+          # 4. Dify 代码节点入口（防御式，新增 complaints_list）\n# ============================================================\ndef main(str_01:\
+          \ str, str_02: str, str_03: str, str_04: str, str_05: str) -> dict:\n    try:\n        res = parse_and_validate_inputs(str_01,\
+          \ str_02, str_03, str_04, str_05)\n        parse_ok_val = \"true\" if res.get(\"parse_ok\") else \"false\"\n   \
+          \     summary_val  = json.dumps(res.get(\"summary\", {}),      ensure_ascii=False, default=str)\n        batch_val\
+          \    = json.dumps(res.get(\"batch_issues\", []), ensure_ascii=False, default=str)\n        row_val      = json.dumps(res.get(\"\
+          row_issues\", []),   ensure_ascii=False, default=str)\n        tables_val   = json.dumps(res.get(\"tables\", {}),\
+          \       ensure_ascii=False, default=str)\n        indexes_val  = json.dumps(res.get(\"indexes\", {}),      ensure_ascii=False,\
+          \ default=str)\n\n        # 原生列表，供迭代节点使用，绝不能 json.dumps\n        complaints_list = res.get(\"tables\", {}).get(\"\
+          complaints\", {}).get(\"rows\", [])\n        if not isinstance(complaints_list, list):\n            complaints_list\
+          \ = []\n\n    except Exception as e:\n        parse_ok_val = \"false\"\n        summary_val  = json.dumps({\"error\"\
+          : str(e)}, ensure_ascii=False)\n        batch_val    = json.dumps([f\"代码异常：{e}\"], ensure_ascii=False)\n       \
+          \ row_val      = \"[]\"\n        tables_val   = \"{}\"\n        indexes_val  = \"{}\"\n        complaints_list =\
+          \ []\n\n    return {\n        \"parse_ok\":          str(parse_ok_val),\n        \"summary_json\":      str(summary_val),\n\
+          \        \"batch_issues_json\": str(batch_val),\n        \"row_issues_json\":   str(row_val),\n        \"tables_json\"\
+          :       str(tables_val),\n        \"indexes_json\":      str(indexes_val),\n        \"complaints_list\":   complaints_list,\
+          \   # \U0001F448 Array[Object]\n    }"
+        code_language: python3
+        outputs:
+          batch_issues_json:
+            children: null
+            type: string
+          complaints_list:
+            children: null
+            type: array[object]
+          indexes_json:
+            children: null
+            type: string
+          parse_ok:
+            children: null
+            type: string
+          row_issues_json:
+            children: null
+            type: string
+          summary_json:
+            children: null
+            type: string
+          tables_json:
+            children: null
+            type: string
+        selected: false
+        title: 03表解析与输入校验
+        type: code
+        variables:
+        - value_selector:
+          - '1793174435916'
+          - text
+          value_type: string
+          variable: str_01
+        - value_selector:
+          - '1793174440685'
+          - text
+          value_type: string
+          variable: str_02
+        - value_selector:
+          - '1793174443252'
+          - text
+          value_type: string
+          variable: str_03
+        - value_selector:
+          - '1793174446008'
+          - text
+          value_type: string
+          variable: str_04
+        - value_selector:
+          - '1793174448436'
+          - text
+          value_type: string
+          variable: str_05
+      height: 51
+      id: '1793174699147'
+      position:
+        x: 694.1670758259814
+        y: 374.0032538224181
+      positionAbsolute:
+        x: 694.1670758259814
+        y: 374.0032538224181
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: is
+            id: 25e31af6-102c-4f4c-8684-51d74428a934
+            value: 'true'
+            varType: string
+            variable_selector:
+            - '1793174699147'
+            - parse_ok
+          id: 'true'
+          logical_operator: and
+        selected: false
+        title: 04条件分支
+        type: if-else
+      height: 147
+      id: '1793175927633'
+      position:
+        x: 743.6520942161402
+        y: 582.7851074888397
+      positionAbsolute:
+        x: 743.6520942161402
+        y: 582.7851074888397
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        code: "import json\n\ndef main(parse_ok: str, batch_issues_json: str, row_issues_json: str) -> dict:\n    if parse_ok\
+          \ == \"true\":\n        return {\"error_msg\": \"\"}\n\n    try:\n        batch = json.loads(batch_issues_json or\
+          \ \"[]\")\n    except Exception:\n        batch = []\n    try:\n        rows = json.loads(row_issues_json or \"\
+          []\")\n    except Exception:\n        rows = []\n\n    lines = [\"⚠️ 数据解析未通过，已终止后续分流。\", \"\"]\n    if batch:\n\
+          \        lines.append(\"【批次级问题】\")\n        for b in batch:\n            lines.append(f\"- {b}\")\n    if rows:\n\
+          \        lines.append(\"\")\n        lines.append(\"【单条问题（前 5 条）】\")\n        for r in rows[:5]:\n            lines.append(f\"\
+          - 表 {r.get('table')} 第 {r.get('row')} 行：{r.get('issue')}\")\n        if len(rows) > 5:\n            lines.append(f\"\
+          - … 还有 {len(rows) - 5} 条问题，详见日志\")\n\n    return {\"error_msg\": \"\\n\".join(lines)}"
+        code_language: python3
+        outputs:
+          error_msg:
+            children: null
+            type: string
+        selected: false
+        title: 04-1
+        type: code
+        variables:
+        - value_selector:
+          - '1793174699147'
+          - parse_ok
+          value_type: boolean
+          variable: parse_ok
+        - value_selector:
+          - '1793174699147'
+          - batch_issues_json
+          value_type: string
+          variable: batch_issues_json
+        - value_selector:
+          - '1793174699147'
+          - row_issues_json
+          value_type: string
+          variable: row_issues_json
+      height: 51
+      id: '1793176059029'
+      position:
+        x: 876.1614754677998
+        y: 771.0533796349654
+      positionAbsolute:
+        x: 876.1614754677998
+        y: 771.0533796349654
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        outputs:
+        - value_selector:
+          - '1793176059029'
+          - error_msg
+          value_type: string
+          variable: error_msg
+        selected: false
+        title: 错误提示
+        type: end
+      height: 87
+      id: '1793176141766'
+      position:
+        x: 994.0194985674302
+        y: 829.6588122430837
+      positionAbsolute:
+        x: 994.0194985674302
+        y: 829.6588122430837
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        error_handle_mode: terminated
+        flatten_output: true
+        height: 175
+        is_parallel: true
+        iterator_input_type: array[object]
+        iterator_selector:
+        - '1793174699147'
+        - complaints_list
+        output_selector:
+        - '1793177933149'
+        - result_str
+        output_type: array[string]
+        parallel_nums: 10
+        selected: false
+        start_node_id: 1793176186719start
+        title: 05-逐条分析
+        type: iteration
+        width: 686
+      height: 175
+      id: '1793176186719'
+      position:
+        x: 1114.7909149438808
+        y: 480.3497652106972
+      positionAbsolute:
+        x: 1114.7909149438808
+        y: 480.3497652106972
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 686
+      zIndex: 1
+    - data:
+        desc: ''
+        isInIteration: true
+        selected: false
+        title: ''
+        type: iteration-start
+      draggable: false
+      height: 48
+      id: 1793176186719start
+      parentId: '1793176186719'
+      position:
+        x: 24
+        y: 68
+      positionAbsolute:
+        x: 1138.7909149438808
+        y: 548.3497652106972
+      selectable: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-iteration-start
+      width: 44
+      zIndex: 1002
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1793176186719'
+          - item
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1793176186719'
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: qwen3.8-max
+          provider: langgenius/tongyi/tongyi
+        prompt_template:
+        - id: 8f0fdb39-26be-4643-bebf-3045519278d6
+          role: system
+          text: "# 角色\n你是中国某电信运营商的客服工单意图分类专家。请阅读单条客户诉求文本，识别所有候选意图，并按规则输出主意图、副意图及判定理由。\n\n# 可用意图代码（仅限以下7个，禁止自造）\n1. BILLING_DISPUTE：账单、扣费、多扣费、月费、套餐费争议等。\n\
+            2. MOBILE_NETWORK：手机信号弱、无信号、无服务、移动上网慢或断续等。\n3. BROADBAND_FAULT：宽带已交付使用后出现的断网、断线、卡顿、光猫红灯等故障。\n4. INSTALL_DELAY：新装宽带尚未交付或验收的争议（如预约未上门、进度不推进、显示完工但未验收）。\n\
+            5. SERVICE_ATTITUDE：客服、营业厅或上门人员的服务态度问题（如挂断电话、态度恶劣）。\n6. POSITIVE_FEEDBACK：感谢、表扬、好评等正向反馈。\n7. OTHER：文本过于模糊，无法可靠归入以上任一类。\n\
+            \n# 核心判定规则（必须严格遵守）\n1. 仅依据 complaint_text 识别意图。service_type 仅供辅助参考，严禁仅凭 service_type 推断意图。\n2. 多重意图保留：一条文本涉及多个问题时，保留所有候选意图。按\
+            \ precedence（优先级数字越小优先级越高）确定 primary_intent，其余放入 secondary_intents（按优先级升序排列）。\n   - 优先级顺序：MOBILE_NETWORK(1) =\
+            \ BROADBAND_FAULT(1) > INSTALL_DELAY(2) > BILLING_DISPUTE(3) > SERVICE_ATTITUDE(4) > OTHER(8) > POSITIVE_FEEDBACK(9)。\n\
+            \   - 若 MOBILE_NETWORK 和 BROADBAND_FAULT 同时出现（同为优先级 1），按该意图在文本中先出现的顺序确定主意图。\n3. 安装与故障区分：新装宽带尚未交付验收的争议归 INSTALL_DELAY；已经交付使用后断网的归\
+            \ BROADBAND_FAULT。\n4. 正向反馈特例：若包含“感谢、表扬”且明确表示“没有投诉/不是投诉”，则**仅输出** POSITIVE_FEEDBACK，不再叠加其他任何意图。\n5. 无法可靠归类时输出\
+            \ OTHER，切勿强行匹配。\n\n# 输入信息\n- case_id：{{{#1793176186719.item#}}的case_id\n- service_type：{{#1793176186719.item#}}的service_type\n\
+            - complaint_text：{{#1793176186719.item#}}的complaint_text\n\n# 参考示例\n示例 1（单意图）：\ncomplaint_text: 9月套餐约定每月129元，这期账单扣了159元，请核对多出的30元。\n\
+            输出: {\"primary_intent\":\"BILLING_DISPUTE\",\"secondary_intents\":[],\"intent_reason\":\"核对月费与账单扣费差额，属账单争议\"}\n\
+            \n示例 2（双意图，宽带故障优先于账单）：\ncomplaint_text: 宽带现在断网，9月账单还多收了20元，请先恢复网络并核对收费。\n输出: {\"primary_intent\":\"BROADBAND_FAULT\"\
+            ,\"secondary_intents\":[\"BILLING_DISPUTE\"],\"intent_reason\":\"同时涉及断网与多收费，断网优先级更高\"}\n\n示例 3（安装延迟 vs 故障）：\n\
+            complaint_text: 新装宽带系统显示已完工，但一直没有上门交付验收，请核查安装情况。\n输出: {\"primary_intent\":\"INSTALL_DELAY\",\"secondary_intents\"\
+            :[],\"intent_reason\":\"新装尚未交付验收，属安装延迟\"}\n\n示例 4（正向反馈特例）：\ncomplaint_text: 感谢营业厅工作人员帮我解决问题，这次没有投诉。\n输出: {\"primary_intent\"\
+            :\"POSITIVE_FEEDBACK\",\"secondary_intents\":[],\"intent_reason\":\"明确感谢且声明无投诉，仅正向反馈\"}\n\n示例 5（其他模糊场景）：\ncomplaint_text:\
+            \ 我有个事想问一下，方便回电话吗。\n输出: {\"primary_intent\":\"OTHER\",\"secondary_intents\":[],\"intent_reason\":\"内容模糊无法归类\"}"
+        selected: false
+        structured_output_enabled: false
+        title: 05-01 单条意图识别
+        type: llm
+        vision:
+          enabled: false
+      height: 87
+      id: '1793176630478'
+      parentId: '1793176186719'
+      position:
+        x: 128
+        y: 68
+      positionAbsolute:
+        x: 1242.7909149438808
+        y: 548.3497652106972
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+      zIndex: 1002
+    - data:
+        code: "import json\nimport re\nfrom datetime import datetime, timedelta\n\n# ============================================================\n\
+          # 1. 超级 JSON 提取器（无视 <think> 标签和 markdown）\n# ============================================================\ndef _extract_json(text:\
+          \ str) -> dict:\n    if not text: return {}\n    # 清除 markdown 代码块标记\n    text = re.sub(r\"```(?:json)?\", \"\"\
+          , text, flags=re.I).strip()\n    \n    # 优先定位标志位，精准截取大模型的 JSON\n    start_idx = text.find('{\"primary_intent\"')\n\
+          \    if start_idx == -1:\n        start_idx = text.find('{\\n  \"primary_intent\"')\n        \n    if start_idx\
+          \ != -1:\n        end_idx = text.rfind(\"}\")\n        if end_idx > start_idx:\n            try:\n             \
+          \   return json.loads(text[start_idx:end_idx+1])\n            except Exception:\n                pass\n\n    # 兜底：找第一个\
+          \ { 和最后一个 }\n    l, r = text.find(\"{\"), text.rfind(\"}\")\n    if l != -1 and r != -1 and r > l:\n        try:\n\
+          \            return json.loads(text[l:r+1])\n        except Exception:\n            pass\n    return {}\n\n\n# ============================================================\n\
+          # 2. 主函数\n# ============================================================\ndef main(item: dict, indexes_json: str,\
+          \ llm_intent_json: str) -> dict:\n    try:\n        indexes = json.loads(indexes_json) if indexes_json else {}\n\
+          \        snap_by_svc = indexes.get(\"snapshot_by_service\", {})\n        dup_snaps = indexes.get(\"duplicate_snapshot_services\"\
+          , {})\n        cust_by_id = indexes.get(\"customer_by_id\", {})\n        rules_by_key = indexes.get(\"rules_by_key\"\
+          , {})\n        open_tk_by_key = indexes.get(\"open_tickets_by_key\", {})\n\n        # 解析 LLM 意图\n        intent_obj\
+          \ = _extract_json(llm_intent_json)\n        primary_intent = intent_obj.get(\"primary_intent\", \"OTHER\")\n   \
+          \     secondary_intents = intent_obj.get(\"secondary_intents\", [])\n        if not isinstance(secondary_intents,\
+          \ list):\n            secondary_intents = []\n\n        # ============================================================\n\
+          \        # \U0001F680 LLM 兜底纠偏机制（防止 LLM 误判为 OTHER）\n        # ============================================================\n\
+          \        text = item.get(\"complaint_text\", \"\")\n        if primary_intent == \"OTHER\":\n            if any(k\
+          \ in text for k in [\"手机\", \"信号\", \"无服务\", \"没信号\", \"5G\", \"移动网络\", \"上网\"]):\n                primary_intent\
+          \ = \"MOBILE_NETWORK\"\n            elif any(k in text for k in [\"宽带\", \"断网\", \"断线\", \"光猫\", \"卡顿\", \"连不上\"\
+          ]):\n                if any(k in text for k in [\"新装\", \"预约\", \"安装\", \"完工\", \"验收\"]):\n                    primary_intent\
+          \ = \"INSTALL_DELAY\"\n                else:\n                    primary_intent = \"BROADBAND_FAULT\"\n       \
+          \     elif any(k in text for k in [\"账单\", \"扣费\", \"多扣\", \"多收\", \"收费\", \"月费\", \"套餐\"]):\n                primary_intent\
+          \ = \"BILLING_DISPUTE\"\n\n        case_id = item.get(\"case_id\", \"\")\n        customer_id = item.get(\"customer_id\"\
+          , \"\")\n        service_id = item.get(\"service_id\", \"\")\n        service_type = item.get(\"service_type\",\
+          \ \"\")\n        region = item.get(\"region\", \"\")\n        received_at_str = item.get(\"received_at\", \"\")\n\
+          \n        result = {\n            \"case_id\": case_id, \"customer_id\": customer_id, \"service_id\": service_id,\n\
+          \            \"primary_intent\": primary_intent, \"secondary_intents\": secondary_intents,\n            \"verification_result\"\
+          : \"\", \"matched_rule_id\": \"\", \"evidence_id\": \"\",\n            \"queue_id\": \"\", \"priority\": \"\", \"\
+          sla_deadline\": \"\",\n            \"ticket_action\": \"\", \"existing_ticket_id\": \"\", \"draft_ticket_id\": \"\
+          \",\n            \"related_ticket_ids\": [], \"reason\": \"\"\n        }\n\n        try:\n            rec_dt = datetime.fromisoformat(received_at_str)\n\
+          \        except Exception:\n            rec_dt = datetime.now()\n\n        # ============================================================\n\
+          \        # 特例：POSITIVE_FEEDBACK\n        # ============================================================\n      \
+          \  if primary_intent == \"POSITIVE_FEEDBACK\":\n            result[\"verification_result\"] = \"NOT_REQUIRED\"\n\
+          \            result[\"ticket_action\"] = \"NO_TICKET\"\n            reason = \"客户表达感谢，不生成投诉工单。\"\n            if\
+          \ not service_id: reason += \" [提示:缺少号码]\"\n            elif service_id not in snap_by_svc: reason += \" [提示:无快照]\"\
+          \n            elif snap_by_svc[service_id].get(\"customer_id\") != customer_id:\n                reason += \" [提示:客户号不一致]\"\
+          \n            result[\"reason\"] = reason\n            return {\"result_str\": json.dumps(result, ensure_ascii=False)}\n\
+          \n        # ============================================================\n        # 身份与归属校验\n        # ============================================================\n\
+          \        v_fail_reason = \"\"\n        if not customer_id: v_fail_reason = \"缺少客户号\"\n        elif not service_id:\
+          \ v_fail_reason = \"缺少业务号码\"\n        elif customer_id not in cust_by_id: v_fail_reason = \"客户号与主档不一致\"\n      \
+          \  elif service_id in dup_snaps: v_fail_reason = \"快照归属冲突\"\n        elif service_id not in snap_by_svc: v_fail_reason\
+          \ = \"未找到业务快照\"\n        else:\n            snap = snap_by_svc[service_id]\n            if snap.get(\"customer_id\"\
+          ) != customer_id or snap.get(\"service_type\") != service_type or snap.get(\"region\") != region:\n            \
+          \    v_fail_reason = \"快照归属不一致\"\n            elif snap.get(\"account_status\") != \"ACTIVE\":\n               \
+          \ v_fail_reason = \"账户非 ACTIVE\"\n\n        if v_fail_reason:\n            result.update({\n                \"verification_result\"\
+          : \"UNKNOWN\", \"queue_id\": \"MANUAL_TRIAGE_QUEUE\",\n                \"priority\": \"P2\", \"ticket_action\":\
+          \ \"MANUAL_REVIEW\",\n                \"sla_deadline\": (rec_dt + timedelta(hours=4)).isoformat(),\n           \
+          \     \"reason\": f\"校验不通过：{v_fail_reason}。转人工复核。\"\n            })\n            return {\"result_str\": json.dumps(result,\
+          \ ensure_ascii=False)}\n\n        snap = snap_by_svc[service_id]\n        result[\"evidence_id\"] = snap.get(\"\
+          evidence_id\", \"\")\n\n        # ============================================================\n        # 业务事实核验\n\
+          \        # ============================================================\n        v_result, v_reason = \"UNKNOWN\"\
+          , \"\"\n        if primary_intent == \"BILLING_DISPUTE\":\n            contract, charged = snap.get(\"contract_monthly_fee_yuan\"\
+          , \"\"), snap.get(\"charged_monthly_fee_yuan\", \"\")\n            try:\n                c_val, ch_val = float(contract),\
+          \ float(charged)\n                if ch_val > c_val: v_result, v_reason = \"CONFIRMED\", f\"实收({ch_val})>约定({c_val})\"\
+          \n                else: v_result, v_reason = \"NOT_CONFIRMED\", f\"实收({ch_val})<=约定({c_val})\"\n            except\
+          \ (ValueError, TypeError):\n                v_result, v_reason = \"UNKNOWN\", \"金额缺失或无法解析\"\n\n        elif primary_intent\
+          \ == \"MOBILE_NETWORK\":\n            net_status = snap.get(\"network_incident_status\", \"\")\n            if net_status\
+          \ == \"OPEN\": v_result, v_reason = \"CONFIRMED\", \"网络故障状态OPEN\"\n            elif net_status == \"NONE\": v_result,\
+          \ v_reason = \"NOT_CONFIRMED\", \"网络故障状态NONE\"\n            else: v_result, v_reason = \"UNKNOWN\", \"网络状态缺失或未知\"\
+          \n\n        elif primary_intent == \"BROADBAND_FAULT\":\n            line_status = snap.get(\"access_line_status\"\
+          , \"\")\n            if line_status == \"DOWN\": v_result, v_reason = \"CONFIRMED\", \"线路状态DOWN\"\n            elif\
+          \ line_status == \"UP\": v_result, v_reason = \"NOT_CONFIRMED\", \"线路状态UP\"\n            else: v_result, v_reason\
+          \ = \"UNKNOWN\", \"线路状态缺失或未知\"\n\n        elif primary_intent == \"INSTALL_DELAY\":\n            inst_status = snap.get(\"\
+          install_order_status\", \"\")\n            if inst_status == \"DELAYED\": v_result, v_reason = \"CONFIRMED\", \"\
+          安装单状态DELAYED\"\n            elif inst_status == \"COMPLETED\": v_result, v_reason = \"NOT_CONFIRMED\", \"安装单状态COMPLETED\"\
+          \n            else: v_result, v_reason = \"UNKNOWN\", \"安装单状态缺失或未知\"\n\n        elif primary_intent == \"SERVICE_ATTITUDE\"\
+          :\n            v_result, v_reason = \"NOT_CHECKED\", \"服务态度投诉\"\n\n        elif primary_intent == \"OTHER\":\n \
+          \           v_result, v_reason = \"NOT_CHECKED\", \"无法可靠归类\"\n\n        result[\"verification_result\"] = v_result\n\
+          \        result[\"reason\"] = v_reason\n\n        # ============================================================\n\
+          \        # 规则匹配\n        # ============================================================\n        rule_key = f\"\
+          {primary_intent}||{service_type}||{v_result}\"\n        rule_any_key = f\"{primary_intent}||ANY||{v_result}\"\n\
+          \        matched_rules = rules_by_key.get(rule_key, []) or rules_by_key.get(rule_any_key, [])\n        \n      \
+          \  if not matched_rules:\n            result.update({\n                \"queue_id\": \"MANUAL_TRIAGE_QUEUE\", \"\
+          priority\": \"P2\", \"ticket_action\": \"MANUAL_REVIEW\",\n                \"sla_deadline\": (rec_dt + timedelta(hours=4)).isoformat(),\n\
+          \                \"reason\": f\"{v_reason}；未找到规则，转人工\"\n            })\n            return {\"result_str\": json.dumps(result,\
+          \ ensure_ascii=False)}\n\n        matched_rules.sort(key=lambda x: x.get(\"precedence\", 99))\n        rule = matched_rules[0]\n\
+          \        result[\"matched_rule_id\"] = rule.get(\"rule_id\")\n        result[\"queue_id\"] = rule.get(\"queue_id\"\
+          )\n\n        # ============================================================\n        # 客户等级与SLA\n        # ============================================================\n\
+          \        cust_info = cust_by_id.get(customer_id, {})\n        level_map = {\"普通客户\": \"normal\", \"VIP客户\": \"vip\"\
+          , \"企业客户\": \"enterprise\"}\n        c_level = level_map.get(cust_info.get(\"customer_level\", \"\"), \"normal\"\
+          )\n        result[\"priority\"] = rule.get(f\"priority_{c_level}\", rule.get(\"priority_normal\", \"P2\"))\n   \
+          \     sla_hours = rule.get(f\"sla_hours_{c_level}\", rule.get(\"sla_hours_normal\", 24))\n        result[\"sla_deadline\"\
+          ] = (rec_dt + timedelta(hours=int(sla_hours))).isoformat()\n\n        # ============================================================\n\
+          \        # 工单动作\n        # ============================================================\n        action_rule = rule.get(\"\
+          ticket_action\", \"\")\n        if action_rule == \"CREATE_OR_MERGE\":\n            tk_key = f\"{customer_id}||{service_id}||{primary_intent}\"\
+          \n            existing_tks = open_tk_by_key.get(tk_key, [])\n            if existing_tks:\n                result[\"\
+          ticket_action\"] = \"MERGE\"\n                result[\"existing_ticket_id\"] = existing_tks[0].get(\"ticket_id\"\
+          )\n                result[\"reason\"] += \"；已合并\"\n            else:\n                result[\"ticket_action\"]\
+          \ = \"CREATE\"\n                result[\"draft_ticket_id\"] = f\"DRAFT-{case_id}\"\n                result[\"reason\"\
+          ] += \"；新建草稿\"\n        elif action_rule == \"MANUAL_REVIEW\":\n            result[\"ticket_action\"] = \"MANUAL_REVIEW\"\
+          \n            result[\"reason\"] += \"；转人工\"\n        else:\n            result[\"ticket_action\"] = \"NO_TICKET\"\
+          \n            result[\"priority\"] = \"\"\n            result[\"sla_deadline\"] = \"\"\n            result[\"reason\"\
+          ] += \"；不建单\"\n\n        # ============================================================\n        # 副意图关联\n     \
+          \   # ============================================================\n        if secondary_intents:\n            result[\"\
+          reason\"] += f\"；副意图:{','.join(secondary_intents)}\"\n            for sec_intent in secondary_intents:\n       \
+          \         sec_tks = open_tk_by_key.get(f\"{customer_id}||{service_id}||{sec_intent}\", [])\n                for\
+          \ t in sec_tks:\n                    result[\"related_ticket_ids\"].append(t.get(\"ticket_id\"))\n\n        return\
+          \ {\"result_str\": json.dumps(result, ensure_ascii=False)}\n\n    except Exception as e:\n        fallback = {\n\
+          \            \"case_id\": item.get(\"case_id\", \"\"), \"customer_id\": item.get(\"customer_id\", \"\"),\n     \
+          \       \"service_id\": item.get(\"service_id\", \"\"), \"primary_intent\": \"OTHER\",\n            \"secondary_intents\"\
+          : [], \"verification_result\": \"UNKNOWN\", \"matched_rule_id\": \"\",\n            \"evidence_id\": \"\", \"queue_id\"\
+          : \"MANUAL_TRIAGE_QUEUE\", \"priority\": \"P2\",\n            \"sla_deadline\": \"\", \"ticket_action\": \"MANUAL_REVIEW\"\
+          , \"existing_ticket_id\": \"\",\n            \"draft_ticket_id\": \"\", \"related_ticket_ids\": [], \"reason\":\
+          \ f\"代码异常：{str(e)}\"\n        }\n        return {\"result_str\": json.dumps(fallback, ensure_ascii=False)}"
+        code_language: python3
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1793176186719'
+        outputs:
+          result_str:
+            children: null
+            type: string
+        selected: false
+        title: 分流
+        type: code
+        variables:
+        - value_selector:
+          - '1793176186719'
+          - item
+          value_type: object
+          variable: item
+        - value_selector:
+          - '1793174699147'
+          - indexes_json
+          value_type: string
+          variable: indexes_json
+        - value_selector:
+          - '1793176630478'
+          - text
+          value_type: string
+          variable: llm_intent_json
+      height: 51
+      id: '1793177933149'
+      parentId: '1793176186719'
+      position:
+        x: 429
+        y: 68
+      positionAbsolute:
+        x: 1543.7909149438808
+        y: 548.3497652106972
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+      zIndex: 1002
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Data of column chart, such as, [{ "category":"北京", "value":825, "group":"油车" }].
+            ja_JP: Data of column chart, such as, [{ "category":"北京", "value":825, "group":"油车" }].
+            pt_BR: Data of column chart, such as, [{ "category":"北京", "value":825, "group":"油车" }].
+            zh_Hans: 柱状图数据， 例如，[{ "category":"北京", "value":825, "group":"油车" }]。
+          label:
+            en_US: data of column chart
+            ja_JP: data of column chart
+            pt_BR: data of column chart
+            zh_Hans: 柱状图数据
+          llm_description: Data of column chart, such as, [{ "category":"北京", "value":825, "group":"油车" }].
+          max: null
+          min: null
+          name: data
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: false
+          form: llm
+          human_description:
+            en_US: Whether stacking is enabled. When enabled, area charts require a 'group' field in the data.
+            ja_JP: Whether stacking is enabled. When enabled, area charts require a 'group' field in the data.
+            pt_BR: Whether stacking is enabled. When enabled, area charts require a 'group' field in the data..
+            zh_Hans: 是否开启柱状图叠加，当 stack 为 true， data 数据中 必须有 'group' 字段。
+          label:
+            en_US: stack
+            ja_JP: stack
+            pt_BR: stack
+            zh_Hans: 柱状图叠加
+          llm_description: Whether stacking is enabled. When enabled, area charts require a 'group' field in the data.
+          max: null
+          min: null
+          name: stack
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: boolean
+        - auto_generate: null
+          default: false
+          form: llm
+          human_description:
+            en_US: Whether grouping is enabled. When enabled, column charts require a 'group' field in the data. When `group`
+              is true, `stack` should be false.
+            ja_JP: Whether grouping is enabled. When enabled, column charts require a 'group' field in the data. When `group`
+              is true, `stack` should be false.
+            pt_BR: Whether grouping is enabled. When enabled, column charts require a 'group' field in the data. When `group`
+              is true, `stack` should be false.
+            zh_Hans: 是否开启柱状图分组，当 group 为 true，data 数据中 必须有 'group' 字段。
+          label:
+            en_US: group
+            ja_JP: group
+            pt_BR: group
+            zh_Hans: 柱状图分组
+          llm_description: Whether grouping is enabled. When enabled, column charts require a 'group' field in the data. When
+            `group` is true, `stack` should be false.
+          max: null
+          min: null
+          name: group
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: boolean
+        - auto_generate: null
+          default: 600
+          form: form
+          human_description:
+            en_US: Set the width of chart, default is 600.
+            ja_JP: Set the width of chart, default is 600.
+            pt_BR: Set the width of chart, default is 600.
+            zh_Hans: 请设置图表宽度， 默认值为 600。
+          label:
+            en_US: width
+            ja_JP: width
+            pt_BR: width
+            zh_Hans: 宽
+          llm_description: Set the width of chart, default is 600.
+          max: null
+          min: null
+          name: width
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: number
+        - auto_generate: null
+          default: 400
+          form: form
+          human_description:
+            en_US: Set the height of chart, default is 400.
+            ja_JP: Set the height of chart, default is 400.
+            pt_BR: Set the height of chart, default is 400.
+            zh_Hans: 请设置图表高度，默认值为 400。
+          label:
+            en_US: height
+            ja_JP: height
+            pt_BR: height
+            zh_Hans: 高
+          llm_description: Set the height of chart, default is 400.
+          max: null
+          min: null
+          name: height
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: number
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Set the title of chart.
+            ja_JP: Set the title of chart.
+            pt_BR: Set the title of chart.
+            zh_Hans: 请设置图表名称。
+          label:
+            en_US: title
+            ja_JP: title
+            pt_BR: title
+            zh_Hans: 图表名称
+          llm_description: Set the title of chart.
+          max: null
+          min: null
+          name: title
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Set the axisXTitle of chart.
+            ja_JP: Set the axisXTitle of chart.
+            pt_BR: Set the axisXTitle of chart.
+            zh_Hans: 请设置图表 X 轴名称。
+          label:
+            en_US: axisXTitle
+            ja_JP: axisXTitle
+            pt_BR: axisXTitle
+            zh_Hans: 图表 X 轴名称
+          llm_description: Set the axisXTitle of chart.
+          max: null
+          min: null
+          name: axisXTitle
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Set the axisYTitle of chart.
+            ja_JP: Set the axisYTitle of chart.
+            pt_BR: Set the axisYTitle of chart.
+            zh_Hans: 请设置图表 Y 轴名称。
+          label:
+            en_US: axisYTitle
+            ja_JP: axisYTitle
+            pt_BR: axisYTitle
+            zh_Hans: 图表 Y 轴名称
+          llm_description: Set the axisYTitle of chart.
+          max: null
+          min: null
+          name: axisYTitle
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: default
+          form: form
+          human_description:
+            en_US: Set the theme of chart.
+            ja_JP: Set the theme of chart.
+            pt_BR: Set the theme of chart.
+            zh_Hans: 请设置图表主题。
+          label:
+            en_US: theme
+            ja_JP: theme
+            pt_BR: theme
+            zh_Hans: 图表主题
+          llm_description: Set the theme of chart.
+          max: null
+          min: null
+          name: theme
+          options:
+          - icon: ''
+            label:
+              en_US: default
+              ja_JP: default
+              pt_BR: default
+              zh_Hans: 默认主题
+            value: default
+          - icon: ''
+            label:
+              en_US: academy
+              ja_JP: academy
+              pt_BR: academy
+              zh_Hans: 学术主题
+            value: academy
+          - icon: ''
+            label:
+              en_US: dark
+              ja_JP: dark
+              pt_BR: dark
+              zh_Hans: 暗黑主题
+            value: dark
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: select
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: Set the style of chart, such as, { "backgroundColor":"transparent", "palette":["#8459fc","#ff89bd","#1677ff","#00c2ff","#ff9a00","#f2cc2e","#7587dc","#bd80fa"],
+              "texture":"rough" }.
+            ja_JP: Set the style of chart, such as, { "backgroundColor":"transparent", "palette":["#8459fc","#ff89bd","#1677ff","#00c2ff","#ff9a00","#f2cc2e","#7587dc","#bd80fa"],
+              "texture":"rough" }.
+            pt_BR: Set the style of chart, such as, { "backgroundColor":"transparent", "palette":["#8459fc","#ff89bd","#1677ff","#00c2ff","#ff9a00","#f2cc2e","#7587dc","#bd80fa"],
+              "texture":"rough" }.
+            zh_Hans: 请设置图表样式，例如，{ "backgroundColor":"transparent", "palette":["#8459fc","#ff89bd","#1677ff","#00c2ff","#ff9a00","#f2cc2e","#7587dc","#bd80fa"],
+              "texture":"rough" }。
+          label:
+            en_US: style
+            ja_JP: style
+            pt_BR: style
+            zh_Hans: 图表样式
+          llm_description: Set the style of chart, such as, { "backgroundColor":"transparent", "palette":["#8459fc","#ff89bd","#1677ff","#00c2ff","#ff9a00","#f2cc2e","#7587dc","#bd80fa"],
+            "texture":"rough" }.
+          max: null
+          min: null
+          name: style
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        params:
+          axisXTitle: ''
+          axisYTitle: ''
+          data: ''
+          group: ''
+          height: ''
+          stack: ''
+          style: ''
+          theme: ''
+          title: ''
+          width: ''
+        plugin_id: antv/visualization
+        plugin_unique_identifier: antv/visualization:0.2.0@798a255e7bf02e93b8a5717be235b833482be58daab1c64c79c954281da14b9c
+        provider_icon: /console/api/workspaces/current/plugin/icon?tenant_id=ebcaa89c-7a8a-4b41-a834-e868685c7b87&filename=0845c09f38c8d07ea4250bb588697f25bfe7d35fc590ceb8aa50425a715bb062.svg
+        provider_id: antv/visualization/visualization
+        provider_name: antv/visualization/visualization
+        provider_type: builtin
+        selected: false
+        title: 07 工单动作分布 柱状图
+        tool_configurations:
+          height:
+            type: constant
+            value: 400
+          style:
+            type: mixed
+            value: ''
+          theme:
+            type: constant
+            value: default
+          width:
+            type: constant
+            value: 600
+        tool_description: 生成一个柱状图，对不同类别进行数值比较，例如，当数值接近时，由于人眼对于高度的感知优于其他视觉元素（如面积、角度等），因此，使用柱状图更加合适。
+        tool_label: 生成柱状图
+        tool_name: generate_column_chart
+        tool_node_version: '2'
+        tool_parameters:
+          axisXTitle:
+            type: mixed
+            value: 工单动作
+          axisYTitle:
+            type: mixed
+            value: 数量（条）
+          data:
+            type: mixed
+            value: '{{#1793178783368.action_chart_data#}}'
+          group:
+            type: constant
+            value: false
+          stack:
+            type: constant
+            value: false
+          title:
+            type: mixed
+            value: 工单动作分布
+        type: tool
+      height: 165
+      id: '1793178729841'
+      position:
+        x: 2137.8162992465186
+        y: 233.5789855767003
+      positionAbsolute:
+        x: 2137.8162992465186
+        y: 233.5789855767003
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Data of column chart, such as, [{ "category":"北京", "value":825, "group":"油车" }].
+            ja_JP: Data of column chart, such as, [{ "category":"北京", "value":825, "group":"油车" }].
+            pt_BR: Data of column chart, such as, [{ "category":"北京", "value":825, "group":"油车" }].
+            zh_Hans: 柱状图数据， 例如，[{ "category":"北京", "value":825, "group":"油车" }]。
+          label:
+            en_US: data of column chart
+            ja_JP: data of column chart
+            pt_BR: data of column chart
+            zh_Hans: 柱状图数据
+          llm_description: Data of column chart, such as, [{ "category":"北京", "value":825, "group":"油车" }].
+          max: null
+          min: null
+          name: data
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: false
+          form: llm
+          human_description:
+            en_US: Whether stacking is enabled. When enabled, area charts require a 'group' field in the data.
+            ja_JP: Whether stacking is enabled. When enabled, area charts require a 'group' field in the data.
+            pt_BR: Whether stacking is enabled. When enabled, area charts require a 'group' field in the data..
+            zh_Hans: 是否开启柱状图叠加，当 stack 为 true， data 数据中 必须有 'group' 字段。
+          label:
+            en_US: stack
+            ja_JP: stack
+            pt_BR: stack
+            zh_Hans: 柱状图叠加
+          llm_description: Whether stacking is enabled. When enabled, area charts require a 'group' field in the data.
+          max: null
+          min: null
+          name: stack
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: boolean
+        - auto_generate: null
+          default: false
+          form: llm
+          human_description:
+            en_US: Whether grouping is enabled. When enabled, column charts require a 'group' field in the data. When `group`
+              is true, `stack` should be false.
+            ja_JP: Whether grouping is enabled. When enabled, column charts require a 'group' field in the data. When `group`
+              is true, `stack` should be false.
+            pt_BR: Whether grouping is enabled. When enabled, column charts require a 'group' field in the data. When `group`
+              is true, `stack` should be false.
+            zh_Hans: 是否开启柱状图分组，当 group 为 true，data 数据中 必须有 'group' 字段。
+          label:
+            en_US: group
+            ja_JP: group
+            pt_BR: group
+            zh_Hans: 柱状图分组
+          llm_description: Whether grouping is enabled. When enabled, column charts require a 'group' field in the data. When
+            `group` is true, `stack` should be false.
+          max: null
+          min: null
+          name: group
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: boolean
+        - auto_generate: null
+          default: 600
+          form: form
+          human_description:
+            en_US: Set the width of chart, default is 600.
+            ja_JP: Set the width of chart, default is 600.
+            pt_BR: Set the width of chart, default is 600.
+            zh_Hans: 请设置图表宽度， 默认值为 600。
+          label:
+            en_US: width
+            ja_JP: width
+            pt_BR: width
+            zh_Hans: 宽
+          llm_description: Set the width of chart, default is 600.
+          max: null
+          min: null
+          name: width
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: number
+        - auto_generate: null
+          default: 400
+          form: form
+          human_description:
+            en_US: Set the height of chart, default is 400.
+            ja_JP: Set the height of chart, default is 400.
+            pt_BR: Set the height of chart, default is 400.
+            zh_Hans: 请设置图表高度，默认值为 400。
+          label:
+            en_US: height
+            ja_JP: height
+            pt_BR: height
+            zh_Hans: 高
+          llm_description: Set the height of chart, default is 400.
+          max: null
+          min: null
+          name: height
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: number
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Set the title of chart.
+            ja_JP: Set the title of chart.
+            pt_BR: Set the title of chart.
+            zh_Hans: 请设置图表名称。
+          label:
+            en_US: title
+            ja_JP: title
+            pt_BR: title
+            zh_Hans: 图表名称
+          llm_description: Set the title of chart.
+          max: null
+          min: null
+          name: title
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Set the axisXTitle of chart.
+            ja_JP: Set the axisXTitle of chart.
+            pt_BR: Set the axisXTitle of chart.
+            zh_Hans: 请设置图表 X 轴名称。
+          label:
+            en_US: axisXTitle
+            ja_JP: axisXTitle
+            pt_BR: axisXTitle
+            zh_Hans: 图表 X 轴名称
+          llm_description: Set the axisXTitle of chart.
+          max: null
+          min: null
+          name: axisXTitle
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Set the axisYTitle of chart.
+            ja_JP: Set the axisYTitle of chart.
+            pt_BR: Set the axisYTitle of chart.
+            zh_Hans: 请设置图表 Y 轴名称。
+          label:
+            en_US: axisYTitle
+            ja_JP: axisYTitle
+            pt_BR: axisYTitle
+            zh_Hans: 图表 Y 轴名称
+          llm_description: Set the axisYTitle of chart.
+          max: null
+          min: null
+          name: axisYTitle
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: default
+          form: form
+          human_description:
+            en_US: Set the theme of chart.
+            ja_JP: Set the theme of chart.
+            pt_BR: Set the theme of chart.
+            zh_Hans: 请设置图表主题。
+          label:
+            en_US: theme
+            ja_JP: theme
+            pt_BR: theme
+            zh_Hans: 图表主题
+          llm_description: Set the theme of chart.
+          max: null
+          min: null
+          name: theme
+          options:
+          - icon: ''
+            label:
+              en_US: default
+              ja_JP: default
+              pt_BR: default
+              zh_Hans: 默认主题
+            value: default
+          - icon: ''
+            label:
+              en_US: academy
+              ja_JP: academy
+              pt_BR: academy
+              zh_Hans: 学术主题
+            value: academy
+          - icon: ''
+            label:
+              en_US: dark
+              ja_JP: dark
+              pt_BR: dark
+              zh_Hans: 暗黑主题
+            value: dark
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: select
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: Set the style of chart, such as, { "backgroundColor":"transparent", "palette":["#8459fc","#ff89bd","#1677ff","#00c2ff","#ff9a00","#f2cc2e","#7587dc","#bd80fa"],
+              "texture":"rough" }.
+            ja_JP: Set the style of chart, such as, { "backgroundColor":"transparent", "palette":["#8459fc","#ff89bd","#1677ff","#00c2ff","#ff9a00","#f2cc2e","#7587dc","#bd80fa"],
+              "texture":"rough" }.
+            pt_BR: Set the style of chart, such as, { "backgroundColor":"transparent", "palette":["#8459fc","#ff89bd","#1677ff","#00c2ff","#ff9a00","#f2cc2e","#7587dc","#bd80fa"],
+              "texture":"rough" }.
+            zh_Hans: 请设置图表样式，例如，{ "backgroundColor":"transparent", "palette":["#8459fc","#ff89bd","#1677ff","#00c2ff","#ff9a00","#f2cc2e","#7587dc","#bd80fa"],
+              "texture":"rough" }。
+          label:
+            en_US: style
+            ja_JP: style
+            pt_BR: style
+            zh_Hans: 图表样式
+          llm_description: Set the style of chart, such as, { "backgroundColor":"transparent", "palette":["#8459fc","#ff89bd","#1677ff","#00c2ff","#ff9a00","#f2cc2e","#7587dc","#bd80fa"],
+            "texture":"rough" }.
+          max: null
+          min: null
+          name: style
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        params:
+          axisXTitle: ''
+          axisYTitle: ''
+          data: ''
+          group: ''
+          height: ''
+          stack: ''
+          style: ''
+          theme: ''
+          title: ''
+          width: ''
+        plugin_id: antv/visualization
+        plugin_unique_identifier: antv/visualization:0.2.0@798a255e7bf02e93b8a5717be235b833482be58daab1c64c79c954281da14b9c
+        provider_icon: /console/api/workspaces/current/plugin/icon?tenant_id=ebcaa89c-7a8a-4b41-a834-e868685c7b87&filename=0845c09f38c8d07ea4250bb588697f25bfe7d35fc590ceb8aa50425a715bb062.svg
+        provider_id: antv/visualization/visualization
+        provider_name: antv/visualization/visualization
+        provider_type: builtin
+        selected: false
+        title: 08 客户诉求主意图分布 柱状图
+        tool_configurations:
+          height:
+            type: constant
+            value: 400
+          style:
+            type: mixed
+            value: null
+          theme:
+            type: constant
+            value: default
+          width:
+            type: constant
+            value: 600
+        tool_description: 生成一个柱状图，对不同类别进行数值比较，例如，当数值接近时，由于人眼对于高度的感知优于其他视觉元素（如面积、角度等），因此，使用柱状图更加合适。
+        tool_label: 生成柱状图
+        tool_name: generate_column_chart
+        tool_node_version: '2'
+        tool_parameters:
+          axisXTitle:
+            type: mixed
+            value: 主意图
+          axisYTitle:
+            type: mixed
+            value: 数量（条）
+          data:
+            type: mixed
+            value: '{{#1793178783368.intent_chart_data#}}'
+          group:
+            type: constant
+            value: false
+          stack:
+            type: constant
+            value: false
+          title:
+            type: mixed
+            value: 客户诉求主意图分布
+        type: tool
+      height: 165
+      id: '1793178745542'
+      position:
+        x: 2137.8162992465186
+        y: 719.967767299187
+      positionAbsolute:
+        x: 2137.8162992465186
+        y: 719.967767299187
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        code: "import json\n\ndef main(results_list: list) -> dict:\n    results = []\n    for r_str in results_list:\n  \
+          \      try:\n            results.append(json.loads(r_str))\n        except Exception:\n            continue\n  \
+          \  results.sort(key=lambda x: x.get(\"case_id\", \"\"))\n\n    actions = {\"CREATE\": 0, \"MERGE\": 0, \"MANUAL_REVIEW\"\
+          : 0, \"NO_TICKET\": 0}\n    intents = {\n        \"BILLING_DISPUTE\": 0, \"MOBILE_NETWORK\": 0, \"BROADBAND_FAULT\"\
+          : 0,\n        \"INSTALL_DELAY\": 0, \"SERVICE_ATTITUDE\": 0, \"POSITIVE_FEEDBACK\": 0\n    }\n\n    for r in results:\n\
+          \        action = r.get(\"ticket_action\", \"\")\n        if action in actions: actions[action] += 1\n        p_intent\
+          \ = r.get(\"primary_intent\", \"\")\n        if p_intent in intents: intents[p_intent] += 1\n\n    # ✅ AntV 插件要求的格式：必须是\
+          \ category 和 value\n    action_data = [{\"category\": k, \"value\": v} for k, v in actions.items()]\n    intent_data\
+          \ = [{\"category\": k, \"value\": v} for k, v in intents.items()]\n\n    context = {\n        \"results\": results,\n\
+          \        \"actions\": actions\n    }\n\n    return {\n        \"action_chart_data\": json.dumps(action_data, ensure_ascii=False),\n\
+          \        \"intent_chart_data\": json.dumps(intent_data, ensure_ascii=False),\n        \"summary_json\": json.dumps(context,\
+          \ ensure_ascii=False)\n    }"
+        code_language: python3
+        outputs:
+          action_chart_data:
+            children: null
+            type: string
+          intent_chart_data:
+            children: null
+            type: string
+          summary_json:
+            children: null
+            type: string
+        selected: false
+        title: 06 图表数据准备节点
+        type: code
+        variables:
+        - value_selector:
+          - '1793176186719'
+          - output
+          value_type: array[string]
+          variable: results_list
+      height: 51
+      id: '1793178783368'
+      position:
+        x: 1839.236521348531
+        y: 517.156509977629
+      positionAbsolute:
+        x: 1839.236521348531
+        y: 517.156509977629
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        code: "import json\n\ndef main(summary_json: str, chart1_text: str, chart2_text: str) -> dict:\n    context = json.loads(summary_json)\n\
+          \    results = context.get(\"results\", [])\n    actions = context.get(\"actions\", {})\n    \n    manual_reviews\
+          \ = []\n    no_tickets = []\n    table_rows = []\n\n    def safe_val(v):\n        return \"-\" if v is None or v\
+          \ == \"\" else str(v)\n\n    def format_reason(r_dict):\n        base = r_dict.get(\"reason\", \"\")\n        secs\
+          \ = r_dict.get(\"secondary_intents\", [])\n        rel_tks = r_dict.get(\"related_ticket_ids\", [])\n        extras\
+          \ = []\n        if secs and \"副意图\" not in base: extras.append(f\"副意图:{','.join(secs)}\")\n        if rel_tks and\
+          \ \"关联工单\" not in base: extras.append(f\"关联工单:{','.join(rel_tks)}\")\n        if extras: base = base + \"；\" + \"\
+          ；\".join(extras)\n        base = base.replace(\"|\", \"／\").replace(\"\\n\", \" \").replace(\"\\r\", \"\")\n   \
+          \     if len(base) > 60: base = base[:60] + \"…\"\n        return base\n\n    def get_ticket_no(r_dict):\n     \
+          \   action = r_dict.get(\"ticket_action\", \"\")\n        if action == \"CREATE\": return r_dict.get(\"draft_ticket_id\"\
+          ) or f\"DRAFT-{r_dict.get('case_id')}\"\n        elif action == \"MERGE\": return r_dict.get(\"existing_ticket_id\"\
+          ) or \"-\"\n        return \"-\"\n\n    for idx, r in enumerate(results, start=1):\n        case_id = r.get(\"case_id\"\
+          , \"\")\n        action = r.get(\"ticket_action\", \"\")\n        \n        if action == \"MANUAL_REVIEW\":\n  \
+          \          manual_reviews.append(f\"- {case_id}：{format_reason(r)}\")\n        elif action == \"NO_TICKET\":\n \
+          \           no_tickets.append(f\"- {case_id}：{format_reason(r)}\")\n\n        row = [\n            str(idx), safe_val(case_id),\
+          \ safe_val(r.get(\"customer_id\")),\n            safe_val(r.get(\"service_id\")), safe_val(r.get(\"primary_intent\"\
+          )),\n            safe_val(r.get(\"verification_result\")), safe_val(r.get(\"matched_rule_id\")),\n            safe_val(r.get(\"\
+          queue_id\")), safe_val(r.get(\"priority\")),\n            safe_val(r.get(\"sla_deadline\")), safe_val(action),\n\
+          \            safe_val(get_ticket_no(r)), format_reason(r)\n        ]\n        table_rows.append(\"| \" + \" | \"\
+          .join(row) + \" |\")\n\n    # 提取图表链接（兼容反引号）\n    def extract_url(text):\n        if not text: return \"\"\n    \
+          \    text = text.strip()\n        if text.startswith(\"http\"): return text\n        return text\n\n    return {\n\
+          \        \"create_count\": str(actions.get('CREATE', 0)),\n        \"merge_count\": str(actions.get('MERGE', 0)),\n\
+          \        \"manual_count\": str(actions.get('MANUAL_REVIEW', 0)),\n        \"no_ticket_count\": str(actions.get('NO_TICKET',\
+          \ 0)),\n        \"detail_table_text\": \"\\n\".join(table_rows),\n        \"manual_review_text\": \"\\n\".join(manual_reviews),\n\
+          \        \"no_ticket_text\": \"\\n\".join(no_tickets),\n        \"chart1_url\": extract_url(chart1_text),\n    \
+          \    \"chart2_url\": extract_url(chart2_text)\n    }"
+        code_language: python3
+        outputs:
+          chart1_url:
+            children: null
+            type: string
+          chart2_url:
+            children: null
+            type: string
+          create_count:
+            children: null
+            type: string
+          detail_table_text:
+            children: null
+            type: string
+          manual_count:
+            children: null
+            type: string
+          manual_review_text:
+            children: null
+            type: string
+          merge_count:
+            children: null
+            type: string
+          no_ticket_count:
+            children: null
+            type: string
+          no_ticket_text:
+            children: null
+            type: string
+        selected: false
+        title: 09 报告生成
+        type: code
+        variables:
+        - value_selector:
+          - '1793178783368'
+          - summary_json
+          value_type: string
+          variable: summary_json
+        - value_selector:
+          - '1793178729841'
+          - text
+          value_type: string
+          variable: chart1_text
+        - value_selector:
+          - '1793178745542'
+          - text
+          value_type: string
+          variable: chart2_text
+      height: 51
+      id: '1793179903233'
+      position:
+        x: 2525.745745621151
+        y: 538.5605054702057
+      positionAbsolute:
+        x: 2525.745745621151
+        y: 538.5605054702057
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        outputs:
+        - value_selector:
+          - '1793180326881'
+          - output
+          value_type: string
+          variable: report_markdown
+        - value_selector:
+          - '1793180210048'
+          - files
+          value_type: array[file]
+          variable: report_file
+        selected: false
+        title: 输出 2
+        type: end
+      height: 113
+      id: '1793180037076'
+      position:
+        x: 3022.336999964074
+        y: 548.5908262057402
+      positionAbsolute:
+        x: 3022.336999964074
+        y: 548.5908262057402
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Markdown text
+            ja_JP: Markdown text
+            pt_BR: Markdown text
+            zh_Hans: Markdown格式文本
+          label:
+            en_US: Markdown text
+            ja_JP: Markdown text
+            pt_BR: Markdown text
+            zh_Hans: Markdown格式文本
+          llm_description: ''
+          max: null
+          min: null
+          name: md_text
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Optional custom output file name, and the filename suffix is not required.
+            ja_JP: Optional custom output file name, and the filename suffix is not required.
+            pt_BR: Optional custom output file name, and the filename suffix is not required.
+            zh_Hans: 可选的自定义输出文件名，后缀名无需指定
+          label:
+            en_US: Output Filename
+            ja_JP: Output Filename
+            pt_BR: Output Filename
+            zh_Hans: 输出文件名
+          llm_description: ''
+          max: null
+          min: null
+          name: output_filename
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        params:
+          md_text: ''
+          output_filename: ''
+        plugin_id: bowenliang123/md_exporter
+        plugin_unique_identifier: bowenliang123/md_exporter:3.6.9@3f027d63e80b44d5d5a9f706871afaef37905b8f8a89a2d152dc530211a8acb1
+        provider_icon: /console/api/workspaces/current/plugin/icon?tenant_id=ebcaa89c-7a8a-4b41-a834-e868685c7b87&filename=94713265c9473c3bd2bc8b0dd0794ad40955b7431610243bbd00ab02dae281cf.png
+        provider_id: bowenliang123/md_exporter/md_exporter
+        provider_name: bowenliang123/md_exporter/md_exporter
+        provider_type: builtin
+        selected: true
+        title: 结果报告文档
+        tool_configurations: {}
+        tool_description: 将 Markdown 转换为 .md 文件的工具
+        tool_label: Markdown ⮕ MD
+        tool_name: md_to_md
+        tool_node_version: '2'
+        tool_parameters:
+          md_text:
+            type: mixed
+            value: '{{#1793180326881.output#}}'
+          output_filename:
+            type: mixed
+            value: 结果报告
+        type: tool
+      height: 51
+      id: '1793180210048'
+      position:
+        x: 2757.9241962296414
+        y: 703.6086707140955
+      positionAbsolute:
+        x: 2757.9241962296414
+        y: 703.6086707140955
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        selected: false
+        template: '# 分流与工单草稿报告
+
+
+          ## 一、完整性检查
+
+
+          - 诉求总数：{{ input_items | length }}
+
+          - 结果总数：{{ result_items | length }}
+
+          - 结论：{% if input_items | length == result_items | length %}数量一致{% else %}数量不一致，请检查逐条分流结果{% endif %}
+
+
+          ## 二、工单动作统计
+
+
+          | 动作 | 数量 |
+
+          | --- | --- |
+
+          | CREATE（新建草稿） | {{ create_count }} |
+
+          | MERGE（合并至在途） | {{ merge_count }} |
+
+          | MANUAL_REVIEW（转人工） | {{ manual_count }} |
+
+          | NO_TICKET（不建单） | {{ no_ticket_count }} |
+
+
+          ## 三、逐条分流明细
+
+
+          | 序号 | case_id | 客户 | 业务号码 | 主意图 | 核验 | 规则 | 队列 | 优先级 | SLA截止 | 动作 | 工单编号 | 说明 |
+
+          | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+          {{ detail_table_text }}
+
+
+          {% if manual_review_text %}
+
+          ## 四、转人工复核清单
+
+
+          {{ manual_review_text }}
+
+          {% endif %}
+
+
+          {% if no_ticket_text %}
+
+          ## 五、不建单清单（NO_TICKET）
+
+
+          {{ no_ticket_text }}
+
+          {% endif %}
+
+
+          ## 附：说明
+
+
+          - 本报告仅汇总分流结果，不重新判定意图、业务状态或分流规则。
+
+          - CREATE 为工单草稿，MERGE 为合并至已存在在途工单，MANUAL_REVIEW 为转人工复核，NO_TICKET 为非投诉不生成工单。
+
+          - 所有工单编号均为草稿或在途引用，本报告不实际创建或派发工单。
+
+
+          ## 可视化图表
+
+
+          ### 工单动作分布
+
+
+          ![工单动作分布]({{ chart1_url }})
+
+
+          ### 客户诉求主意图分布
+
+
+          ![客户诉求主意图分布]({{ chart2_url }})'
+        title: 模板转换
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1793179903233'
+          - create_count
+          value_type: string
+          variable: create_count
+        - value_selector:
+          - '1793179903233'
+          - merge_count
+          value_type: string
+          variable: merge_count
+        - value_selector:
+          - '1793179903233'
+          - manual_count
+          value_type: string
+          variable: manual_count
+        - value_selector:
+          - '1793179903233'
+          - no_ticket_count
+          value_type: string
+          variable: no_ticket_count
+        - value_selector:
+          - '1793179903233'
+          - detail_table_text
+          value_type: string
+          variable: detail_table_text
+        - value_selector:
+          - '1793179903233'
+          - manual_review_text
+          value_type: string
+          variable: manual_review_text
+        - value_selector:
+          - '1793179903233'
+          - no_ticket_text
+          value_type: string
+          variable: no_ticket_text
+        - value_selector:
+          - '1793179903233'
+          - chart1_url
+          value_type: string
+          variable: chart1_url
+        - value_selector:
+          - '1793179903233'
+          - chart2_url
+          value_type: string
+          variable: chart2_url
+        - variable: input_items
+          value_selector:
+          - '1793174699147'
+          - complaints_list
+          value_type: array[object]
+        - variable: result_items
+          value_selector:
+          - '1793176186719'
+          - output
+          value_type: array[string]
+      height: 51
+      id: '1793180326881'
+      position:
+        x: 2714.740497407682
+        y: 828.1161908641255
+      positionAbsolute:
+        x: 2714.740497407682
+        y: 828.1161908641255
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    viewport:
+      x: -418.84567435005283
+      y: 391.76585041254884
+      zoom: 0.9744544580928318
+  rag_pipeline_variables: []

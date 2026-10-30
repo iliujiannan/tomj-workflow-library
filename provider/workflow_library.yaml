@@ -1,0 +1,15 @@
+identity:
+  author: tomj
+  name: workflow_library
+  label:
+    en_US: TomJ Workflow Library
+    zh_Hans: TomJ 工作流资料库
+  description:
+    en_US: Offline reference library containing TomJ-ES, TomJ-CR, and TomJ-DC YAML workflows.
+    zh_Hans: 内置 TomJ-ES、TomJ-CR、TomJ-DC 三份 YAML 工作流的离线参考资料库。
+  icon: icon.svg
+tools:
+  - tools/workflow_library.yaml
+extra:
+  python:
+    source: provider/workflow_library.py
